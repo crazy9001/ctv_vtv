@@ -97,7 +97,7 @@ class PostController extends BaseController
         StoreCategoryService $categoryService,
         BaseHttpResponse $response
     ) {
-        dd($request->all());
+
         /**
          * @var Post $post
          */
