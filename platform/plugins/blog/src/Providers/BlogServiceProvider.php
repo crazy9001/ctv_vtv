@@ -74,7 +74,7 @@ class BlogServiceProvider extends ServiceProvider
                     'id'          => 'cms-plugins-blog',
                     'priority'    => 3,
                     'parent_id'   => null,
-                    'name'        => 'plugins/blog::base.menu_name',
+                    'name'        => 'plugins/blog::posts.menu_name',
                     'icon'        => 'fa fa-edit',
                     'url'         => route('posts.index'),
                     'permissions' => ['posts.index'],

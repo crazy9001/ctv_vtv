@@ -67,7 +67,9 @@ class MigrateOldDatabase extends Command
                 'slug_id' => 0,
                 'language' => 'vi',
                 'model' => Post::class,
-                'image' => $this->generateThumbnail('http://apictv.vtv.vn/storage/uploads' . $post->thumbnail) ?? 'http://ctv.local.ub/storage/galleries/2-540x360.jpg'
+                'image' => $this->generateThumbnail('http://apictv.vtv.vn/storage/uploads' . $post->thumbnail) ?? 'http://ctv.local.ub/storage/galleries/2-540x360.jpg',
+                'created_at' => $post->created_at,
+                'updated_at' => $post->updated_at,
             ]);
             $post = $this->postRepository->createOrUpdate(array_merge($request->all(), [
                 'author_id' => 1,
@@ -102,7 +104,7 @@ class MigrateOldDatabase extends Command
         $file = 'tmp/' . $info['basename'];
         file_put_contents($file, $contents);
         $uploaded_file = new UploadedFile($file, $info['basename']);
-        $result = RvMedia::handleUpload($uploaded_file, 5, '');
+        $result = RvMedia::handleUpload($uploaded_file, 5);
         if (Arr::get($result, 'error') !== true) {
             return $result['data']->url;
         }
