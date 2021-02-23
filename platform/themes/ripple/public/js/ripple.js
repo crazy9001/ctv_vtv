@@ -1,1 +1,130 @@
-(()=>{"use strict";var e={7770:(e,a,t)=>{function r(e,a){for(var t=0;t<a.length;t++){var r=a[t];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}var n=$(".search-input"),o=$(".super-search"),s=$(".close-search"),c=$(".search-result"),i=null,l=function(){function e(){!function(e,a){if(!(e instanceof a))throw new TypeError("Cannot call a class as a function")}(this,e)}var a,t;return a=e,(t=[{key:"searchFunction",value:function(e){clearTimeout(i),i=setTimeout((function(){o.removeClass("search-finished"),c.fadeOut(),$.ajax({type:"GET",cache:!1,url:o.data("search-url"),data:{q:e},success:function(e){e.error?c.html(e.message):(c.html(e.data.items),o.addClass("search-finished")),c.fadeIn(500)},error:function(e){c.html(e.responseText),c.fadeIn(500)}})}),500)}},{key:"bindActionToElement",value:function(){var e=this;s.on("click",(function(a){a.preventDefault(),s.hasClass("active")?(o.removeClass("active"),c.hide(),s.removeClass("active"),$("body").removeClass("overflow"),$(".quick-search > .form-control").focus()):(o.addClass("active"),""!==n.val()&&e.searchFunction(n.val()),$("body").addClass("overflow"),s.addClass("active"))})),n.keyup((function(a){n.val(a.target.value),e.searchFunction(a.target.value)}))}}])&&r(a.prototype,t),e}();$(document).ready((function(){(new l).bindActionToElement()}))}},a={};function t(r){if(a[r])return a[r].exports;var n=a[r]={exports:{}};return e[r](n,n.exports,t),n.exports}t.d=(e,a)=>{for(var r in a)t.o(a,r)&&!t.o(e,r)&&Object.defineProperty(e,r,{enumerable:!0,get:a[r]})},t.o=(e,a)=>Object.prototype.hasOwnProperty.call(e,a),t(7770)})();
+/******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
+/******/ 	// The require scope
+/******/ 	var __webpack_require__ = {};
+/******/ 	
+/************************************************************************/
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	(() => {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__webpack_require__.d = (exports, definition) => {
+/******/ 			for(var key in definition) {
+/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
+/******/ 	(() => {
+/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/make namespace object */
+/******/ 	(() => {
+/******/ 		// define __esModule on exports
+/******/ 		__webpack_require__.r = (exports) => {
+/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 			}
+/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/************************************************************************/
+var __webpack_exports__ = {};
+/*!****************************************************!*\
+  !*** ./platform/themes/ripple/assets/js/ripple.js ***!
+  \****************************************************/
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Ripple": () => (/* binding */ Ripple)
+/* harmony export */ });
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var searchInput = $('.search-input');
+var superSearch = $('.super-search');
+var closeSearch = $('.close-search');
+var searchResult = $('.search-result');
+var timeoutID = null;
+var Ripple = /*#__PURE__*/function () {
+  function Ripple() {
+    _classCallCheck(this, Ripple);
+  }
+
+  _createClass(Ripple, [{
+    key: "searchFunction",
+    value: function searchFunction(keyword) {
+      clearTimeout(timeoutID);
+      timeoutID = setTimeout(function () {
+        superSearch.removeClass('search-finished');
+        searchResult.fadeOut();
+        $.ajax({
+          type: 'GET',
+          cache: false,
+          url: superSearch.data('search-url'),
+          data: {
+            'q': keyword
+          },
+          success: function success(res) {
+            if (!res.error) {
+              searchResult.html(res.data.items);
+              superSearch.addClass('search-finished');
+            } else {
+              searchResult.html(res.message);
+            }
+
+            searchResult.fadeIn(500);
+          },
+          error: function error(res) {
+            searchResult.html(res.responseText);
+            searchResult.fadeIn(500);
+          }
+        });
+      }, 500);
+    }
+  }, {
+    key: "bindActionToElement",
+    value: function bindActionToElement() {
+      var _this = this;
+
+      closeSearch.on('click', function (event) {
+        event.preventDefault();
+
+        if (closeSearch.hasClass('active')) {
+          superSearch.removeClass('active');
+          searchResult.hide();
+          closeSearch.removeClass('active');
+          $('body').removeClass('overflow');
+          $('.quick-search > .form-control').focus();
+        } else {
+          superSearch.addClass('active');
+
+          if (searchInput.val() !== '') {
+            _this.searchFunction(searchInput.val());
+          }
+
+          $('body').addClass('overflow');
+          closeSearch.addClass('active');
+        }
+      });
+      searchInput.keyup(function (e) {
+        searchInput.val(e.target.value);
+
+        _this.searchFunction(e.target.value);
+      });
+    }
+  }]);
+
+  return Ripple;
+}();
+$(document).ready(function () {
+  new Ripple().bindActionToElement();
+});
+/******/ })()
+;

@@ -43,10 +43,16 @@ class PostController extends Controller
      */
     public function index(Request $request, BaseHttpResponse $response)
     {
+        $language = $request->input('language') ? $request->input('language') : 'vi';
         $data = $this->postRepository
             ->getModel()
             ->where(['status' => BaseStatusEnum::PUBLISHED])
             ->with(['tags', 'categories', 'author', 'slugable'])
+            ->join('language_meta', function ($join) {
+                $join->on('posts.id', '=', 'language_meta.reference_id')
+                    ->where('language_meta.reference_type', '=', Post::class);
+            })
+            ->where('language_meta.lang_meta_code', '=', $language)
             ->select([
                 'posts.id',
                 'posts.name',
