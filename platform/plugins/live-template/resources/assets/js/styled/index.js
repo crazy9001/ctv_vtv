@@ -58,6 +58,9 @@ export const SESearchNewsPublishedStyled = styled.input`
     outline: none;
     margin-bottom: 0
 `
+export const ButtonSearchPost = styled.button`
+    display: none
+`
 
 export const SENewsPublishedSearchByZoneWrapper = styled.div`
     display: inline-block;
@@ -89,6 +92,7 @@ export const SENewsSearchSelectWrapper = styled.div`
 `
 export const NewsPositionHot = styled.div`
     height: calc(100vh - 307px);
+    overflow: auto
 `
 
 export const SENewsItem = styled.div`

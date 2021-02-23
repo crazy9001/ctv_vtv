@@ -1393,11 +1393,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react_custom_scrollbars__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-custom-scrollbars */ "./node_modules/react-custom-scrollbars/lib/index.js");
-/* harmony import */ var _config_const__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./../config/const */ "./platform/plugins/live-template/resources/assets/js/config/const.js");
+/* harmony import */ var _config_const__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../config/const */ "./platform/plugins/live-template/resources/assets/js/config/const.js");
+/* harmony import */ var react_infinite_scroll_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-infinite-scroll-component */ "./node_modules/react-infinite-scroll-component/dist/index.es.js");
 /* harmony import */ var _styled_index__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./../styled/index */ "./platform/plugins/live-template/resources/assets/js/styled/index.js");
 /* harmony import */ var _PostItem__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./PostItem */ "./platform/plugins/live-template/resources/assets/js/components/PostItem.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -1410,15 +1418,6 @@ function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
-
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
-
-function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
 
 
@@ -1427,50 +1426,69 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 
 
 
-
-var renderThumb = function renderThumb(_ref) {
-  var style = _ref.style,
-      props = _objectWithoutProperties(_ref, ["style"]);
-
-  var thumbStyle = {
-    backgroundColor: '#333',
-    height: '50px',
-    width: '10px'
-  };
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", _objectSpread({
-    style: _objectSpread(_objectSpread({}, style), thumbStyle)
-  }, props));
-};
-
-var PostList = function PostList(props) {
-  var scrollNode = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
+var PostList = function PostList(_ref) {
+  var props = _ref.props;
 
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
       _useState2 = _slicedToArray(_useState, 2),
       dataPost = _useState2[0],
       setDataPost = _useState2[1];
 
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(_config_const__WEBPACK_IMPORTED_MODULE_1__.API_URL + '/api/v1/posts'),
+      _useState4 = _slicedToArray(_useState3, 2),
+      nextPage = _useState4[0],
+      setNexPage = _useState4[1];
+
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(true),
+      _useState6 = _slicedToArray(_useState5, 2),
+      hasMore = _useState6[0],
+      setHasmore = _useState6[1];
+
+  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
+      _useState8 = _slicedToArray(_useState7, 2),
+      searchTerm = _useState8[0],
+      setSearchTerm = _useState8[1];
+
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    axios.get(_config_const__WEBPACK_IMPORTED_MODULE_2__.API_URL + '/api/v1/posts').then(function (res) {
+    fetchPostData();
+  }, []);
+
+  var fetchPostData = function fetchPostData() {
+    if (hasMore) {
+      axios.get(nextPage).then(function (res) {
+        if (!res.data.error) {
+          var _res$data = res.data,
+              links = _res$data.links,
+              data = _res$data.data;
+
+          if (data.length) {
+            setDataPost([].concat(_toConsumableArray(dataPost), _toConsumableArray(data)));
+            setNexPage(links.next);
+          }
+
+          if (!links.next) {
+            setHasmore(false);
+          }
+        }
+      })["catch"](function (res) {
+        Botble.handleError(res.response.data);
+      });
+    }
+  };
+
+  var handleChangeSearchInput = function handleChangeSearchInput(event) {
+    setSearchTerm(event.target.value);
+  };
+
+  var handleSubmitSearch = function handleSubmitSearch(event) {
+    event.preventDefault();
+    axios.get(_config_const__WEBPACK_IMPORTED_MODULE_1__.API_URL + "/api/v1/search?q=".concat(searchTerm)).then(function (res) {
       if (!res.data.error) {
         setDataPost(res.data.data);
       }
-    })["catch"](function (res) {
-      Botble.handleError(res.response.data);
+    })["catch"](function (err) {
+      Botble.handleError(err.response.data);
     });
-  }, []);
-
-  var handleUpdateScrollBar = function handleUpdateScrollBar(values) {
-    var scrollTop = values.scrollTop,
-        scrollHeight = values.scrollHeight,
-        clientHeight = values.clientHeight;
-    var pad = 100; // 100px of the bottom
-
-    var t = (scrollTop + pad) / (scrollHeight - clientHeight);
-
-    if (t > 1) {
-      console.log('scroll to bottom');
-    }
   };
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_styled_index__WEBPACK_IMPORTED_MODULE_3__.ItemSettingsStyled, {
@@ -1490,10 +1508,13 @@ var PostList = function PostList(props) {
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
                 id: "NewsListTab",
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_styled_index__WEBPACK_IMPORTED_MODULE_3__.SENewsSearchWrapper, {
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("form", {
-                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_styled_index__WEBPACK_IMPORTED_MODULE_3__.SESearchNewsPublishedStyled, {
-                      placeholder: "T\u1EEB kh\xF3a"
-                    })
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("form", {
+                    onSubmit: handleSubmitSearch,
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_styled_index__WEBPACK_IMPORTED_MODULE_3__.SESearchNewsPublishedStyled, {
+                      placeholder: "T\u1EEB kh\xF3a",
+                      value: searchTerm,
+                      onChange: handleChangeSearchInput
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_styled_index__WEBPACK_IMPORTED_MODULE_3__.ButtonSearchPost, {})]
                   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_styled_index__WEBPACK_IMPORTED_MODULE_3__.SENewsPublishedSearchByZoneWrapper, {
                     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_styled_index__WEBPACK_IMPORTED_MODULE_3__.SENewsSearchLabel, {
                       children: "Chuy\xEAn m\u1EE5c"
@@ -1510,10 +1531,15 @@ var PostList = function PostList(props) {
                   })]
                 })
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_styled_index__WEBPACK_IMPORTED_MODULE_3__.NewsPositionHot, {
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_custom_scrollbars__WEBPACK_IMPORTED_MODULE_1__.Scrollbars, {
-                  renderThumbVertical: renderThumb,
-                  autoHide: true,
-                  onUpdate: handleUpdateScrollBar,
+                id: "scrollableDiv",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_infinite_scroll_component__WEBPACK_IMPORTED_MODULE_2__.default, {
+                  dataLength: dataPost.length,
+                  next: fetchPostData,
+                  hasMore: hasMore,
+                  loader: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
+                    children: "Loading..."
+                  }),
+                  scrollableTarget: "scrollableDiv",
                   children: dataPost && dataPost.length ? dataPost.map(function (post, index) {
                     return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_PostItem__WEBPACK_IMPORTED_MODULE_4__.default, {
                       post: post
@@ -1564,6 +1590,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "LiveBrowseHeaderTitle": () => (/* binding */ LiveBrowseHeaderTitle),
 /* harmony export */   "SENewsSearchWrapper": () => (/* binding */ SENewsSearchWrapper),
 /* harmony export */   "SESearchNewsPublishedStyled": () => (/* binding */ SESearchNewsPublishedStyled),
+/* harmony export */   "ButtonSearchPost": () => (/* binding */ ButtonSearchPost),
 /* harmony export */   "SENewsPublishedSearchByZoneWrapper": () => (/* binding */ SENewsPublishedSearchByZoneWrapper),
 /* harmony export */   "SENewsSearchLabel": () => (/* binding */ SENewsSearchLabel),
 /* harmony export */   "SENewsSearchSelectWrapper": () => (/* binding */ SENewsSearchSelectWrapper),
@@ -1573,7 +1600,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "SENewsItemInfo": () => (/* binding */ SENewsItemInfo)
 /* harmony export */ });
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
-var _templateObject, _templateObject2, _templateObject3, _templateObject4, _templateObject5, _templateObject6, _templateObject7, _templateObject8, _templateObject9, _templateObject10, _templateObject11, _templateObject12, _templateObject13, _templateObject14;
+var _templateObject, _templateObject2, _templateObject3, _templateObject4, _templateObject5, _templateObject6, _templateObject7, _templateObject8, _templateObject9, _templateObject10, _templateObject11, _templateObject12, _templateObject13, _templateObject14, _templateObject15;
 
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
@@ -1585,13 +1612,14 @@ var LiveBrowseSettingBlockHeader = styled_components__WEBPACK_IMPORTED_MODULE_0_
 var LiveBrowseHeaderTitle = styled_components__WEBPACK_IMPORTED_MODULE_0__.default.span(_templateObject5 || (_templateObject5 = _taggedTemplateLiteral(["\n    margin-top: 7px;\n    display: inline-block;\n    margin-left: 12px;\n    font-weight: 700\n"])));
 var SENewsSearchWrapper = styled_components__WEBPACK_IMPORTED_MODULE_0__.default.div(_templateObject6 || (_templateObject6 = _taggedTemplateLiteral(["\n    padding: 5px;\n    border-bottom: 1px solid #ddd;\n"])));
 var SESearchNewsPublishedStyled = styled_components__WEBPACK_IMPORTED_MODULE_0__.default.input(_templateObject7 || (_templateObject7 = _taggedTemplateLiteral(["\n    border: 1px solid #ddd;\n    border-radius: 2px;\n    color: #333;\n    font-size: 11px!important;\n    height: 22px;\n    opacity: .5;\n    padding: 0 5px;\n    width: 270px;\n    transition: opacity .25s ease-in-out;\n    outline: none;\n    margin-bottom: 0\n"])));
-var SENewsPublishedSearchByZoneWrapper = styled_components__WEBPACK_IMPORTED_MODULE_0__.default.div(_templateObject8 || (_templateObject8 = _taggedTemplateLiteral(["\n    display: inline-block;\n"])));
-var SENewsSearchLabel = styled_components__WEBPACK_IMPORTED_MODULE_0__.default.label(_templateObject9 || (_templateObject9 = _taggedTemplateLiteral(["\n    color: #333;\n    display: inline-block;\n    font-size: 10px;\n    text-transform: uppercase;\n    width: 80px;\n    float: left;\n    margin-top: 13px;\n    margin-left: 2px;\n"])));
-var SENewsSearchSelectWrapper = styled_components__WEBPACK_IMPORTED_MODULE_0__.default.div(_templateObject10 || (_templateObject10 = _taggedTemplateLiteral(["\n    display: inline-block;\n    margin-top: 5px;\n    select {\n        width: 188px;\n        border: 1px solid #ccc;\n        padding: 3px;\n        font-size: 12px;\n        outline: none;\n        margin-bottom: 0;\n        margin-top: 0\n    }\n"])));
-var NewsPositionHot = styled_components__WEBPACK_IMPORTED_MODULE_0__.default.div(_templateObject11 || (_templateObject11 = _taggedTemplateLiteral(["\n    height: calc(100vh - 307px);\n"])));
-var SENewsItem = styled_components__WEBPACK_IMPORTED_MODULE_0__.default.div(_templateObject12 || (_templateObject12 = _taggedTemplateLiteral(["\n    cursor: move;\n    background: #fff;\n    height: 100%;\n    margin-top: 0;\n    width: 298px;\n"])));
-var SENewsItemContent = styled_components__WEBPACK_IMPORTED_MODULE_0__.default.div(_templateObject13 || (_templateObject13 = _taggedTemplateLiteral(["\n    border-bottom: 1px solid #ddd;\n    display: flex;\n    flex-wrap: wrap;\n    padding: 5px;\n\n     img {\n        height: 72px;\n        width: 100px;\n        -webkit-box-flex: 1;\n        flex-grow: 1;\n    }\n"])));
-var SENewsItemInfo = styled_components__WEBPACK_IMPORTED_MODULE_0__.default.div(_templateObject14 || (_templateObject14 = _taggedTemplateLiteral(["\n    color: #333;\n    font-size: 11px;\n    width: 180px;\n\n    .SENewsItemTitle{\n        display: inline-block;\n        font-size: 12px;\n        font-weight: 700;\n        width: 175px;\n        max-height: 37px;\n        overflow: hidden;\n        -webkit-box-flex: 1;\n        flex-grow: 1;\n        margin: 0 5px;\n     }\n\n\n    .SENewsItemCreatedBy {\n        margin-bottom: 2px;\n        margin-left: 5px;\n        width: 170px;\n        display: inline-block;\n        overflow: hidden;\n        text-overflow: ellipsis;\n    }\n    .SENewsItemViewCount {\n        color: #333;\n        display: inline-block;\n        font-weight: 700;\n        margin-left: 5px;\n        width: 165px;\n    }\n"])));
+var ButtonSearchPost = styled_components__WEBPACK_IMPORTED_MODULE_0__.default.button(_templateObject8 || (_templateObject8 = _taggedTemplateLiteral(["\n    display: none\n"])));
+var SENewsPublishedSearchByZoneWrapper = styled_components__WEBPACK_IMPORTED_MODULE_0__.default.div(_templateObject9 || (_templateObject9 = _taggedTemplateLiteral(["\n    display: inline-block;\n"])));
+var SENewsSearchLabel = styled_components__WEBPACK_IMPORTED_MODULE_0__.default.label(_templateObject10 || (_templateObject10 = _taggedTemplateLiteral(["\n    color: #333;\n    display: inline-block;\n    font-size: 10px;\n    text-transform: uppercase;\n    width: 80px;\n    float: left;\n    margin-top: 13px;\n    margin-left: 2px;\n"])));
+var SENewsSearchSelectWrapper = styled_components__WEBPACK_IMPORTED_MODULE_0__.default.div(_templateObject11 || (_templateObject11 = _taggedTemplateLiteral(["\n    display: inline-block;\n    margin-top: 5px;\n    select {\n        width: 188px;\n        border: 1px solid #ccc;\n        padding: 3px;\n        font-size: 12px;\n        outline: none;\n        margin-bottom: 0;\n        margin-top: 0\n    }\n"])));
+var NewsPositionHot = styled_components__WEBPACK_IMPORTED_MODULE_0__.default.div(_templateObject12 || (_templateObject12 = _taggedTemplateLiteral(["\n    height: calc(100vh - 307px);\n    overflow: auto\n"])));
+var SENewsItem = styled_components__WEBPACK_IMPORTED_MODULE_0__.default.div(_templateObject13 || (_templateObject13 = _taggedTemplateLiteral(["\n    cursor: move;\n    background: #fff;\n    height: 100%;\n    margin-top: 0;\n    width: 298px;\n"])));
+var SENewsItemContent = styled_components__WEBPACK_IMPORTED_MODULE_0__.default.div(_templateObject14 || (_templateObject14 = _taggedTemplateLiteral(["\n    border-bottom: 1px solid #ddd;\n    display: flex;\n    flex-wrap: wrap;\n    padding: 5px;\n\n     img {\n        height: 72px;\n        width: 100px;\n        -webkit-box-flex: 1;\n        flex-grow: 1;\n    }\n"])));
+var SENewsItemInfo = styled_components__WEBPACK_IMPORTED_MODULE_0__.default.div(_templateObject15 || (_templateObject15 = _taggedTemplateLiteral(["\n    color: #333;\n    font-size: 11px;\n    width: 180px;\n\n    .SENewsItemTitle{\n        display: inline-block;\n        font-size: 12px;\n        font-weight: 700;\n        width: 175px;\n        max-height: 37px;\n        overflow: hidden;\n        -webkit-box-flex: 1;\n        flex-grow: 1;\n        margin: 0 5px;\n     }\n\n\n    .SENewsItemCreatedBy {\n        margin-bottom: 2px;\n        margin-left: 5px;\n        width: 170px;\n        display: inline-block;\n        overflow: hidden;\n        text-overflow: ellipsis;\n    }\n    .SENewsItemViewCount {\n        color: #333;\n        display: inline-block;\n        font-weight: 700;\n        margin-left: 5px;\n        width: 165px;\n    }\n"])));
 
 /***/ }),
 
@@ -33902,6 +33930,460 @@ function checkDCE() {
 if (false) {} else {
   module.exports = __webpack_require__(/*! ./cjs/react-dom.development.js */ "./node_modules/react-dom/cjs/react-dom.development.js");
 }
+
+
+/***/ }),
+
+/***/ "./node_modules/react-infinite-scroll-component/dist/index.es.js":
+/*!***********************************************************************!*\
+  !*** ./node_modules/react-infinite-scroll-component/dist/index.es.js ***!
+  \***********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+
+/*! *****************************************************************************
+Copyright (c) Microsoft Corporation. All rights reserved.
+Licensed under the Apache License, Version 2.0 (the "License"); you may not use
+this file except in compliance with the License. You may obtain a copy of the
+License at http://www.apache.org/licenses/LICENSE-2.0
+
+THIS CODE IS PROVIDED ON AN *AS IS* BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, EITHER EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION ANY IMPLIED
+WARRANTIES OR CONDITIONS OF TITLE, FITNESS FOR A PARTICULAR PURPOSE,
+MERCHANTABLITY OR NON-INFRINGEMENT.
+
+See the Apache Version 2.0 License for specific language governing permissions
+and limitations under the License.
+***************************************************************************** */
+/* global Reflect, Promise */
+
+var extendStatics = function(d, b) {
+    extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return extendStatics(d, b);
+};
+
+function __extends(d, b) {
+    extendStatics(d, b);
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+}
+
+var __assign = function() {
+    __assign = Object.assign || function __assign(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+
+/* eslint-disable no-undefined,no-param-reassign,no-shadow */
+
+/**
+ * Throttle execution of a function. Especially useful for rate limiting
+ * execution of handlers on events like resize and scroll.
+ *
+ * @param  {Number}    delay          A zero-or-greater delay in milliseconds. For event callbacks, values around 100 or 250 (or even higher) are most useful.
+ * @param  {Boolean}   [noTrailing]   Optional, defaults to false. If noTrailing is true, callback will only execute every `delay` milliseconds while the
+ *                                    throttled-function is being called. If noTrailing is false or unspecified, callback will be executed one final time
+ *                                    after the last throttled-function call. (After the throttled-function has not been called for `delay` milliseconds,
+ *                                    the internal counter is reset)
+ * @param  {Function}  callback       A function to be executed after delay milliseconds. The `this` context and all arguments are passed through, as-is,
+ *                                    to `callback` when the throttled-function is executed.
+ * @param  {Boolean}   [debounceMode] If `debounceMode` is true (at begin), schedule `clear` to execute after `delay` ms. If `debounceMode` is false (at end),
+ *                                    schedule `callback` to execute after `delay` ms.
+ *
+ * @return {Function}  A new, throttled, function.
+ */
+function throttle (delay, noTrailing, callback, debounceMode) {
+  /*
+   * After wrapper has stopped being called, this timeout ensures that
+   * `callback` is executed at the proper times in `throttle` and `end`
+   * debounce modes.
+   */
+  var timeoutID;
+  var cancelled = false; // Keep track of the last time `callback` was executed.
+
+  var lastExec = 0; // Function to clear existing timeout
+
+  function clearExistingTimeout() {
+    if (timeoutID) {
+      clearTimeout(timeoutID);
+    }
+  } // Function to cancel next exec
+
+
+  function cancel() {
+    clearExistingTimeout();
+    cancelled = true;
+  } // `noTrailing` defaults to falsy.
+
+
+  if (typeof noTrailing !== 'boolean') {
+    debounceMode = callback;
+    callback = noTrailing;
+    noTrailing = undefined;
+  }
+  /*
+   * The `wrapper` function encapsulates all of the throttling / debouncing
+   * functionality and when executed will limit the rate at which `callback`
+   * is executed.
+   */
+
+
+  function wrapper() {
+    var self = this;
+    var elapsed = Date.now() - lastExec;
+    var args = arguments;
+
+    if (cancelled) {
+      return;
+    } // Execute `callback` and update the `lastExec` timestamp.
+
+
+    function exec() {
+      lastExec = Date.now();
+      callback.apply(self, args);
+    }
+    /*
+     * If `debounceMode` is true (at begin) this is used to clear the flag
+     * to allow future `callback` executions.
+     */
+
+
+    function clear() {
+      timeoutID = undefined;
+    }
+
+    if (debounceMode && !timeoutID) {
+      /*
+       * Since `wrapper` is being called for the first time and
+       * `debounceMode` is true (at begin), execute `callback`.
+       */
+      exec();
+    }
+
+    clearExistingTimeout();
+
+    if (debounceMode === undefined && elapsed > delay) {
+      /*
+       * In throttle mode, if `delay` time has been exceeded, execute
+       * `callback`.
+       */
+      exec();
+    } else if (noTrailing !== true) {
+      /*
+       * In trailing throttle mode, since `delay` time has not been
+       * exceeded, schedule `callback` to execute `delay` ms after most
+       * recent execution.
+       *
+       * If `debounceMode` is true (at begin), schedule `clear` to execute
+       * after `delay` ms.
+       *
+       * If `debounceMode` is false (at end), schedule `callback` to
+       * execute after `delay` ms.
+       */
+      timeoutID = setTimeout(debounceMode ? clear : exec, debounceMode === undefined ? delay - elapsed : delay);
+    }
+  }
+
+  wrapper.cancel = cancel; // Return the wrapper function.
+
+  return wrapper;
+}
+
+var ThresholdUnits = {
+    Pixel: 'Pixel',
+    Percent: 'Percent',
+};
+var defaultThreshold = {
+    unit: ThresholdUnits.Percent,
+    value: 0.8,
+};
+function parseThreshold(scrollThreshold) {
+    if (typeof scrollThreshold === 'number') {
+        return {
+            unit: ThresholdUnits.Percent,
+            value: scrollThreshold * 100,
+        };
+    }
+    if (typeof scrollThreshold === 'string') {
+        if (scrollThreshold.match(/^(\d*(\.\d+)?)px$/)) {
+            return {
+                unit: ThresholdUnits.Pixel,
+                value: parseFloat(scrollThreshold),
+            };
+        }
+        if (scrollThreshold.match(/^(\d*(\.\d+)?)%$/)) {
+            return {
+                unit: ThresholdUnits.Percent,
+                value: parseFloat(scrollThreshold),
+            };
+        }
+        console.warn('scrollThreshold format is invalid. Valid formats: "120px", "50%"...');
+        return defaultThreshold;
+    }
+    console.warn('scrollThreshold should be string or number');
+    return defaultThreshold;
+}
+
+var InfiniteScroll = /** @class */ (function (_super) {
+    __extends(InfiniteScroll, _super);
+    function InfiniteScroll(props) {
+        var _this = _super.call(this, props) || this;
+        _this.lastScrollTop = 0;
+        _this.actionTriggered = false;
+        // variables to keep track of pull down behaviour
+        _this.startY = 0;
+        _this.currentY = 0;
+        _this.dragging = false;
+        // will be populated in componentDidMount
+        // based on the height of the pull down element
+        _this.maxPullDownDistance = 0;
+        _this.getScrollableTarget = function () {
+            if (_this.props.scrollableTarget instanceof HTMLElement)
+                return _this.props.scrollableTarget;
+            if (typeof _this.props.scrollableTarget === 'string') {
+                return document.getElementById(_this.props.scrollableTarget);
+            }
+            if (_this.props.scrollableTarget === null) {
+                console.warn("You are trying to pass scrollableTarget but it is null. This might\n        happen because the element may not have been added to DOM yet.\n        See https://github.com/ankeetmaini/react-infinite-scroll-component/issues/59 for more info.\n      ");
+            }
+            return null;
+        };
+        _this.onStart = function (evt) {
+            if (_this.lastScrollTop)
+                return;
+            _this.dragging = true;
+            if (evt instanceof MouseEvent) {
+                _this.startY = evt.pageY;
+            }
+            else if (evt instanceof TouchEvent) {
+                _this.startY = evt.touches[0].pageY;
+            }
+            _this.currentY = _this.startY;
+            if (_this._infScroll) {
+                _this._infScroll.style.willChange = 'transform';
+                _this._infScroll.style.transition = "transform 0.2s cubic-bezier(0,0,0.31,1)";
+            }
+        };
+        _this.onMove = function (evt) {
+            if (!_this.dragging)
+                return;
+            if (evt instanceof MouseEvent) {
+                _this.currentY = evt.pageY;
+            }
+            else if (evt instanceof TouchEvent) {
+                _this.currentY = evt.touches[0].pageY;
+            }
+            // user is scrolling down to up
+            if (_this.currentY < _this.startY)
+                return;
+            if (_this.currentY - _this.startY >=
+                Number(_this.props.pullDownToRefreshThreshold)) {
+                _this.setState({
+                    pullToRefreshThresholdBreached: true,
+                });
+            }
+            // so you can drag upto 1.5 times of the maxPullDownDistance
+            if (_this.currentY - _this.startY > _this.maxPullDownDistance * 1.5)
+                return;
+            if (_this._infScroll) {
+                _this._infScroll.style.overflow = 'visible';
+                _this._infScroll.style.transform = "translate3d(0px, " + (_this.currentY -
+                    _this.startY) + "px, 0px)";
+            }
+        };
+        _this.onEnd = function () {
+            _this.startY = 0;
+            _this.currentY = 0;
+            _this.dragging = false;
+            if (_this.state.pullToRefreshThresholdBreached) {
+                _this.props.refreshFunction && _this.props.refreshFunction();
+                _this.setState({
+                    pullToRefreshThresholdBreached: false,
+                });
+            }
+            requestAnimationFrame(function () {
+                // this._infScroll
+                if (_this._infScroll) {
+                    _this._infScroll.style.overflow = 'auto';
+                    _this._infScroll.style.transform = 'none';
+                    _this._infScroll.style.willChange = 'unset';
+                }
+            });
+        };
+        _this.onScrollListener = function (event) {
+            if (typeof _this.props.onScroll === 'function') {
+                // Execute this callback in next tick so that it does not affect the
+                // functionality of the library.
+                setTimeout(function () { return _this.props.onScroll && _this.props.onScroll(event); }, 0);
+            }
+            var target = _this.props.height || _this._scrollableNode
+                ? event.target
+                : document.documentElement.scrollTop
+                    ? document.documentElement
+                    : document.body;
+            // return immediately if the action has already been triggered,
+            // prevents multiple triggers.
+            if (_this.actionTriggered)
+                return;
+            var atBottom = _this.props.inverse
+                ? _this.isElementAtTop(target, _this.props.scrollThreshold)
+                : _this.isElementAtBottom(target, _this.props.scrollThreshold);
+            // call the `next` function in the props to trigger the next data fetch
+            if (atBottom && _this.props.hasMore) {
+                _this.actionTriggered = true;
+                _this.setState({ showLoader: true });
+                _this.props.next && _this.props.next();
+            }
+            _this.lastScrollTop = target.scrollTop;
+        };
+        _this.state = {
+            showLoader: false,
+            pullToRefreshThresholdBreached: false,
+        };
+        _this.throttledOnScrollListener = throttle(150, _this.onScrollListener).bind(_this);
+        _this.onStart = _this.onStart.bind(_this);
+        _this.onMove = _this.onMove.bind(_this);
+        _this.onEnd = _this.onEnd.bind(_this);
+        return _this;
+    }
+    InfiniteScroll.prototype.componentDidMount = function () {
+        if (typeof this.props.dataLength === 'undefined') {
+            throw new Error("mandatory prop \"dataLength\" is missing. The prop is needed" +
+                " when loading more content. Check README.md for usage");
+        }
+        this._scrollableNode = this.getScrollableTarget();
+        this.el = this.props.height
+            ? this._infScroll
+            : this._scrollableNode || window;
+        if (this.el) {
+            this.el.addEventListener('scroll', this
+                .throttledOnScrollListener);
+        }
+        if (typeof this.props.initialScrollY === 'number' &&
+            this.el &&
+            this.el instanceof HTMLElement &&
+            this.el.scrollHeight > this.props.initialScrollY) {
+            this.el.scrollTo(0, this.props.initialScrollY);
+        }
+        if (this.props.pullDownToRefresh && this.el) {
+            this.el.addEventListener('touchstart', this.onStart);
+            this.el.addEventListener('touchmove', this.onMove);
+            this.el.addEventListener('touchend', this.onEnd);
+            this.el.addEventListener('mousedown', this.onStart);
+            this.el.addEventListener('mousemove', this.onMove);
+            this.el.addEventListener('mouseup', this.onEnd);
+            // get BCR of pullDown element to position it above
+            this.maxPullDownDistance =
+                (this._pullDown &&
+                    this._pullDown.firstChild &&
+                    this._pullDown.firstChild.getBoundingClientRect()
+                        .height) ||
+                    0;
+            this.forceUpdate();
+            if (typeof this.props.refreshFunction !== 'function') {
+                throw new Error("Mandatory prop \"refreshFunction\" missing.\n          Pull Down To Refresh functionality will not work\n          as expected. Check README.md for usage'");
+            }
+        }
+    };
+    InfiniteScroll.prototype.componentWillUnmount = function () {
+        if (this.el) {
+            this.el.removeEventListener('scroll', this
+                .throttledOnScrollListener);
+            if (this.props.pullDownToRefresh) {
+                this.el.removeEventListener('touchstart', this.onStart);
+                this.el.removeEventListener('touchmove', this.onMove);
+                this.el.removeEventListener('touchend', this.onEnd);
+                this.el.removeEventListener('mousedown', this.onStart);
+                this.el.removeEventListener('mousemove', this.onMove);
+                this.el.removeEventListener('mouseup', this.onEnd);
+            }
+        }
+    };
+    InfiniteScroll.prototype.UNSAFE_componentWillReceiveProps = function (props) {
+        // do nothing when dataLength is unchanged
+        if (this.props.dataLength === props.dataLength)
+            return;
+        this.actionTriggered = false;
+        // update state when new data was sent in
+        this.setState({
+            showLoader: false,
+        });
+    };
+    InfiniteScroll.prototype.isElementAtTop = function (target, scrollThreshold) {
+        if (scrollThreshold === void 0) { scrollThreshold = 0.8; }
+        var clientHeight = target === document.body || target === document.documentElement
+            ? window.screen.availHeight
+            : target.clientHeight;
+        var threshold = parseThreshold(scrollThreshold);
+        if (threshold.unit === ThresholdUnits.Pixel) {
+            return (target.scrollTop <=
+                threshold.value + clientHeight - target.scrollHeight + 1);
+        }
+        return (target.scrollTop <=
+            threshold.value / 100 + clientHeight - target.scrollHeight + 1);
+    };
+    InfiniteScroll.prototype.isElementAtBottom = function (target, scrollThreshold) {
+        if (scrollThreshold === void 0) { scrollThreshold = 0.8; }
+        var clientHeight = target === document.body || target === document.documentElement
+            ? window.screen.availHeight
+            : target.clientHeight;
+        var threshold = parseThreshold(scrollThreshold);
+        if (threshold.unit === ThresholdUnits.Pixel) {
+            return (target.scrollTop + clientHeight >= target.scrollHeight - threshold.value);
+        }
+        return (target.scrollTop + clientHeight >=
+            (threshold.value / 100) * target.scrollHeight);
+    };
+    InfiniteScroll.prototype.render = function () {
+        var _this = this;
+        var style = __assign({ height: this.props.height || 'auto', overflow: 'auto', WebkitOverflowScrolling: 'touch' }, this.props.style);
+        var hasChildren = this.props.hasChildren ||
+            !!(this.props.children &&
+                this.props.children instanceof Array &&
+                this.props.children.length);
+        // because heighted infiniteScroll visualy breaks
+        // on drag down as overflow becomes visible
+        var outerDivStyle = this.props.pullDownToRefresh && this.props.height
+            ? { overflow: 'auto' }
+            : {};
+        return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: outerDivStyle, className: "infinite-scroll-component__outerdiv" },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "infinite-scroll-component " + (this.props.className || ''), ref: function (infScroll) { return (_this._infScroll = infScroll); }, style: style },
+                this.props.pullDownToRefresh && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { position: 'relative' }, ref: function (pullDown) { return (_this._pullDown = pullDown); } },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: {
+                            position: 'absolute',
+                            left: 0,
+                            right: 0,
+                            top: -1 * this.maxPullDownDistance,
+                        } }, this.state.pullToRefreshThresholdBreached
+                        ? this.props.releaseToRefreshContent
+                        : this.props.pullDownToRefreshContent))),
+                this.props.children,
+                !this.state.showLoader &&
+                    !hasChildren &&
+                    this.props.hasMore &&
+                    this.props.loader,
+                this.state.showLoader && this.props.hasMore && this.props.loader,
+                !this.props.hasMore && this.props.endMessage)));
+    };
+    return InfiniteScroll;
+}(react__WEBPACK_IMPORTED_MODULE_0__.Component));
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (InfiniteScroll);
+//# sourceMappingURL=index.es.js.map
 
 
 /***/ }),

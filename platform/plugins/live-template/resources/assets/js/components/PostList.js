@@ -1,6 +1,6 @@
-import React, {useState, useEffect, useRef} from 'react'
-import {Scrollbars} from "react-custom-scrollbars";
-import {API_URL} from './../config/const'
+import React, { useState, useEffect } from 'react'
+import { API_URL } from './../config/const'
+import InfiniteScroll from "react-infinite-scroll-component";
 
 import {
     ItemSettingsStyled,
@@ -13,50 +13,57 @@ import {
     SENewsSearchLabel,
     SENewsSearchSelectWrapper,
     NewsPositionHot,
+    ButtonSearchPost
 } from './../styled/index'
 import PostItem from "./PostItem";
 
-
-const renderThumb = ({style, ...props}) => {
-    const thumbStyle = {
-        backgroundColor: '#333',
-        height: '50px',
-        width: '10px'
-    };
-    return (
-        <div
-            style={{...style, ...thumbStyle}}
-            {...props}/>
-    );
-}
-
-
-const PostList = (props) => {
-
-    let scrollNode = useRef(null);
+const PostList = ({ props }) => {
 
     const [dataPost, setDataPost] = useState([])
+    const [nextPage, setNexPage] = useState(API_URL + '/api/v1/posts')
+    const [hasMore, setHasmore] = useState(true)
+    const [searchTerm, setSearchTerm] = useState('')
 
     useEffect(() => {
-        axios.get(API_URL + '/api/v1/posts')
+        fetchPostData();
+    }, [])
+
+    const fetchPostData = () => {
+        if (hasMore) {
+            axios.get(nextPage)
+                .then(res => {
+                    if (!res.data.error) {
+                        const { links, data } = res.data
+                        if (data.length) {
+                            setDataPost([...dataPost, ...data]);
+                            setNexPage(links.next);
+                        }
+                        if (!links.next) {
+                            setHasmore(false)
+                        }
+                    }
+                })
+                .catch(res => {
+                    Botble.handleError(res.response.data);
+                })
+        }
+    }
+
+    const handleChangeSearchInput = event => {
+        setSearchTerm(event.target.value);
+    };
+
+    const handleSubmitSearch = event => {
+        event.preventDefault();
+        axios.get(API_URL + `/api/v1/search?q=${searchTerm}`)
             .then(res => {
                 if (!res.data.error) {
                     setDataPost(res.data.data)
                 }
             })
-            .catch(res => {
-                Botble.handleError(res.response.data);
+            .catch(err => {
+                Botble.handleError(err.response.data);
             })
-    }, [])
-
-    const handleUpdateScrollBar = (values) => {
-        const { scrollTop, scrollHeight, clientHeight } = values;
-        const pad = 100; // 100px of the bottom
-
-        const t = ((scrollTop + pad) / (scrollHeight - clientHeight));
-        if (t > 1) {
-            console.log('scroll to bottom')
-        }
     }
 
     return (
@@ -71,10 +78,13 @@ const PostList = (props) => {
                             <div id="LiveBrowseNewsListTabs">
                                 <div id="NewsListTab">
                                     <SENewsSearchWrapper>
-                                        <form>
+                                        <form onSubmit={handleSubmitSearch}>
                                             <SESearchNewsPublishedStyled
                                                 placeholder={`Từ khóa`}
+                                                value={searchTerm}
+                                                onChange={handleChangeSearchInput}
                                             />
+                                            <ButtonSearchPost />
                                         </form>
                                         <SENewsPublishedSearchByZoneWrapper>
                                             <SENewsSearchLabel>Chuyên mục</SENewsSearchLabel>
@@ -91,11 +101,13 @@ const PostList = (props) => {
                                         </SENewsPublishedSearchByZoneWrapper>
                                     </SENewsSearchWrapper>
                                 </div>
-                                <NewsPositionHot>
-                                    <Scrollbars
-                                        renderThumbVertical={renderThumb}
-                                        autoHide
-                                        onUpdate={handleUpdateScrollBar}
+                                <NewsPositionHot id="scrollableDiv">
+                                    <InfiniteScroll
+                                        dataLength={dataPost.length}
+                                        next={fetchPostData}
+                                        hasMore={hasMore}
+                                        loader={<span>Loading...</span>}
+                                        scrollableTarget="scrollableDiv"
                                     >
                                         {
                                             dataPost && dataPost.length ? dataPost.map((post, index) => {
@@ -107,7 +119,7 @@ const PostList = (props) => {
                                                 )
                                             }) : null
                                         }
-                                    </Scrollbars>
+                                    </InfiniteScroll>
                                 </NewsPositionHot>
                             </div>
                         </div>
