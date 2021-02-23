@@ -108,11 +108,10 @@ export const SENewsItemContent = styled.div`
     flex-wrap: wrap;
     padding: 5px;
 
-     img {
-        height: 72px;
-        width: 100px;
+    img {
+        width: 20%;
         -webkit-box-flex: 1;
-        flex-grow: 1;
+        flex-grow: 1;  
     }
 `
 
