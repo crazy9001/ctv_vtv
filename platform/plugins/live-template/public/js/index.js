@@ -1431,10 +1431,10 @@ var PostList = function PostList(_ref) {
 
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
       _useState2 = _slicedToArray(_useState, 2),
-      dataPost = _useState2[0],
-      setDataPost = _useState2[1];
+      postPublished = _useState2[0],
+      setPostPublished = _useState2[1];
 
-  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(_config_const__WEBPACK_IMPORTED_MODULE_1__.API_GET_POST),
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(_config_const__WEBPACK_IMPORTED_MODULE_1__.API_GET_POST_PUBLISH),
       _useState4 = _slicedToArray(_useState3, 2),
       nextPage = _useState4[0],
       setNexPage = _useState4[1];
@@ -1451,7 +1451,16 @@ var PostList = function PostList(_ref) {
 
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     fetchPostData();
+    getHighLightHome();
   }, []);
+
+  var getHighLightHome = function getHighLightHome() {
+    axios.get(_config_const__WEBPACK_IMPORTED_MODULE_1__.API_GET_HIGH_LIGHT_HOME).then(function (res) {
+      console.log(res);
+    })["catch"](function (res) {
+      Botble.handleError(res.response.data);
+    });
+  };
 
   var fetchPostData = function fetchPostData() {
     if (hasMore) {
@@ -1462,7 +1471,7 @@ var PostList = function PostList(_ref) {
               data = _res$data.data;
 
           if (data.length) {
-            setDataPost([].concat(_toConsumableArray(dataPost), _toConsumableArray(data)));
+            setPostPublished([].concat(_toConsumableArray(postPublished), _toConsumableArray(data)));
             setNexPage(links.next);
           }
 
@@ -1484,7 +1493,7 @@ var PostList = function PostList(_ref) {
     event.preventDefault();
     axios.get(_config_const__WEBPACK_IMPORTED_MODULE_1__.API_SEARCH_POST + "?q=".concat(searchTerm)).then(function (res) {
       if (!res.data.error) {
-        setDataPost(res.data.data);
+        setPostPublished(res.data.data);
       }
     })["catch"](function (err) {
       Botble.handleError(err.response.data);
@@ -1536,14 +1545,14 @@ var PostList = function PostList(_ref) {
                   overflowY: "scroll"
                 },
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_infinite_scroll_component__WEBPACK_IMPORTED_MODULE_2__.default, {
-                  dataLength: dataPost.length,
+                  dataLength: postPublished.length,
                   next: fetchPostData,
                   hasMore: hasMore,
                   loader: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
                     children: "Loading..."
                   }),
                   scrollableTarget: "scrollableDiv",
-                  children: dataPost && dataPost.length ? dataPost.map(function (post, index) {
+                  children: postPublished && postPublished.length ? postPublished.map(function (post, index) {
                     return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_PostItem__WEBPACK_IMPORTED_MODULE_4__.default, {
                       post: post
                     }, index);
@@ -1572,12 +1581,14 @@ var PostList = function PostList(_ref) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "API_URL": () => (/* binding */ API_URL),
-/* harmony export */   "API_GET_POST": () => (/* binding */ API_GET_POST),
-/* harmony export */   "API_SEARCH_POST": () => (/* binding */ API_SEARCH_POST)
+/* harmony export */   "API_GET_POST_PUBLISH": () => (/* binding */ API_GET_POST_PUBLISH),
+/* harmony export */   "API_SEARCH_POST": () => (/* binding */ API_SEARCH_POST),
+/* harmony export */   "API_GET_HIGH_LIGHT_HOME": () => (/* binding */ API_GET_HIGH_LIGHT_HOME)
 /* harmony export */ });
 var API_URL = 'http://ctv.local.ub';
-var API_GET_POST = API_URL + '/api/v1/posts';
+var API_GET_POST_PUBLISH = API_URL + '/api/v1/posts';
 var API_SEARCH_POST = API_URL + '/api/v1/search';
+var API_GET_HIGH_LIGHT_HOME = API_URL + '/admin/live-templates/high_light/home';
 
 /***/ }),
 

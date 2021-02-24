@@ -2,40 +2,42 @@
 
 namespace Botble\LiveTemplate\Http\Controllers;
 
-use Botble\Base\Events\BeforeEditContentEvent;
-use Botble\LiveTemplate\Http\Requests\LiveTemplateRequest;
-use Botble\LiveTemplate\Repositories\Interfaces\LiveTemplateInterface;
 use Botble\Base\Http\Controllers\BaseController;
 use Illuminate\Http\Request;
-use Exception;
 use Botble\LiveTemplate\Tables\LiveTemplateTable;
-use Botble\Base\Events\CreatedContentEvent;
-use Botble\Base\Events\DeletedContentEvent;
-use Botble\Base\Events\UpdatedContentEvent;
 use Botble\Base\Http\Responses\BaseHttpResponse;
-use Botble\LiveTemplate\Forms\LiveTemplateForm;
-use Botble\Base\Forms\FormBuilder;
 use Assets;
+use Botble\Setting\Supports\SettingStore;
+use Botble\LiveTemplate\Http\Requests\HomeConfigRequest;
+use Botble\Blog\Repositories\Interfaces\PostInterface;
+use Botble\Blog\Http\Resources\ListPostResource;
 
 class LiveTemplateController extends BaseController
 {
     /**
-     * @var LiveTemplateInterface
+     * @var SettingStore
      */
-    protected $liveTemplateRepository;
+    protected $settingStore;
 
     /**
-     * @param LiveTemplateInterface $liveTemplateRepository
+     * @var PostInterface
      */
-    public function __construct(LiveTemplateInterface $liveTemplateRepository)
+    protected $postRepository;
+
+    /**
+     * LiveTemplateController constructor.
+     * @param SettingStore $settingStore
+     * @param PostInterface $postRepository
+     */
+    public function __construct(SettingStore $settingStore, PostInterface $postRepository)
     {
-        $this->liveTemplateRepository = $liveTemplateRepository;
+        $this->settingStore = $settingStore;
+        $this->postRepository = $postRepository;
     }
 
     /**
-     * @param LiveTemplateTable $table
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
-     * @throws \Throwable
+     * @param Request $request
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function index(Request $request)
     {
@@ -47,115 +49,35 @@ class LiveTemplateController extends BaseController
     }
 
     /**
-     * @param FormBuilder $formBuilder
-     * @return string
-     */
-    public function create(FormBuilder $formBuilder)
-    {
-        page_title()->setTitle(trans('plugins/live-template::live-template.create'));
-
-        return $formBuilder->create(LiveTemplateForm::class)->renderForm();
-    }
-
-    /**
-     * @param LiveTemplateRequest $request
+     * @param HomeConfigRequest $request
      * @param BaseHttpResponse $response
-     * @return BaseHttpResponse
+     * @return BaseHttpResponse|\Illuminate\Http\JsonResponse|\Illuminate\Http\RedirectResponse|\Illuminate\Http\Resources\Json\JsonResource
      */
-    public function store(LiveTemplateRequest $request, BaseHttpResponse $response)
+    public function postHighLightHomeConfig(HomeConfigRequest $request, BaseHttpResponse $response)
     {
-        $liveTemplate = $this->liveTemplateRepository->createOrUpdate($request->input());
-
-        event(new CreatedContentEvent(LIVE_TEMPLATE_MODULE_SCREEN_NAME, $request, $liveTemplate));
-
+        $this->settingStore
+            ->set('high_light_home', json_encode(($request->all())))
+            ->save();
         return $response
-            ->setPreviousUrl(route('live-template.index'))
-            ->setNextUrl(route('live-template.edit', $liveTemplate->id))
-            ->setMessage(trans('core/base::notices.create_success_message'));
+            ->setData('Update success')
+            ->toApiResponse();
     }
 
     /**
-     * @param int $id
      * @param Request $request
-     * @param FormBuilder $formBuilder
-     * @return string
-     */
-    public function edit($id, FormBuilder $formBuilder, Request $request)
-    {
-        $liveTemplate = $this->liveTemplateRepository->findOrFail($id);
-
-        event(new BeforeEditContentEvent($request, $liveTemplate));
-
-        page_title()->setTitle(trans('plugins/live-template::live-template.edit') . ' "' . $liveTemplate->name . '"');
-
-        return $formBuilder->create(LiveTemplateForm::class, ['model' => $liveTemplate])->renderForm();
-    }
-
-    /**
-     * @param int $id
-     * @param LiveTemplateRequest $request
      * @param BaseHttpResponse $response
-     * @return BaseHttpResponse
+     * @return BaseHttpResponse|\Illuminate\Http\JsonResponse|\Illuminate\Http\RedirectResponse|\Illuminate\Http\Resources\Json\JsonResource
      */
-    public function update($id, LiveTemplateRequest $request, BaseHttpResponse $response)
+    public function getHighLightHomeConfig(Request $request, BaseHttpResponse $response)
     {
-        $liveTemplate = $this->liveTemplateRepository->findOrFail($id);
-
-        $liveTemplate->fill($request->input());
-
-        $this->liveTemplateRepository->createOrUpdate($liveTemplate);
-
-        event(new UpdatedContentEvent(LIVE_TEMPLATE_MODULE_SCREEN_NAME, $request, $liveTemplate));
-
+        $setting = json_decode(setting('high_light_home'), true);
+        if (!$setting) {
+            $data = $this->postRepository->getFeatured(5, []);
+        } else {
+            $data = $this->postRepository->getListPostInList($setting['ids'], 5, []);
+        }
         return $response
-            ->setPreviousUrl(route('live-template.index'))
-            ->setMessage(trans('core/base::notices.update_success_message'));
-    }
-
-    /**
-     * @param int $id
-     * @param Request $request
-     * @param BaseHttpResponse $response
-     * @return BaseHttpResponse
-     */
-    public function destroy(Request $request, $id, BaseHttpResponse $response)
-    {
-        try {
-            $liveTemplate = $this->liveTemplateRepository->findOrFail($id);
-
-            $this->liveTemplateRepository->delete($liveTemplate);
-
-            event(new DeletedContentEvent(LIVE_TEMPLATE_MODULE_SCREEN_NAME, $request, $liveTemplate));
-
-            return $response->setMessage(trans('core/base::notices.delete_success_message'));
-        } catch (Exception $exception) {
-            return $response
-                ->setError()
-                ->setMessage($exception->getMessage());
-        }
-    }
-
-    /**
-     * @param Request $request
-     * @param BaseHttpResponse $response
-     * @return BaseHttpResponse
-     * @throws Exception
-     */
-    public function deletes(Request $request, BaseHttpResponse $response)
-    {
-        $ids = $request->input('ids');
-        if (empty($ids)) {
-            return $response
-                ->setError()
-                ->setMessage(trans('core/base::notices.no_select'));
-        }
-
-        foreach ($ids as $id) {
-            $liveTemplate = $this->liveTemplateRepository->findOrFail($id);
-            $this->liveTemplateRepository->delete($liveTemplate);
-            event(new DeletedContentEvent(LIVE_TEMPLATE_MODULE_SCREEN_NAME, $request, $liveTemplate));
-        }
-
-        return $response->setMessage(trans('core/base::notices.delete_success_message'));
+            ->setData(ListPostResource::collection($data))
+            ->toApiResponse();
     }
 }

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { API_GET_POST, API_SEARCH_POST } from './../config/const'
+import { API_GET_POST_PUBLISH, API_SEARCH_POST, API_GET_HIGH_LIGHT_HOME } from './../config/const'
 import InfiniteScroll from "react-infinite-scroll-component";
 
 import {
@@ -19,14 +19,25 @@ import PostItem from "./PostItem";
 
 const PostList = ({ props }) => {
 
-    const [dataPost, setDataPost] = useState([])
-    const [nextPage, setNexPage] = useState(API_GET_POST)
+    const [postPublished, setPostPublished] = useState([])
+    const [nextPage, setNexPage] = useState(API_GET_POST_PUBLISH)
     const [hasMore, setHasmore] = useState(true)
     const [searchTerm, setSearchTerm] = useState('')
 
     useEffect(() => {
         fetchPostData();
+        getHighLightHome();
     }, [])
+
+    const getHighLightHome = () => {
+        axios.get(API_GET_HIGH_LIGHT_HOME)
+            .then(res =>  {
+                console.log(res);
+            })
+            .catch(res =>  {
+                Botble.handleError(res.response.data);
+            });
+    }
 
     const fetchPostData = () => {
         if (hasMore) {
@@ -35,7 +46,7 @@ const PostList = ({ props }) => {
                     if (!res.data.error) {
                         const { links, data } = res.data
                         if (data.length) {
-                            setDataPost([...dataPost, ...data]);
+                            setPostPublished([...postPublished, ...data]);
                             setNexPage(links.next);
                         }
                         if (!links.next) {
@@ -58,7 +69,7 @@ const PostList = ({ props }) => {
         axios.get(API_SEARCH_POST + `?q=${searchTerm}`)
             .then(res => {
                 if (!res.data.error) {
-                    setDataPost(res.data.data)
+                    setPostPublished(res.data.data)
                 }
             })
             .catch(err => {
@@ -103,14 +114,14 @@ const PostList = ({ props }) => {
                                 </div>
                                 <NewsPositionHot id="scrollableDiv" style={{ overflowY: "scroll" }}>
                                     <InfiniteScroll
-                                        dataLength={dataPost.length}
+                                        dataLength={postPublished.length}
                                         next={fetchPostData}
                                         hasMore={hasMore}
                                         loader={<span>Loading...</span>}
                                         scrollableTarget="scrollableDiv"
                                     >
                                         {
-                                            dataPost && dataPost.length ? dataPost.map((post, index) => {
+                                            postPublished && postPublished.length ? postPublished.map((post, index) => {
                                                 return (
                                                     <PostItem
                                                         key={index}
