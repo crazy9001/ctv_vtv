@@ -48,6 +48,14 @@ class LiveTemplateController extends BaseController
         return view('plugins/live-template::index');
     }
 
+    public function getPostsPublished(Request $request, BaseHttpResponse $response)
+    {
+        $data = $this->postRepository->getAllPosts();
+        return $response
+            ->setData(ListPostResource::collection($data))
+            ->toApiResponse();
+    }
+
     /**
      * @param HomeConfigRequest $request
      * @param BaseHttpResponse $response
