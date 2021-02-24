@@ -15,20 +15,18 @@ class LiveTemplate extends BaseModel
      *
      * @var string
      */
-    protected $table = 'live_templates';
+    protected $table = 'setting_live_templates';
 
     /**
      * @var array
      */
     protected $fillable = [
-        'name',
-        'status',
+        'key',
+        'value',
     ];
 
     /**
-     * @var array
+     * @var bool
      */
-    protected $casts = [
-        'status' => BaseStatusEnum::class,
-    ];
+    public $timestamps = false;
 }

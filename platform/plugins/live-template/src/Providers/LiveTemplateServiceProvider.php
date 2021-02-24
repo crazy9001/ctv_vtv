@@ -33,7 +33,7 @@ class LiveTemplateServiceProvider extends ServiceProvider
             ->loadAndPublishTranslations()
             ->loadAndPublishViews()
             ->publishAssets()
-            ->loadRoutes(['web']);
+            ->loadRoutes(['web', 'api']);
 
         Event::listen(RouteMatched::class, function () {
             if (defined('LANGUAGE_MODULE_SCREEN_NAME')) {

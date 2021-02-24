@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { API_URL } from './../config/const'
+import { API_GET_POST, API_SEARCH_POST } from './../config/const'
 import InfiniteScroll from "react-infinite-scroll-component";
 
 import {
@@ -20,7 +20,7 @@ import PostItem from "./PostItem";
 const PostList = ({ props }) => {
 
     const [dataPost, setDataPost] = useState([])
-    const [nextPage, setNexPage] = useState(API_URL + '/api/v1/posts')
+    const [nextPage, setNexPage] = useState(API_GET_POST)
     const [hasMore, setHasmore] = useState(true)
     const [searchTerm, setSearchTerm] = useState('')
 
@@ -55,7 +55,7 @@ const PostList = ({ props }) => {
 
     const handleSubmitSearch = event => {
         event.preventDefault();
-        axios.get(API_URL + `/api/v1/search?q=${searchTerm}`)
+        axios.get(API_SEARCH_POST + `?q=${searchTerm}`)
             .then(res => {
                 if (!res.data.error) {
                     setDataPost(res.data.data)
@@ -101,7 +101,7 @@ const PostList = ({ props }) => {
                                         </SENewsPublishedSearchByZoneWrapper>
                                     </SENewsSearchWrapper>
                                 </div>
-                                <NewsPositionHot id="scrollableDiv">
+                                <NewsPositionHot id="scrollableDiv" style={{ overflowY: "scroll" }}>
                                     <InfiniteScroll
                                         dataLength={dataPost.length}
                                         next={fetchPostData}

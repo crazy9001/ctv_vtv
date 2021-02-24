@@ -92,7 +92,6 @@ export const SENewsSearchSelectWrapper = styled.div`
 `
 export const NewsPositionHot = styled.div`
     height: calc(100vh - 307px);
-    overflow: auto
 `
 
 export const SENewsItem = styled.div`
@@ -100,7 +99,6 @@ export const SENewsItem = styled.div`
     background: #fff;
     height: 100%;
     margin-top: 0;
-    width: 298px;
 `
 export const SENewsItemContent = styled.div`
     border-bottom: 1px solid #ddd;

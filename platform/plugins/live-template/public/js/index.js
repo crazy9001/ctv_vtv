@@ -1434,7 +1434,7 @@ var PostList = function PostList(_ref) {
       dataPost = _useState2[0],
       setDataPost = _useState2[1];
 
-  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(_config_const__WEBPACK_IMPORTED_MODULE_1__.API_URL + '/api/v1/posts'),
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(_config_const__WEBPACK_IMPORTED_MODULE_1__.API_GET_POST),
       _useState4 = _slicedToArray(_useState3, 2),
       nextPage = _useState4[0],
       setNexPage = _useState4[1];
@@ -1482,7 +1482,7 @@ var PostList = function PostList(_ref) {
 
   var handleSubmitSearch = function handleSubmitSearch(event) {
     event.preventDefault();
-    axios.get(_config_const__WEBPACK_IMPORTED_MODULE_1__.API_URL + "/api/v1/search?q=".concat(searchTerm)).then(function (res) {
+    axios.get(_config_const__WEBPACK_IMPORTED_MODULE_1__.API_SEARCH_POST + "?q=".concat(searchTerm)).then(function (res) {
       if (!res.data.error) {
         setDataPost(res.data.data);
       }
@@ -1532,6 +1532,9 @@ var PostList = function PostList(_ref) {
                 })
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_styled_index__WEBPACK_IMPORTED_MODULE_3__.NewsPositionHot, {
                 id: "scrollableDiv",
+                style: {
+                  overflowY: "scroll"
+                },
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_infinite_scroll_component__WEBPACK_IMPORTED_MODULE_2__.default, {
                   dataLength: dataPost.length,
                   next: fetchPostData,
@@ -1568,9 +1571,13 @@ var PostList = function PostList(_ref) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "API_URL": () => (/* binding */ API_URL)
+/* harmony export */   "API_URL": () => (/* binding */ API_URL),
+/* harmony export */   "API_GET_POST": () => (/* binding */ API_GET_POST),
+/* harmony export */   "API_SEARCH_POST": () => (/* binding */ API_SEARCH_POST)
 /* harmony export */ });
 var API_URL = 'http://ctv.local.ub';
+var API_GET_POST = API_URL + '/api/v1/posts';
+var API_SEARCH_POST = API_URL + '/api/v1/search';
 
 /***/ }),
 
@@ -1616,8 +1623,8 @@ var ButtonSearchPost = styled_components__WEBPACK_IMPORTED_MODULE_0__.default.bu
 var SENewsPublishedSearchByZoneWrapper = styled_components__WEBPACK_IMPORTED_MODULE_0__.default.div(_templateObject9 || (_templateObject9 = _taggedTemplateLiteral(["\n    display: inline-block;\n"])));
 var SENewsSearchLabel = styled_components__WEBPACK_IMPORTED_MODULE_0__.default.label(_templateObject10 || (_templateObject10 = _taggedTemplateLiteral(["\n    color: #333;\n    display: inline-block;\n    font-size: 10px;\n    text-transform: uppercase;\n    width: 80px;\n    float: left;\n    margin-top: 13px;\n    margin-left: 2px;\n"])));
 var SENewsSearchSelectWrapper = styled_components__WEBPACK_IMPORTED_MODULE_0__.default.div(_templateObject11 || (_templateObject11 = _taggedTemplateLiteral(["\n    display: inline-block;\n    margin-top: 5px;\n    select {\n        width: 188px;\n        border: 1px solid #ccc;\n        padding: 3px;\n        font-size: 12px;\n        outline: none;\n        margin-bottom: 0;\n        margin-top: 0\n    }\n"])));
-var NewsPositionHot = styled_components__WEBPACK_IMPORTED_MODULE_0__.default.div(_templateObject12 || (_templateObject12 = _taggedTemplateLiteral(["\n    height: calc(100vh - 307px);\n    overflow: auto\n"])));
-var SENewsItem = styled_components__WEBPACK_IMPORTED_MODULE_0__.default.div(_templateObject13 || (_templateObject13 = _taggedTemplateLiteral(["\n    cursor: move;\n    background: #fff;\n    height: 100%;\n    margin-top: 0;\n    width: 298px;\n"])));
+var NewsPositionHot = styled_components__WEBPACK_IMPORTED_MODULE_0__.default.div(_templateObject12 || (_templateObject12 = _taggedTemplateLiteral(["\n    height: calc(100vh - 307px);\n"])));
+var SENewsItem = styled_components__WEBPACK_IMPORTED_MODULE_0__.default.div(_templateObject13 || (_templateObject13 = _taggedTemplateLiteral(["\n    cursor: move;\n    background: #fff;\n    height: 100%;\n    margin-top: 0;\n"])));
 var SENewsItemContent = styled_components__WEBPACK_IMPORTED_MODULE_0__.default.div(_templateObject14 || (_templateObject14 = _taggedTemplateLiteral(["\n    border-bottom: 1px solid #ddd;\n    display: flex;\n    flex-wrap: wrap;\n    padding: 5px;\n\n    img {\n        width: 20%;\n        -webkit-box-flex: 1;\n        flex-grow: 1;  \n    }\n"])));
 var SENewsItemInfo = styled_components__WEBPACK_IMPORTED_MODULE_0__.default.div(_templateObject15 || (_templateObject15 = _taggedTemplateLiteral(["\n    color: #333;\n    font-size: 11px;\n    width: 180px;\n\n    .SENewsItemTitle{\n        display: inline-block;\n        font-size: 12px;\n        font-weight: 700;\n        width: 175px;\n        max-height: 37px;\n        overflow: hidden;\n        -webkit-box-flex: 1;\n        flex-grow: 1;\n        margin: 0 5px;\n     }\n\n\n    .SENewsItemCreatedBy {\n        margin-bottom: 2px;\n        margin-left: 5px;\n        width: 170px;\n        display: inline-block;\n        overflow: hidden;\n        text-overflow: ellipsis;\n    }\n    .SENewsItemViewCount {\n        color: #333;\n        display: inline-block;\n        font-weight: 700;\n        margin-left: 5px;\n        width: 165px;\n    }\n"])));
 

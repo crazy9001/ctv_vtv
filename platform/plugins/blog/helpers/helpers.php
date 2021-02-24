@@ -16,6 +16,10 @@ if (!function_exists('get_featured_posts')) {
      */
     function get_featured_posts($limit, array $with = [])
     {
+        $setting = json_decode(setting('high_light_home'), true);
+        if ($setting) {
+            return app(PostInterface::class)->getListPostInList($setting['ids'], 5, $with);
+        }
         return app(PostInterface::class)->getFeatured($limit, $with);
     }
 }
@@ -198,7 +202,7 @@ if (!function_exists('get_categories')) {
         $categories = $repo->getCategories(Arr::get($args, 'select', ['*']), [
             'categories.created_at' => 'DESC',
             'categories.is_default' => 'DESC',
-            'categories.order'      => 'ASC',
+            'categories.order' => 'ASC',
         ]);
 
         $categories = sort_item_with_children($categories);

@@ -18,6 +18,14 @@ class PostCacheDecorator extends CacheAbstractDecorator implements PostInterface
     /**
      * {@inheritDoc}
      */
+    public function getListPostInList(array $selected = [], $limit = 5, array $with = [])
+    {
+        return $this->getDataIfExistCache(__FUNCTION__, func_get_args());
+    }
+
+    /**
+     * {@inheritDoc}
+     */
     public function getListPostNonInList(array $selected = [], $limit = 12, array $with = [])
     {
         return $this->getDataIfExistCache(__FUNCTION__, func_get_args());
