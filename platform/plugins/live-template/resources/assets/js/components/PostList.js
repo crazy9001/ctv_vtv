@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { API_GET_POST_PUBLISH, API_SEARCH_POST, API_GET_HIGH_LIGHT_HOME } from './../config/const'
+import { API_GET_POST_PUBLISH, API_SEARCH_POST, API_GET_HIGH_LIGHT_HOME, API_GET_POST_CATEGORIES } from './../config/const'
 import InfiniteScroll from "react-infinite-scroll-component";
 
 import {
@@ -27,7 +27,18 @@ const PostList = ({ props }) => {
     useEffect(() => {
         fetchPostData();
         getHighLightHome();
+        getCategories();
     }, [])
+
+    const getCategories = () => {
+        axios.get(API_GET_POST_CATEGORIES)
+            .then(res =>  {
+                console.log(res);
+            })
+            .catch(res =>  {
+                Botble.handleError(res.response.data);
+            });
+    }
 
     const getHighLightHome = () => {
         axios.get(API_GET_HIGH_LIGHT_HOME)

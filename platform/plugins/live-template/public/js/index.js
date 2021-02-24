@@ -1452,7 +1452,16 @@ var PostList = function PostList(_ref) {
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     fetchPostData();
     getHighLightHome();
+    getCategories();
   }, []);
+
+  var getCategories = function getCategories() {
+    axios.get(_config_const__WEBPACK_IMPORTED_MODULE_1__.API_GET_POST_CATEGORIES).then(function (res) {
+      console.log(res);
+    })["catch"](function (res) {
+      Botble.handleError(res.response.data);
+    });
+  };
 
   var getHighLightHome = function getHighLightHome() {
     axios.get(_config_const__WEBPACK_IMPORTED_MODULE_1__.API_GET_HIGH_LIGHT_HOME).then(function (res) {
@@ -1582,13 +1591,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "API_URL": () => (/* binding */ API_URL),
 /* harmony export */   "API_GET_POST_PUBLISH": () => (/* binding */ API_GET_POST_PUBLISH),
+/* harmony export */   "API_GET_HIGH_LIGHT_HOME": () => (/* binding */ API_GET_HIGH_LIGHT_HOME),
 /* harmony export */   "API_SEARCH_POST": () => (/* binding */ API_SEARCH_POST),
-/* harmony export */   "API_GET_HIGH_LIGHT_HOME": () => (/* binding */ API_GET_HIGH_LIGHT_HOME)
+/* harmony export */   "API_GET_POST_CATEGORIES": () => (/* binding */ API_GET_POST_CATEGORIES)
 /* harmony export */ });
 var API_URL = 'http://ctv.local.ub';
 var API_GET_POST_PUBLISH = API_URL + '/admin/live-templates/posts/published';
-var API_SEARCH_POST = API_URL + '/api/v1/search';
 var API_GET_HIGH_LIGHT_HOME = API_URL + '/admin/live-templates/posts/high_light/home';
+var API_SEARCH_POST = API_URL + '/api/v1/search';
+var API_GET_POST_CATEGORIES = API_URL + '/admin/live-templates/categories';
 
 /***/ }),
 

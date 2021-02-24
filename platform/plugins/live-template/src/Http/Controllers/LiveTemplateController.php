@@ -10,7 +10,10 @@ use Assets;
 use Botble\Setting\Supports\SettingStore;
 use Botble\LiveTemplate\Http\Requests\HomeConfigRequest;
 use Botble\Blog\Repositories\Interfaces\PostInterface;
+use Botble\Blog\Repositories\Interfaces\CategoryInterface;
 use Botble\Blog\Http\Resources\ListPostResource;
+use Botble\Blog\Http\Resources\ListCategoryResource;
+use Botble\Base\Enums\BaseStatusEnum;
 
 class LiveTemplateController extends BaseController
 {
@@ -25,14 +28,20 @@ class LiveTemplateController extends BaseController
     protected $postRepository;
 
     /**
+     * @var CategoryInterface
+     */
+    protected $categoriesRepository;
+
+    /**
      * LiveTemplateController constructor.
      * @param SettingStore $settingStore
      * @param PostInterface $postRepository
      */
-    public function __construct(SettingStore $settingStore, PostInterface $postRepository)
+    public function __construct(SettingStore $settingStore, PostInterface $postRepository, CategoryInterface $categoriesRepository)
     {
         $this->settingStore = $settingStore;
         $this->postRepository = $postRepository;
+        $this->categoriesRepository = $categoriesRepository;
     }
 
     /**
@@ -88,4 +97,14 @@ class LiveTemplateController extends BaseController
             ->setData(ListPostResource::collection($data))
             ->toApiResponse();
     }
+
+    public function getCategories(Request $request, BaseHttpResponse $response)
+    {
+        //$data = $this->categoriesRepository->getAllCategoriesWithChildren(['status' => BaseStatusEnum::PUBLISHED], [], ['id', 'name', 'parent_id']);
+        $data = get_categories_with_children();
+        return $response
+            ->setData(ListCategoryResource::collection($data))
+            ->toApiResponse();
+    }
+
 }

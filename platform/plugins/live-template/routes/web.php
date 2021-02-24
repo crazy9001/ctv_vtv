@@ -2,7 +2,7 @@
 
 Route::group(['namespace' => 'Botble\LiveTemplate\Http\Controllers', 'middleware' => ['web', 'core']], function () {
 
-    Route::group(['prefix' => BaseHelper::getAdminPrefix()], function () {
+    Route::group(['prefix' => BaseHelper::getAdminPrefix(), 'middleware' => 'auth'], function () {
 
         Route::group(['prefix' => 'live-templates'], function () {
 
@@ -33,6 +33,14 @@ Route::group(['namespace' => 'Botble\LiveTemplate\Http\Controllers', 'middleware
                         'permission' => 'live-template.index',
                     ]);
                 });
+            });
+
+            Route::group(['prefix' => 'categories'], function () {
+                Route::get('/', [
+                    'as'         => 'live-template.index',
+                    'uses'       => 'LiveTemplateController@getCategories',
+                    'permission' => 'live-template.index',
+                ]);
             });
 
         });
