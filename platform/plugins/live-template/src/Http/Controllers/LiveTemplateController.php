@@ -12,8 +12,7 @@ use Botble\Blog\Repositories\Interfaces\PostInterface;
 use Botble\Blog\Repositories\Interfaces\CategoryInterface;
 use Botble\Blog\Http\Resources\ListPostResource;
 use Botble\LiveTemplate\Http\Resources\ListCategoryResource;
-use Botble\Base\Enums\BaseStatusEnum;
-use Botble\Base\Supports\SortItemsWithChildrenHelper;
+use Language;
 
 class LiveTemplateController extends BaseController
 {
@@ -87,7 +86,8 @@ class LiveTemplateController extends BaseController
      */
     public function getHighLightHomeConfig(Request $request, BaseHttpResponse $response)
     {
-        $setting = json_decode(setting('high_light_home'), true);
+        $currentLocaleCode = Language::getCurrentLocaleCode();
+        $setting = json_decode(setting('theme-high-light-home-' . $currentLocaleCode), true);
         if (!$setting) {
             $data = $this->postRepository->getFeatured(5, []);
         } else {

@@ -43,29 +43,31 @@ class PostController extends Controller
      */
     public function index(Request $request, BaseHttpResponse $response)
     {
-        $language = $request->input('language') ? $request->input('language') : 'vi';
-        $data = $this->postRepository
-            ->getModel()
-            ->where(['status' => BaseStatusEnum::PUBLISHED])
-            ->with(['tags', 'categories', 'author', 'slugable'])
-            ->join('language_meta', function ($join) {
-                $join->on('posts.id', '=', 'language_meta.reference_id')
-                    ->where('language_meta.reference_type', '=', Post::class);
-            })
-            ->where('language_meta.lang_meta_code', '=', $language)
-            ->select([
-                'posts.id',
-                'posts.name',
-                'posts.description',
-                'posts.content',
-                'posts.image',
-                'posts.created_at',
-                'posts.status',
-                'posts.updated_at',
-                'posts.author_id',
-                'posts.author_type',
-            ])
-            ->paginate($request->input('per_page', 10));
+//        $language = $request->input('language') ? $request->input('language') : 'vi';
+//        $data = $this->postRepository
+//            ->getModel()
+//            ->where(['status' => BaseStatusEnum::PUBLISHED])
+//            ->with(['tags', 'categories', 'author', 'slugable'])
+//            ->join('language_meta', function ($join) {
+//                $join->on('posts.id', '=', 'language_meta.reference_id')
+//                    ->where('language_meta.reference_type', '=', Post::class);
+//            })
+//            ->where('language_meta.lang_meta_code', '=', $language)
+//            ->select([
+//                'posts.id',
+//                'posts.name',
+//                'posts.description',
+//                'posts.content',
+//                'posts.image',
+//                'posts.created_at',
+//                'posts.status',
+//                'posts.updated_at',
+//                'posts.author_id',
+//                'posts.author_type',
+//            ])
+//            ->paginate($request->input('per_page', 10));
+
+        $data = $this->postRepository->getAllPosts(10, true, []);
 
         return $response
             ->setData(ListPostResource::collection($data))
