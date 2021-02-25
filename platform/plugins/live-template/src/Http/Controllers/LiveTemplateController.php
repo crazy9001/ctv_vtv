@@ -4,7 +4,6 @@ namespace Botble\LiveTemplate\Http\Controllers;
 
 use Botble\Base\Http\Controllers\BaseController;
 use Illuminate\Http\Request;
-use Botble\LiveTemplate\Tables\LiveTemplateTable;
 use Botble\Base\Http\Responses\BaseHttpResponse;
 use Assets;
 use Botble\Setting\Supports\SettingStore;
@@ -12,8 +11,9 @@ use Botble\LiveTemplate\Http\Requests\HomeConfigRequest;
 use Botble\Blog\Repositories\Interfaces\PostInterface;
 use Botble\Blog\Repositories\Interfaces\CategoryInterface;
 use Botble\Blog\Http\Resources\ListPostResource;
-use Botble\Blog\Http\Resources\ListCategoryResource;
+use Botble\LiveTemplate\Http\Resources\ListCategoryResource;
 use Botble\Base\Enums\BaseStatusEnum;
+use Botble\Base\Supports\SortItemsWithChildrenHelper;
 
 class LiveTemplateController extends BaseController
 {

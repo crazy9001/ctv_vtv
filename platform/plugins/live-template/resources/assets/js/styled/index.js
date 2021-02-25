@@ -15,10 +15,6 @@ export const ItemSettingsStyled = styled.div`
 `
 
 export const LiveBrowseSettingBlockStyled = styled.div`
-    *{
-        text-align: left;
-        line-height: inherit;
-    };
     form {
         margin: 0
     }
@@ -92,6 +88,7 @@ export const SENewsSearchSelectWrapper = styled.div`
 `
 export const NewsPositionHot = styled.div`
     height: calc(100vh - 307px);
+    max-height: calc(100vh - 370px);
 `
 
 export const SENewsItem = styled.div`
@@ -109,7 +106,7 @@ export const SENewsItemContent = styled.div`
     img {
         width: 20%;
         -webkit-box-flex: 1;
-        flex-grow: 1;  
+        flex-grow: 1;
     }
 `
 

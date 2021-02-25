@@ -1,5 +1,10 @@
-import React, { useState, useEffect } from 'react'
-import { API_GET_POST_PUBLISH, API_SEARCH_POST, API_GET_HIGH_LIGHT_HOME, API_GET_POST_CATEGORIES } from './../config/const'
+import React, {useState, useEffect} from 'react'
+import {
+    API_GET_POST_PUBLISH,
+    API_SEARCH_POST,
+    API_GET_HIGH_LIGHT_HOME,
+    API_GET_POST_CATEGORIES
+} from './../config/const'
 import InfiniteScroll from "react-infinite-scroll-component";
 
 import {
@@ -10,19 +15,23 @@ import {
     SENewsSearchWrapper,
     SESearchNewsPublishedStyled,
     SENewsPublishedSearchByZoneWrapper,
-    SENewsSearchLabel,
     SENewsSearchSelectWrapper,
     NewsPositionHot,
     ButtonSearchPost
 } from './../styled/index'
 import PostItem from "./PostItem";
 
-const PostList = ({ props }) => {
+import DropdownContainer from "./Dropdown/DropdownContainer";
+
+
+const PostList = ({props}) => {
 
     const [postPublished, setPostPublished] = useState([])
     const [nextPage, setNexPage] = useState(API_GET_POST_PUBLISH)
     const [hasMore, setHasmore] = useState(true)
     const [searchTerm, setSearchTerm] = useState('')
+
+    const [dataCategories, setDataCategories] = useState({})
 
     useEffect(() => {
         fetchPostData();
@@ -32,20 +41,13 @@ const PostList = ({ props }) => {
 
     const getCategories = () => {
         axios.get(API_GET_POST_CATEGORIES)
-            .then(res =>  {
-                console.log(res);
+            .then(res => {
+                if (!res.data.error) {
+                    const {data} = res;
+                    setDataCategories(data.data);
+                }
             })
-            .catch(res =>  {
-                Botble.handleError(res.response.data);
-            });
-    }
-
-    const getHighLightHome = () => {
-        axios.get(API_GET_HIGH_LIGHT_HOME)
-            .then(res =>  {
-                console.log(res);
-            })
-            .catch(res =>  {
+            .catch(res => {
                 Botble.handleError(res.response.data);
             });
     }
@@ -55,7 +57,7 @@ const PostList = ({ props }) => {
             axios.get(nextPage)
                 .then(res => {
                     if (!res.data.error) {
-                        const { links, data } = res.data
+                        const {links, data} = res.data
                         if (data.length) {
                             setPostPublished([...postPublished, ...data]);
                             setNexPage(links.next);
@@ -69,6 +71,16 @@ const PostList = ({ props }) => {
                     Botble.handleError(res.response.data);
                 })
         }
+    }
+
+    const getHighLightHome = () => {
+        axios.get(API_GET_HIGH_LIGHT_HOME)
+            .then(res => {
+                //console.log(res);
+            })
+            .catch(res => {
+                Botble.handleError(res.response.data);
+            });
     }
 
     const handleChangeSearchInput = event => {
@@ -86,6 +98,10 @@ const PostList = ({ props }) => {
             .catch(err => {
                 Botble.handleError(err.response.data);
             })
+    }
+
+    const onChangeCategory = (currentNode, selectedNodes) => {
+        console.log('onChange::', currentNode, selectedNodes)
     }
 
     return (
@@ -106,24 +122,19 @@ const PostList = ({ props }) => {
                                                 value={searchTerm}
                                                 onChange={handleChangeSearchInput}
                                             />
-                                            <ButtonSearchPost />
+                                            <ButtonSearchPost/>
                                         </form>
                                         <SENewsPublishedSearchByZoneWrapper>
-                                            <SENewsSearchLabel>Chuyên mục</SENewsSearchLabel>
                                             <SENewsSearchSelectWrapper>
-                                                <select
-                                                    id="SENewsSearchNewsPublishedZone"
-                                                    name="primary_category"
-                                                >
-                                                    <option value="">
-                                                        Chuyên mục
-                                                    </option>
-                                                </select>
+                                                <DropdownContainer
+                                                    data={dataCategories}
+                                                    onChange={onChangeCategory}
+                                                />
                                             </SENewsSearchSelectWrapper>
                                         </SENewsPublishedSearchByZoneWrapper>
                                     </SENewsSearchWrapper>
                                 </div>
-                                <NewsPositionHot id="scrollableDiv" style={{ overflowY: "scroll" }}>
+                                <NewsPositionHot id="scrollableDiv" style={{overflowY: "scroll"}}>
                                     <InfiniteScroll
                                         dataLength={postPublished.length}
                                         next={fetchPostData}
