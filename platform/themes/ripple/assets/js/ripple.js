@@ -33,54 +33,24 @@ export class Ripple {
             });
         }, 500);
     }
-
+    loadPlayer = (el, url) => {
+        let player = videojs(el, {
+            autoplay: true,
+            sources: [{
+                //type: "video/mp4",
+                type: "application/x-mpegURL",
+                src: url
+            }]
+        });
+        player.play();
+    };
     initVideoPlayer() {
-
-        let resizeVideoJs = function (player, aspectRatio) {
-            // Get the parent element's actual width
-            let width = document.getElementById(player.id).parentElement.offsetWidth;
-            // Set width to fill parent element, Set height
-            player.width(width).height(width * aspectRatio);
-        }
-
-
         let videos = document.getElementsByTagName('video');
-        console.log(videos);
-        // Loop through the videos
         for (let i = 0; i < videos.length; i++) {
-
-            // Stash the video
             let video = videos[i];
-
-            // Check for VideoJs
-            if (video.className.indexOf('video-js') > -1) {
-
-                // When player is ready...
-                videojs(video.id).ready(function () {
-
-                    // Stash the player object
-                    let player = this;
-                    // Create an aspect ratio
-                    let aspectRatio = player.height() / player.width();
-
-                    // Apply the resizer
-                    resizeVideoJs(player, aspectRatio);
-
-                    // Add/Attach the event on resize
-                    if (window.addEventListener) {
-                        window.addEventListener('resize', function () {
-                            resizeVideoJs(player, aspectRatio);
-                        }, false);
-                    } else if (window.attachEvent) {
-                        window.attachEvent('onresize', function () {
-                            resizeVideoJs(player, aspectRatio);
-                        });
-                    }
-                });
-            }
+            this.loadPlayer(video.id, $(video).closest('div.video-player').data('video'));
         }
     }
-
     bindActionToElement() {
         closeSearch.on('click', event => {
             event.preventDefault();

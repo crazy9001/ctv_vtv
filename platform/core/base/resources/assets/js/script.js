@@ -569,6 +569,8 @@ class Botble {
                                     html += '<iframe width="420" height="315" src="' + link + '" frameborder="0" allowfullscreen></iframe><br />';
                                 } else if (file.type === 'image') {
                                     html += '<img src="' + link + '" alt="' + file.name + '" /><br />';
+                                } else if (file.type === 'video') {
+                                    html += '[video-player title="' + file.name + '"]' + link + '[/video-player]<br />';
                                 } else {
                                     html += '<a href="' + link + '">' + file.name + '</a><br />';
                                 }

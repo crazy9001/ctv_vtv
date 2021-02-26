@@ -47,6 +47,8 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 var searchInput = $('.search-input');
 var superSearch = $('.super-search');
 var closeSearch = $('.close-search');
@@ -55,6 +57,18 @@ var timeoutID = null;
 var Ripple = /*#__PURE__*/function () {
   function Ripple() {
     _classCallCheck(this, Ripple);
+
+    _defineProperty(this, "loadPlayer", function (el, url) {
+      var player = videojs(el, {
+        autoplay: true,
+        sources: [{
+          //type: "video/mp4",
+          type: "application/x-mpegURL",
+          src: url
+        }]
+      });
+      player.play();
+    });
   }
 
   _createClass(Ripple, [{
@@ -91,41 +105,11 @@ var Ripple = /*#__PURE__*/function () {
   }, {
     key: "initVideoPlayer",
     value: function initVideoPlayer() {
-      var resizeVideoJs = function resizeVideoJs(player, aspectRatio) {
-        // Get the parent element's actual width
-        var width = document.getElementById(player.id).parentElement.offsetWidth; // Set width to fill parent element, Set height
-
-        player.width(width).height(width * aspectRatio);
-      };
-
       var videos = document.getElementsByTagName('video');
-      console.log(videos); // Loop through the videos
 
       for (var i = 0; i < videos.length; i++) {
-        // Stash the video
-        var video = videos[i]; // Check for VideoJs
-
-        if (video.className.indexOf('video-js') > -1) {
-          // When player is ready...
-          videojs(video.id).ready(function () {
-            // Stash the player object
-            var player = this; // Create an aspect ratio
-
-            var aspectRatio = player.height() / player.width(); // Apply the resizer
-
-            resizeVideoJs(player, aspectRatio); // Add/Attach the event on resize
-
-            if (window.addEventListener) {
-              window.addEventListener('resize', function () {
-                resizeVideoJs(player, aspectRatio);
-              }, false);
-            } else if (window.attachEvent) {
-              window.attachEvent('onresize', function () {
-                resizeVideoJs(player, aspectRatio);
-              });
-            }
-          });
-        }
+        var video = videos[i];
+        this.loadPlayer(video.id, $(video).closest('div.video-player').data('video'));
       }
     }
   }, {
