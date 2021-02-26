@@ -17,10 +17,9 @@ if (!function_exists('get_featured_posts')) {
     function get_featured_posts($limit, array $with = [])
     {
         $currentLocaleCode = Language::getCurrentLocaleCode();
-        $setting = json_decode(setting('theme-high-light-home-' . $currentLocaleCode), true);
-
-        if ($setting) {
-            return app(PostInterface::class)->getListPostInList($setting['ids'], $limit, $with);
+        $setting = json_decode(setting('theme-high-light-home'), true);
+        if ($setting && isset($setting[$currentLocaleCode])) {
+            return app(PostInterface::class)->getListPostInList($setting[$currentLocaleCode]['ids'], $limit, $with);
         }
         return app(PostInterface::class)->getFeatured($limit, $with);
     }

@@ -32,6 +32,11 @@ class LiveTemplateController extends BaseController
     protected $categoriesRepository;
 
     /**
+     * This var get current locale
+     */
+    protected $currentLocale;
+
+    /**
      * LiveTemplateController constructor.
      * @param SettingStore $settingStore
      * @param PostInterface $postRepository
@@ -41,6 +46,7 @@ class LiveTemplateController extends BaseController
         $this->settingStore = $settingStore;
         $this->postRepository = $postRepository;
         $this->categoriesRepository = $categoriesRepository;
+        $this->currentLocale = Language::getCurrentLocaleCode();
     }
 
     /**
@@ -71,8 +77,10 @@ class LiveTemplateController extends BaseController
      */
     public function postHighLightHomeConfig(HomeConfigRequest $request, BaseHttpResponse $response)
     {
+        $setting = json_decode(setting('theme-high-light-home'), true);
+        $setting[$this->currentLocale]["ids"] = $request->ids;
         $this->settingStore
-            ->set('high_light_home', json_encode(($request->all())))
+            ->set('theme-high-light-home', json_encode($setting))
             ->save();
         return $response
             ->setData('Update success')
@@ -86,12 +94,11 @@ class LiveTemplateController extends BaseController
      */
     public function getHighLightHomeConfig(Request $request, BaseHttpResponse $response)
     {
-        $currentLocaleCode = Language::getCurrentLocaleCode();
-        $setting = json_decode(setting('theme-high-light-home-' . $currentLocaleCode), true);
-        if (!$setting) {
-            $data = $this->postRepository->getFeatured(5, []);
+        $setting = json_decode(setting('theme-high-light-home'), true);
+        if ($setting && isset($setting[$this->currentLocale])) {
+            $data = $this->postRepository->getListPostInList($setting[$this->currentLocale]['ids'], 5, []);
         } else {
-            $data = $this->postRepository->getListPostInList($setting['ids'], 5, []);
+            $data = $this->postRepository->getFeatured(5, []);
         }
         return $response
             ->setData(ListPostResource::collection($data))
