@@ -48,6 +48,7 @@ return [
                 ->container('footer')
                 ->usePath()->add('jquery', 'plugins/jquery/jquery.min.js')
                 ->usePath()->add('bootstrap-js', 'plugins/bootstrap/js/bootstrap.min.js', ['jquery'])
+                ->usePath()->add('video-js', 'plugins/videojs/video.min.js', ['jquery'], [], '5.11')
                 ->usePath()->add('custom', 'js/custom.min.js', ['jquery'], [], '5.11')
                 ->usePath()->add('ripple.js', 'js/ripple.js', ['jquery'], [], '5.11');
 
@@ -56,6 +57,8 @@ return [
                 ->usePath()->add('bootstrap-css', 'plugins/bootstrap/css/bootstrap.min.css')
                 ->usePath()->add('font-awesome', 'plugins/font-awesome/css/font-awesome.min.css')
                 ->usePath()->add('ionicons', 'plugins/ionicons/css/ionicons.min.css')
+                ->usePath()->add('video-js', 'plugins/videojs/video-js.css')
+                ->usePath()->add('player-skin', 'plugins/videojs/player-skin.css')
                 ->usePath()->add('style', 'css/style.css', [], [], '5.11');
 
             if (function_exists('shortcode')) {

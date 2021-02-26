@@ -89,6 +89,46 @@ var Ripple = /*#__PURE__*/function () {
       }, 500);
     }
   }, {
+    key: "initVideoPlayer",
+    value: function initVideoPlayer() {
+      var resizeVideoJs = function resizeVideoJs(player, aspectRatio) {
+        // Get the parent element's actual width
+        var width = document.getElementById(player.id).parentElement.offsetWidth; // Set width to fill parent element, Set height
+
+        player.width(width).height(width * aspectRatio);
+      };
+
+      var videos = document.getElementsByTagName('video');
+      console.log(videos); // Loop through the videos
+
+      for (var i = 0; i < videos.length; i++) {
+        // Stash the video
+        var video = videos[i]; // Check for VideoJs
+
+        if (video.className.indexOf('video-js') > -1) {
+          // When player is ready...
+          videojs(video.id).ready(function () {
+            // Stash the player object
+            var player = this; // Create an aspect ratio
+
+            var aspectRatio = player.height() / player.width(); // Apply the resizer
+
+            resizeVideoJs(player, aspectRatio); // Add/Attach the event on resize
+
+            if (window.addEventListener) {
+              window.addEventListener('resize', function () {
+                resizeVideoJs(player, aspectRatio);
+              }, false);
+            } else if (window.attachEvent) {
+              window.attachEvent('onresize', function () {
+                resizeVideoJs(player, aspectRatio);
+              });
+            }
+          });
+        }
+      }
+    }
+  }, {
     key: "bindActionToElement",
     value: function bindActionToElement() {
       var _this = this;
@@ -118,6 +158,7 @@ var Ripple = /*#__PURE__*/function () {
 
         _this.searchFunction(e.target.value);
       });
+      this.initVideoPlayer();
     }
   }]);
 

@@ -550,6 +550,8 @@ class Botble {
                                     content += '<iframe width="420" height="315" src="' + link + '" frameborder="0" allowfullscreen></iframe><br />';
                                 } else if (file.type === 'image') {
                                     content += '<img src="' + link + '" alt="' + file.name + '" /><br />';
+                                } else if (file.type === 'video') {
+                                    content += '[video-player title="' + file.name + '"]' + link + '[/video-player]<br />';
                                 } else {
                                     content += '<a href="' + link + '">' + file.name + '</a><br />';
                                 }

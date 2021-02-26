@@ -28,6 +28,10 @@ add_shortcode('youtube-video', __('Youtube video'), __('Add youtube video'), fun
 
 shortcode()->setAdminConfig('youtube-video', Theme::partial('short-codes.youtube-video-admin-config'));
 
+add_shortcode('video-player', __('Video player'), __('Add video player'), function ($shortCode) {
+    return Theme::partial('short-codes.video-player', ['url' => $shortCode->content, 'title' => $shortCode->title]);
+});
+
 add_shortcode('featured-posts', __('Featured posts'), __('Featured posts'), function () {
     return Theme::partial('short-codes.featured-posts');
 });

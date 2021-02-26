@@ -27,7 +27,8 @@
         @if (defined('GALLERY_MODULE_SCREEN_NAME') && !empty($galleries = gallery_meta_data($post)))
             {!! render_object_gallery($galleries, ($post->categories()->first() ? $post->categories()->first()->name : __('Uncategorized'))) !!}
         @endif
-        {!! clean($post->content, 'youtube') !!}
+        {!! clean($post->content) !!}
+{{--            {!! $post->content !!}--}}
         <div class="fb-like" data-href="{{ Request::url() }}" data-layout="standard" data-action="like" data-show-faces="false" data-share="true"></div>
     </div>
     <footer class="post__footer">
