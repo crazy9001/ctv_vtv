@@ -67,6 +67,7 @@ var Ripple = /*#__PURE__*/function () {
           src: url
         }]
       });
+      player.hlsQualitySelector();
       player.play();
     });
   }

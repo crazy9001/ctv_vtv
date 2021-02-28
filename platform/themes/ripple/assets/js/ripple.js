@@ -42,6 +42,7 @@ export class Ripple {
                 src: url
             }]
         });
+        player.hlsQualitySelector();
         player.play();
     };
     initVideoPlayer() {

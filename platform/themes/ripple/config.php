@@ -49,6 +49,8 @@ return [
                 ->usePath()->add('jquery', 'plugins/jquery/jquery.min.js')
                 ->usePath()->add('bootstrap-js', 'plugins/bootstrap/js/bootstrap.min.js', ['jquery'])
                 ->usePath()->add('video-js', 'plugins/videojs/video.min.js', ['jquery'], [], '5.11')
+                ->usePath()->add('videojs-contrib-quality-levels', 'plugins/videojs/videojs-contrib-quality-levels.min.js', ['jquery'], [], '5.11')
+                ->usePath()->add('videojs-hls-quality-selector', 'plugins/videojs/videojs-hls-quality-selector.js', ['jquery'], [], '5.11')
                 ->usePath()->add('custom', 'js/custom.min.js', ['jquery'], [], '5.11')
                 ->usePath()->add('ripple.js', 'js/ripple.js', ['jquery'], [], '5.11');
 

@@ -163,10 +163,10 @@
     margin: 0
 }
 
-.video-js .vjs-progress-control:hover {
-    height: 1.5em;
-    top: -1.5em
-}
+/*.video-js .vjs-progress-control:hover {*/
+/*    height: 1.5em;*/
+/*    top: -1.5em*/
+/*}*/
 
 .video-js .vjs-control-bar {
     -webkit-transition: -webkit-transform .1s ease 0s;
