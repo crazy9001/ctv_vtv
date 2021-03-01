@@ -63,6 +63,30 @@ var EditorManagement = /*#__PURE__*/function () {
       });
     }
   }, {
+    key: "initMediumEditor",
+    value: function initMediumEditor(element) {
+      var editor = new MediumEditor(element, {
+        toolbar: {
+          /* These are the default options for the toolbar,
+             if nothing is passed this is what is used */
+          allowMultiParagraphSelection: true,
+          buttons: ['bold', 'italic', 'underline', 'anchor', 'h2', 'h3', 'quote'],
+          diffLeft: 0,
+          diffTop: -10,
+          firstButtonClass: 'medium-editor-button-first',
+          lastButtonClass: 'medium-editor-button-last',
+          relativeContainer: null,
+          standardizeSelectionStart: false,
+          "static": false,
+
+          /* options which only apply when static is true */
+          align: 'center',
+          sticky: false,
+          updateOnEmptySelection: false
+        }
+      });
+    }
+  }, {
     key: "initEditor",
     value: function initEditor(element, extraConfig, type) {
       if (!element.length) {
@@ -83,6 +107,12 @@ var EditorManagement = /*#__PURE__*/function () {
             current.initTinyMce($(item).prop('id'));
           });
           break;
+
+        case 'mediumeditor':
+          $.each(element, function (index, item) {
+            current.initMediumEditor(element);
+          });
+          break;
       }
     }
   }, {
@@ -90,6 +120,7 @@ var EditorManagement = /*#__PURE__*/function () {
     value: function init() {
       var $ckEditor = $('.editor-ckeditor');
       var $tinyMce = $('.editor-tinymce');
+      var $mediumEditor = $('.editor-medium');
       var current = this;
 
       if ($ckEditor.length > 0) {
@@ -98,6 +129,10 @@ var EditorManagement = /*#__PURE__*/function () {
 
       if ($tinyMce.length > 0) {
         current.initEditor($tinyMce, {}, 'tinymce');
+      }
+
+      if ($mediumEditor.length > 0) {
+        current.initEditor($mediumEditor, {}, 'mediumeditor');
       }
 
       $(document).on('click', '.show-hide-editor-btn', function (event) {

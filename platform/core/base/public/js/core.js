@@ -1347,6 +1347,10 @@ var Botble = /*#__PURE__*/function () {
                 tinymce.activeEditor.execCommand('mceInsertContent', false, html);
                 break;
 
+              case 'media-insert-mediumeditor':
+                console.log('ahihi tahwfng chó');
+                break;
+
               case 'select-image':
                 var firstImage = _.first(files);
 

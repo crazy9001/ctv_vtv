@@ -577,6 +577,9 @@ class Botble {
                             });
                             tinymce.activeEditor.execCommand('mceInsertContent', false, html);
                             break;
+                        case 'media-insert-mediumeditor':
+                            console.log('ahihi tahwfng chó');
+                            break;
                         case 'select-image':
                             let firstImage = _.first(files);
                             $el.closest('.image-box').find('.image-data').val(firstImage.url);

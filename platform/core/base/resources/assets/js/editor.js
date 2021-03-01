@@ -45,6 +45,29 @@ class EditorManagement {
         });
     }
 
+    initMediumEditor(element) {
+        let editor = new MediumEditor(element, {
+            toolbar: {
+                /* These are the default options for the toolbar,
+                   if nothing is passed this is what is used */
+                allowMultiParagraphSelection: true,
+                buttons: ['bold', 'italic', 'underline', 'anchor', 'h2', 'h3', 'quote'],
+                diffLeft: 0,
+                diffTop: -10,
+                firstButtonClass: 'medium-editor-button-first',
+                lastButtonClass: 'medium-editor-button-last',
+                relativeContainer: null,
+                standardizeSelectionStart: false,
+                static: false,
+                /* options which only apply when static is true */
+                align: 'center',
+                sticky: false,
+                updateOnEmptySelection: false
+            }
+        });
+
+    }
+
     initEditor(element, extraConfig, type) {
         if (!element.length) {
             return false;
@@ -62,12 +85,18 @@ class EditorManagement {
                     current.initTinyMce($(item).prop('id'));
                 });
                 break;
+            case 'mediumeditor':
+                $.each(element, (index, item) => {
+                    current.initMediumEditor(element);
+                });
+                break;
         }
     }
 
     init() {
         let $ckEditor = $('.editor-ckeditor');
         let $tinyMce = $('.editor-tinymce');
+        let $mediumEditor = $('.editor-medium');
         let current = this;
         if ($ckEditor.length > 0) {
             current.initEditor($ckEditor, {}, 'ckeditor');
@@ -75,7 +104,9 @@ class EditorManagement {
         if ($tinyMce.length > 0) {
             current.initEditor($tinyMce, {}, 'tinymce');
         }
-
+        if ($mediumEditor.length > 0) {
+            current.initEditor($mediumEditor, {}, 'mediumeditor');
+        }
         $(document).on('click', '.show-hide-editor-btn', event =>  {
             event.preventDefault();
             let _self = $(event.currentTarget);

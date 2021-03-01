@@ -145,6 +145,10 @@
                                 <input type="radio" name="rich_editor" class="hrv-radio" value="tinymce"
                                        @if (setting('rich_editor', 'ckeditor') == 'tinymce') checked @endif>TinyMCE
                             </label>
+                            <label class="hrv-label">
+                                <input type="radio" name="rich_editor" class="hrv-radio" value="mediumeditor"
+                                       @if (setting('rich_editor', 'ckeditor') == 'mediumeditor') checked @endif>Medium Editor
+                            </label>
                         </div>
 
                         <div class="form-group">
