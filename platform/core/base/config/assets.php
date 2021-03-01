@@ -25,6 +25,7 @@ return [
         'jquery-waypoints',
         'spectrum',
         'fancybox',
+        'video-js'
     ],
     'styles'         => [
         'fontawesome',
@@ -36,6 +37,7 @@ return [
         'datepicker',
         'spectrum',
         'fancybox',
+        'video-js'
     ],
     'resources'      => [
         'scripts' => [
@@ -311,6 +313,13 @@ return [
                     'local' => '/vendor/core/core/js-validation/js/js-validation.js',
                 ],
             ],
+            'video-js'    => [
+                'use_cdn'  => false,
+                'location' => 'footer',
+                'src'      => [
+                    'local' => '/vendor/core/core/base/libraries/videojs/video.min.js',
+                ],
+            ],
             // End JS
         ],
         /* -- STYLESHEET ASSETS -- */
@@ -462,6 +471,16 @@ return [
                 'location' => 'header',
                 'src'      => [
                     'local' => '/vendor/core/core/base/libraries/spectrum/spectrum.css',
+                ],
+            ],
+            'video-js'           => [
+                'use_cdn'  => false,
+                'location' => 'header',
+                'src'      => [
+                    'local' => [
+                        '/vendor/core/core/base/libraries/videojs/video-js.css',
+                        '/vendor/core/core/base/libraries/videojs/player-skin.css'
+                    ],
                 ],
             ],
         ],

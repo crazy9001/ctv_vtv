@@ -35,10 +35,10 @@ export class Ripple {
     }
     loadPlayer = (el, url) => {
         let player = videojs(el, {
-            autoplay: true,
+            autoplay: false,
             sources: [{
-                //type: "video/mp4",
-                type: "application/x-mpegURL",
+                type: "video/mp4",
+                //type: "application/x-mpegURL",
                 src: url
             }]
         });

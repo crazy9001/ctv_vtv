@@ -151,6 +151,11 @@ html {
   -o-transform: translate(-50%, -50%);
 }
 
+.rv-media-thumbnail .video-player {
+    position: absolute;
+    top: -20%;
+}
+
 .rv-media-container .btn {
   border-radius: 0;
   font-size: 13px;
@@ -906,8 +911,8 @@ html {
   background-color: rgba(219, 219, 219, 0.3);
 }
 .rv-media-container .rv-media-details {
-  width: 250px;
-  min-width: 250px;
+  width: 300px;
+  min-width: 300px;
   border-left: 1px solid #dbdbdb;
   flex-direction: column;
   transition: all 0.3s ease-in-out;
@@ -916,8 +921,8 @@ html {
 }
 .rv-media-container .rv-media-details .rv-media-thumbnail,
 .rv-media-container .rv-media-details .rv-media-description {
-  width: 250px;
-  min-width: 250px;
+  width: 300px;
+  min-width: 300px;
 }
 .rv-media-container .rv-media-details .rv-media-thumbnail {
   border-bottom: 1px solid #dbdbdb;

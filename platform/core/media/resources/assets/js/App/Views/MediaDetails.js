@@ -17,9 +17,40 @@ export class MediaDetails {
         ];
     }
 
+    loadPlayer = (el, url) => {
+        let player = videojs(el, {
+            autoplay: false,
+            sources: [{
+                type: MEDIA_ENABLE_HLS === true ? 'application/x-mpegURL' : 'video/mp4',
+                src: url
+            }]
+        });
+        player.play();
+    };
+
+    initPlayer() {
+        let videos = document.getElementsByTagName('video');
+        for (let i = 0; i < videos.length; i++) {
+            let video = videos[i];
+            this.loadPlayer(video.id, $(video).closest('div.video-player').data('video'));
+        }
+    }
+
     renderData(data) {
         let _self = this;
-        let thumb = data.type === 'image' ? '<img src="' + data.full_url + '" alt="' + data.name + '">' : '<i class="' + data.icon + '"></i>';
+
+        let thumb = '';
+        if (data.type === 'image') {
+            thumb = '<img src="' + data.full_url + '" alt="' + data.name + '">'
+        } else if (data.type === 'video') {
+            thumb = '<div class="embed-responsive embed-responsive-16by9 video-player mb30" data-video="'+ data.full_url +'">' +
+                '        <video id="stream-id_'+ Math.random().toString(36).substring(7) +'" controls class="video-js vjs-default-skin vjs-fluid"></video>' +
+                '    </div>'
+        } else {
+            thumb = '<i class="' + data.icon + '"></i>'
+        }
+        console.log(thumb);
+        //let thumb = data.type === 'image' ? '<img src="' + data.full_url + '" alt="' + data.name + '">' : '<i class="' + data.icon + '"></i>';
         let description = '';
         let useClipboard = false;
         _.forEach(data, (val, index) => {
@@ -46,5 +77,6 @@ export class MediaDetails {
                     $(this).tooltip('hide');
                 });
         }
+        this.initPlayer();
     }
 }

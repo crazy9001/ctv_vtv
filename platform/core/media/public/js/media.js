@@ -1514,10 +1514,23 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 var MediaDetails = /*#__PURE__*/function () {
   function MediaDetails() {
     _classCallCheck(this, MediaDetails);
+
+    _defineProperty(this, "loadPlayer", function (el, url) {
+      var player = videojs(el, {
+        autoplay: false,
+        sources: [{
+          type: MEDIA_ENABLE_HLS === true ? 'application/x-mpegURL' : 'video/mp4',
+          src: url
+        }]
+      });
+      player.play();
+    });
 
     this.$detailsWrapper = $('.rv-media-main .rv-media-details');
     this.descriptionItemTemplate = '<div class="rv-media-name"><p>__title__</p>__url__</div>';
@@ -1525,13 +1538,34 @@ var MediaDetails = /*#__PURE__*/function () {
   }
 
   _createClass(MediaDetails, [{
+    key: "initPlayer",
+    value: function initPlayer() {
+      var videos = document.getElementsByTagName('video');
+
+      for (var i = 0; i < videos.length; i++) {
+        var video = videos[i];
+        this.loadPlayer(video.id, $(video).closest('div.video-player').data('video'));
+      }
+    }
+  }, {
     key: "renderData",
     value: function renderData(data) {
       var _this = this;
 
       var _self = this;
 
-      var thumb = data.type === 'image' ? '<img src="' + data.full_url + '" alt="' + data.name + '">' : '<i class="' + data.icon + '"></i>';
+      var thumb = '';
+
+      if (data.type === 'image') {
+        thumb = '<img src="' + data.full_url + '" alt="' + data.name + '">';
+      } else if (data.type === 'video') {
+        thumb = '<div class="embed-responsive embed-responsive-16by9 video-player mb30" data-video="' + data.full_url + '">' + '        <video id="stream-id_' + Math.random().toString(36).substring(7) + '" controls class="video-js vjs-default-skin vjs-fluid"></video>' + '    </div>';
+      } else {
+        thumb = '<i class="' + data.icon + '"></i>';
+      }
+
+      console.log(thumb); //let thumb = data.type === 'image' ? '<img src="' + data.full_url + '" alt="' + data.name + '">' : '<i class="' + data.icon + '"></i>';
+
       var description = '';
       var useClipboard = false;
 
@@ -1559,6 +1593,8 @@ var MediaDetails = /*#__PURE__*/function () {
           $(_this).tooltip('hide');
         });
       }
+
+      this.initPlayer();
     }
   }]);
 

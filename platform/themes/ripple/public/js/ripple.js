@@ -60,10 +60,10 @@ var Ripple = /*#__PURE__*/function () {
 
     _defineProperty(this, "loadPlayer", function (el, url) {
       var player = videojs(el, {
-        autoplay: true,
+        autoplay: false,
         sources: [{
-          //type: "video/mp4",
-          type: "application/x-mpegURL",
+          type: "video/mp4",
+          //type: "application/x-mpegURL",
           src: url
         }]
       });
