@@ -1,3 +1,5 @@
+import {MediumEditorManager} from './medium-editor-manager';
+
 class EditorManagement {
     initCkEditor(element, extraConfig) {
         let config = {
@@ -46,26 +48,8 @@ class EditorManagement {
     }
 
     initMediumEditor(element) {
-        let editor = new MediumEditor(element, {
-            toolbar: {
-                /* These are the default options for the toolbar,
-                   if nothing is passed this is what is used */
-                allowMultiParagraphSelection: true,
-                buttons: ['bold', 'italic', 'underline', 'anchor', 'h2', 'h3', 'quote'],
-                diffLeft: 0,
-                diffTop: -10,
-                firstButtonClass: 'medium-editor-button-first',
-                lastButtonClass: 'medium-editor-button-last',
-                relativeContainer: null,
-                standardizeSelectionStart: false,
-                static: false,
-                /* options which only apply when static is true */
-                align: 'center',
-                sticky: false,
-                updateOnEmptySelection: false
-            }
-        });
-
+        let mediumManager = new MediumEditorManager(element);
+        mediumManager.init();
     }
 
     initEditor(element, extraConfig, type) {
@@ -107,7 +91,7 @@ class EditorManagement {
         if ($mediumEditor.length > 0) {
             current.initEditor($mediumEditor, {}, 'mediumeditor');
         }
-        $(document).on('click', '.show-hide-editor-btn', event =>  {
+        $(document).on('click', '.show-hide-editor-btn', event => {
             event.preventDefault();
             let _self = $(event.currentTarget);
             let $result = $('#' + _self.data('result'));
@@ -140,7 +124,7 @@ class EditorManagement {
                 $.ajax({
                     type: 'GET',
                     url: $(this).prop('href'),
-                    success: res =>  {
+                    success: res => {
                         if (res.error) {
                             Botble.showError(res.message);
                             return false;
@@ -156,7 +140,7 @@ class EditorManagement {
                             $('.short_code_modal .modal-title strong').text($(this).data('description'));
                         }
                     },
-                    error: data =>  {
+                    error: data => {
                         Botble.handleError(data);
                     }
                 });

@@ -1348,7 +1348,13 @@ var Botble = /*#__PURE__*/function () {
                 break;
 
               case 'media-insert-mediumeditor':
-                console.log('ahihi tahwfng chó');
+                $.each(files, function (index, file) {
+                  var html_content = '';
+
+                  if (file.type === 'image') {
+                    html_content = '<div class="embed-responsive embed-responsive-16by9 video-player mb30">' + '<img src="' + link + '" alt="' + file.name + '" />' + '</div><div class="embed-cms-caption"><p>' + file.name + '</p></div>';
+                  }
+                });
                 break;
 
               case 'select-image':

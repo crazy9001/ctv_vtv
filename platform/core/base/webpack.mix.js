@@ -18,6 +18,7 @@ mix
 
     .js(source + '/resources/assets/js/app.js', dist + '/js')
     .js(source + '/resources/assets/js/core.js', dist + '/js')
+    .js(source + '/resources/assets/js/medium-editor-manager.js', dist + '/js')
     .js(source + '/resources/assets/js/editor.js', dist + '/js')
     .js(source + '/resources/assets/js/cache.js', dist + '/js')
     .js(source + '/resources/assets/js/tags.js', dist + '/js')

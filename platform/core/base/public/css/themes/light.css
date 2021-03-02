@@ -4122,23 +4122,6 @@ Bootstrap Time Picker
   content: "";
 }
 
-.editor-medium {
-  height: 500px;
-}
-
-.medium-editor-element {
-  padding: 1rem 0.75rem;
-}
-
-.medium-editor-insert-plugin.medium-editor-placeholder:after {
-  padding: 1rem 0.75rem;
-}
-
-.medium-editor-insert-plugin .medium-insert-buttons {
-  margin-top: -0.3rem;
-  margin-left: -3.5rem;
-}
-
 /***********
 Page Header
 ***********/

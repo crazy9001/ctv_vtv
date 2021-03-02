@@ -1,15 +1,16 @@
 @if (!(isset($attributes['without-buttons']) && $attributes['without-buttons'] == true))
     <div style="height: 34px;">
         @php $result = !empty($attributes['id']) ? $attributes['id'] : $name; @endphp
-        <span class="editor-action-item action-show-hide-editor">
-            <button class="btn btn-primary show-hide-editor-btn" type="button" data-result="{{ $result }}">{{ trans('core/base::forms.show_hide_editor') }}</button>
-        </span>
+{{--        <span class="editor-action-item action-show-hide-editor">--}}
+{{--            <button class="btn btn-primary show-hide-editor-btn" type="button" data-result="{{ $result }}">{{ trans('core/base::forms.show_hide_editor') }}</button>--}}
+{{--        </span>--}}
         <span class="editor-action-item">
             <a href="#" class="btn_gallery btn btn-primary"
                data-result="{{ $result }}"
                data-multiple="true"
                data-action="media-insert-{{ setting('rich_editor', config('core.base.general.editor.primary')) }}">
-                <i class="far fa-image"></i> {{ trans('core/media::media.add') }}
+                <i class="far fa-image"></i>
+{{--                {{ trans('core/media::media.add') }}--}}
             </a>
         </span>
         @if (isset($attributes['with-short-code']) && $attributes['with-short-code'] == true && function_exists('shortcode'))
