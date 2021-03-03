@@ -1,15 +1,12 @@
 @php
     Assets::addStylesDirectly([
         'vendor/core/core/base/libraries/mediumeditor/medium-editor.min.css',
-        'vendor/core/core/base/libraries/mediumeditor/medium-editor-insert.css',
         'vendor/core/core/base/libraries/mediumeditor/extensions/tables/medium-editor-tables.css',
         'vendor/core/core/base/libraries/mediumeditor/flat.min.css',
         'vendor/core/core/base/libraries/mediumeditor/custom-medium-editor-skin.css',
     ])
     ->addScriptsDirectly([
         'vendor/core/core/base/libraries/mediumeditor/medium-editor.min.js',
-        'vendor/core/core/base/js/medium-editor-extensions.js',
-        'vendor/core/core/base/libraries/mediumeditor/medium-editor-insert.js',
         'vendor/core/core/base/libraries/mediumeditor/extensions/tables/medium-editor-tables.js',
         'vendor/core/core/base/js/editor.js'
     ]);

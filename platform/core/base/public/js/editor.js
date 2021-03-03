@@ -69,8 +69,7 @@ var MediumEditorManager = /*#__PURE__*/function () {
           updateOnEmptySelection: false
         },
         extensions: {
-          table: new MediumEditorTable(),
-          mention: new TCMention()
+          table: new MediumEditorTable()
         }
       }); //
       // const elm = document.getElementById(this.element[0].id);
