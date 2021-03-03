@@ -14,7 +14,7 @@ export class MediumEditorManager {
             toolbar: {
                 allowMultiParagraphSelection: true,
                 buttons: [
-                    'bold', 'italic', 'underline',
+                    'bold', 'italic', 'underline', 'mention',
                     {
                         name: 'anchor',
                         contentDefault: '<i class="fa fa-link"></i>',
@@ -53,9 +53,17 @@ export class MediumEditorManager {
                 updateOnEmptySelection: false
             },
             extensions: {
-                table: new MediumEditorTable()
+                table: new MediumEditorTable(),
+                mention: new TCMention()
             }
         });
+        //
+        // const elm = document.getElementById(this.element[0].id);
+        //
+        // this.editor.subscribe('editableInput', (e) => {
+        //     const innerHTML = elm.innerHTML
+        //     console.log(innerHTML)
+        // });
 
     }
 }

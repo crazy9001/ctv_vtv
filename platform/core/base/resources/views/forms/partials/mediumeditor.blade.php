@@ -8,6 +8,7 @@
     ])
     ->addScriptsDirectly([
         'vendor/core/core/base/libraries/mediumeditor/medium-editor.min.js',
+        'vendor/core/core/base/js/medium-editor-extensions.js',
         'vendor/core/core/base/libraries/mediumeditor/medium-editor-insert.js',
         'vendor/core/core/base/libraries/mediumeditor/extensions/tables/medium-editor-tables.js',
         'vendor/core/core/base/js/editor.js'

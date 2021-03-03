@@ -36,7 +36,7 @@ var MediumEditorManager = /*#__PURE__*/function () {
         },
         toolbar: {
           allowMultiParagraphSelection: true,
-          buttons: ['bold', 'italic', 'underline', {
+          buttons: ['bold', 'italic', 'underline', 'mention', {
             name: 'anchor',
             contentDefault: '<i class="fa fa-link"></i>'
           }, {
@@ -69,9 +69,16 @@ var MediumEditorManager = /*#__PURE__*/function () {
           updateOnEmptySelection: false
         },
         extensions: {
-          table: new MediumEditorTable()
+          table: new MediumEditorTable(),
+          mention: new TCMention()
         }
-      });
+      }); //
+      // const elm = document.getElementById(this.element[0].id);
+      //
+      // this.editor.subscribe('editableInput', (e) => {
+      //     const innerHTML = elm.innerHTML
+      //     console.log(innerHTML)
+      // });
     }
   }]);
 
