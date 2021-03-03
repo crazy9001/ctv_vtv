@@ -528,6 +528,7 @@ class Botble {
 
     static initMediaIntegrate() {
 
+        let _this = this;
         if (jQuery().rvMedia) {
 
             $('[data-type="rv-media-standard-alone-button"]').rvMedia({
@@ -538,70 +539,39 @@ class Botble {
             });
 
             $(document).find('.btn_gallery').rvMedia({
-                multiple: false,
-                onSelectFiles: (files, $el) => {
-                    switch ($el.data('action')) {
-                        case 'media-insert-ckeditor':
-                            let content = '';
-                            $.each(files, (index, file) => {
-                                let link = file.full_url;
-                                if (file.type === 'youtube') {
-                                    link = link.replace('watch?v=', 'embed/');
-                                    content += '<iframe width="420" height="315" src="' + link + '" frameborder="0" allowfullscreen></iframe><br />';
-                                } else if (file.type === 'image') {
-                                    content += '<img src="' + link + '" alt="' + file.name + '" /><br />';
-                                } else if (file.type === 'video') {
-                                    content += '[video-player title="' + file.name + '"]' + link + '[/video-player]<br />';
-                                } else {
-                                    content += '<a href="' + link + '">' + file.name + '</a><br />';
-                                }
-                            });
-
-                            CKEDITOR.instances[$el.data('result')].insertHtml(content);
-
-                            break;
-                        case 'media-insert-tinymce':
-                            let html = '';
-                            $.each(files, (index, file) => {
-                                let link = file.full_url;
-                                if (file.type === 'youtube') {
-                                    link = link.replace('watch?v=', 'embed/');
-                                    html += '<iframe width="420" height="315" src="' + link + '" frameborder="0" allowfullscreen></iframe><br />';
-                                } else if (file.type === 'image') {
-                                    html += '<img src="' + link + '" alt="' + file.name + '" /><br />';
-                                } else if (file.type === 'video') {
-                                    html += '[video-player title="' + file.name + '"]' + link + '[/video-player]<br />';
-                                } else {
-                                    html += '<a href="' + link + '">' + file.name + '</a><br />';
-                                }
-                            });
-                            tinymce.activeEditor.execCommand('mceInsertContent', false, html);
-                            break;
-                        case 'media-insert-mediumeditor':
-                            $.each(files, (index, file) => {
-                                let html_content = '';
-                                if (file.type === 'image') {
-                                    html_content = '<div class="embed-responsive embed-responsive-16by9 video-player mb30">' +
-                                                        '<img src="' + link + '" alt="' + file.name + '" />' +
-                                                    '</div><div class="embed-cms-caption"><p>'+ file.name +'</p></div>'
-                                }
-
-                            });
-                            break;
-                        case 'select-image':
-                            let firstImage = _.first(files);
-                            $el.closest('.image-box').find('.image-data').val(firstImage.url);
-                            $el.closest('.image-box').find('.preview_image').attr('src', firstImage.thumb);
-                            $el.closest('.image-box').find('.preview-image-wrapper').show();
-                            break;
-                        case 'attachment':
-                            let firstAttachment = _.first(files);
-                            $el.closest('.attachment-wrapper').find('.attachment-url').val(firstAttachment.url);
-                            $('.attachment-details').html('<a href="' + firstAttachment.full_url + '" target="_blank">' + firstAttachment.url + '</a>');
-                            break;
+                    multiple: false,
+                    onSelectFiles: (files, $el) => {
+                        switch ($el.data('action')) {
+                            case 'media-insert-ckeditor':
+                                let content = _this._renderPreviewEditor(files);
+                                CKEDITOR.instances[$el.data('result')].insertHtml(content);
+                                _this.initPlayer();
+                                break;
+                            case 'media-insert-tinymce':
+                                let html = _this._renderPreviewEditor(files);
+                                tinymce.activeEditor.execCommand('mceInsertContent', false, html);
+                                _this.initPlayer();
+                                break;
+                            case 'media-insert-mediumeditor':
+                                let html_content = _this._renderPreviewEditor(files);
+                                MediumEditor.util.insertHTMLCommand(window.document, html_content);
+                                _this.initPlayer();
+                                break;
+                            case 'select-image':
+                                let firstImage = _.first(files);
+                                $el.closest('.image-box').find('.image-data').val(firstImage.url);
+                                $el.closest('.image-box').find('.preview_image').attr('src', firstImage.thumb);
+                                $el.closest('.image-box').find('.preview-image-wrapper').show();
+                                break;
+                            case 'attachment':
+                                let firstAttachment = _.first(files);
+                                $el.closest('.attachment-wrapper').find('.attachment-url').val(firstAttachment.url);
+                                $('.attachment-details').html('<a href="' + firstAttachment.full_url + '" target="_blank">' + firstAttachment.url + '</a>');
+                                break;
+                        }
                     }
                 }
-            });
+            );
 
             $(document).on('click', '.btn_remove_image', event => {
                 event.preventDefault();
@@ -683,6 +653,27 @@ class Botble {
                 }
                 $current.sortable();
             });
+        }
+    }
+
+    static initPlayer() {
+        let videos = document.getElementsByTagName('video');
+        for (let i = 0; i < videos.length; i++) {
+            let video = videos[i];
+            Botble.initVideoPlayer(video.id,$(video).closest('div.video-player').data('video') )
+        }
+    }
+
+    static initVideoPlayer(element, data_video) {
+        let player = videojs(element, {
+            controls: true,
+        });
+        if (data_video && data_video !== '') {
+            let sources = [{"type": "video/mp4", "src": BotbleVariables.storage_url + data_video}];
+            //let sources = [{"type": "application/x-mpegURL", "src": 'https://nmxlive.akamaized.net/hls/live/529965/Live_1/index.m3u8'}];
+            player.pause();
+            player.src(sources);
+            player.load();
         }
     }
 
@@ -776,6 +767,27 @@ class Botble {
             url: route('membership.authorize'),
             type: 'POST'
         });
+    }
+
+    static _renderPreviewEditor(data) {
+        let html = '';
+        $.each(data, (index, file) => {
+            let link = file.full_url;
+            if (file.type === 'youtube') {
+                link = link.replace('watch?v=', 'embed/');
+                html += '<iframe width="420" height="315" src="' + link + '" frameborder="0" allowfullscreen></iframe><br />';
+            } else if (file.type === 'image') {
+                html += '<img src="' + link + '" alt="' + file.name + '" /><br />';
+            } else if (file.type === 'video') {
+                html += '<div class="video-player mb30" data-video="' + file.url + '">' +
+                            '<video id="stream-id_' + Math.random().toString(36).substring(7) + '" controls class="video-js vjs-default-skin vjs-fluid"></video>' +
+                            '<div class="embed-cms-caption">' + file.name + '</div>'
+                        '</div><br />';
+            } else {
+                html += '<a href="' + link + '">' + file.name + '</a><br />';
+            }
+        });
+        return html;
     }
 }
 

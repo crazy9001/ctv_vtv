@@ -1298,6 +1298,8 @@ var Botble = /*#__PURE__*/function () {
   }, {
     key: "initMediaIntegrate",
     value: function initMediaIntegrate() {
+      var _this = this;
+
       if (jQuery().rvMedia) {
         $('[data-type="rv-media-standard-alone-button"]').rvMedia({
           multiple: false,
@@ -1310,51 +1312,30 @@ var Botble = /*#__PURE__*/function () {
           onSelectFiles: function onSelectFiles(files, $el) {
             switch ($el.data('action')) {
               case 'media-insert-ckeditor':
-                var content = '';
-                $.each(files, function (index, file) {
-                  var link = file.full_url;
+                var content = _this._renderPreviewEditor(files);
 
-                  if (file.type === 'youtube') {
-                    link = link.replace('watch?v=', 'embed/');
-                    content += '<iframe width="420" height="315" src="' + link + '" frameborder="0" allowfullscreen></iframe><br />';
-                  } else if (file.type === 'image') {
-                    content += '<img src="' + link + '" alt="' + file.name + '" /><br />';
-                  } else if (file.type === 'video') {
-                    content += '[video-player title="' + file.name + '"]' + link + '[/video-player]<br />';
-                  } else {
-                    content += '<a href="' + link + '">' + file.name + '</a><br />';
-                  }
-                });
                 CKEDITOR.instances[$el.data('result')].insertHtml(content);
+
+                _this.initPlayer();
+
                 break;
 
               case 'media-insert-tinymce':
-                var html = '';
-                $.each(files, function (index, file) {
-                  var link = file.full_url;
+                var html = _this._renderPreviewEditor(files);
 
-                  if (file.type === 'youtube') {
-                    link = link.replace('watch?v=', 'embed/');
-                    html += '<iframe width="420" height="315" src="' + link + '" frameborder="0" allowfullscreen></iframe><br />';
-                  } else if (file.type === 'image') {
-                    html += '<img src="' + link + '" alt="' + file.name + '" /><br />';
-                  } else if (file.type === 'video') {
-                    html += '[video-player title="' + file.name + '"]' + link + '[/video-player]<br />';
-                  } else {
-                    html += '<a href="' + link + '">' + file.name + '</a><br />';
-                  }
-                });
                 tinymce.activeEditor.execCommand('mceInsertContent', false, html);
+
+                _this.initPlayer();
+
                 break;
 
               case 'media-insert-mediumeditor':
-                $.each(files, function (index, file) {
-                  var html_content = '';
+                var html_content = _this._renderPreviewEditor(files);
 
-                  if (file.type === 'image') {
-                    html_content = '<div class="embed-responsive embed-responsive-16by9 video-player mb30">' + '<img src="' + link + '" alt="' + file.name + '" />' + '</div><div class="embed-cms-caption"><p>' + file.name + '</p></div>';
-                  }
-                });
+                MediumEditor.util.insertHTMLCommand(window.document, html_content);
+
+                _this.initPlayer();
+
                 break;
 
               case 'select-image':
@@ -1443,6 +1424,34 @@ var Botble = /*#__PURE__*/function () {
       }
     }
   }, {
+    key: "initPlayer",
+    value: function initPlayer() {
+      var videos = document.getElementsByTagName('video');
+
+      for (var i = 0; i < videos.length; i++) {
+        var video = videos[i];
+        Botble.initVideoPlayer(video.id, $(video).closest('div.video-player').data('video'));
+      }
+    }
+  }, {
+    key: "initVideoPlayer",
+    value: function initVideoPlayer(element, data_video) {
+      var player = videojs(element, {
+        controls: true
+      });
+
+      if (data_video && data_video !== '') {
+        var sources = [{
+          "type": "video/mp4",
+          "src": BotbleVariables.storage_url + data_video
+        }]; //let sources = [{"type": "application/x-mpegURL", "src": 'https://nmxlive.akamaized.net/hls/live/529965/Live_1/index.m3u8'}];
+
+        player.pause();
+        player.src(sources);
+        player.load();
+      }
+    }
+  }, {
     key: "getViewPort",
     value: function getViewPort() {
       var e = window,
@@ -1493,6 +1502,27 @@ var Botble = /*#__PURE__*/function () {
     value: function onReleaseTool() {
       $('body').off('mousemove', Botble.onDragTool);
       $(window).off('mouseup', Botble.onReleaseTool);
+    }
+  }, {
+    key: "_renderPreviewEditor",
+    value: function _renderPreviewEditor(data) {
+      var html = '';
+      $.each(data, function (index, file) {
+        var link = file.full_url;
+
+        if (file.type === 'youtube') {
+          link = link.replace('watch?v=', 'embed/');
+          html += '<iframe width="420" height="315" src="' + link + '" frameborder="0" allowfullscreen></iframe><br />';
+        } else if (file.type === 'image') {
+          html += '<img src="' + link + '" alt="' + file.name + '" /><br />';
+        } else if (file.type === 'video') {
+          html += '<div class="video-player mb30" data-video="' + file.url + '">' + '<video id="stream-id_' + Math.random().toString(36).substring(7) + '" controls class="video-js vjs-default-skin vjs-fluid"></video>' + '<div class="embed-cms-caption">' + file.name + '</div>';
+          '</div><br />';
+        } else {
+          html += '<a href="' + link + '">' + file.name + '</a><br />';
+        }
+      });
+      return html;
     }
   }]);
 

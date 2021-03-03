@@ -4,6 +4,18 @@
     overflow: auto;
     border: none;
 }
+.editor-medium .video-player {
+    width: 638px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.editor-medium .embed-cms-caption {
+    padding: 13px;
+    border: solid #ededed;
+    border-width: 0 1px 1px 1px;
+    background: #fafafa;
+}
 
 .editor-medium p {
     border: 1px dashed #ccc;

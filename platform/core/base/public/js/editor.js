@@ -29,6 +29,7 @@ var MediumEditorManager = /*#__PURE__*/function () {
     key: "init",
     value: function init() {
       this.editor = new MediumEditor(this.element, {
+        buttonLabels: 'fontawesome',
         placeholder: {
           text: 'Nhập nội dung',
           hideOnClick: true
@@ -50,6 +51,9 @@ var MediumEditorManager = /*#__PURE__*/function () {
           }, {
             name: 'justifyRight',
             contentDefault: '<i class="fa fa-align-right"></i>'
+          }, {
+            name: 'table',
+            contentDefault: '<i class="fa fa-table"></i>'
           }],
           diffLeft: 0,
           diffTop: -10,
@@ -63,6 +67,9 @@ var MediumEditorManager = /*#__PURE__*/function () {
           align: 'center',
           sticky: false,
           updateOnEmptySelection: false
+        },
+        extensions: {
+          table: new MediumEditorTable()
         }
       });
     }

@@ -478,8 +478,7 @@ return [
                 'location' => 'header',
                 'src'      => [
                     'local' => [
-                        '/vendor/core/core/base/libraries/videojs/video-js.css',
-                        '/vendor/core/core/base/libraries/videojs/player-skin.css'
+                        '/vendor/core/core/base/libraries/videojs/video-js.css'
                     ],
                 ],
             ],

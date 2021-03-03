@@ -4,8 +4,9 @@ export class MediumEditorManager {
         this.element = element
     }
 
-    init(){
+    init() {
         this.editor = new MediumEditor(this.element, {
+            buttonLabels: 'fontawesome',
             placeholder: {
                 text: 'Nhập nội dung',
                 hideOnClick: true
@@ -33,7 +34,11 @@ export class MediumEditorManager {
                     {
                         name: 'justifyRight',
                         contentDefault: '<i class="fa fa-align-right"></i>',
-                    }
+                    },
+                    {
+                        name: 'table',
+                        contentDefault: '<i class="fa fa-table"></i>',
+                    },
                 ],
                 diffLeft: 0,
                 diffTop: -10,
@@ -46,6 +51,9 @@ export class MediumEditorManager {
                 align: 'center',
                 sticky: false,
                 updateOnEmptySelection: false
+            },
+            extensions: {
+                table: new MediumEditorTable()
             }
         });
 
