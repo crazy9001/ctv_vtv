@@ -1,3 +1,31 @@
+import React, {useState} from 'react';
+import ReactDOM from 'react-dom';
+
+const _mediumEditor = require("medium-editor");
+require('medium-editor/dist/css/medium-editor.css');
+
+import { TCMention } from "medium-editor-tc-mention";
+require("medium-editor-tc-mention/lib/mention-panel.min.css");
+
+export function CustomizedTagComponent (props) {
+    const trigger = props.currentMentionText.substring(0, 1);
+    const [mentions, setMentions] = useState(["Demon Warlock", "Giao Linh"]);
+    return (
+        <div>
+            <span onClick={() => props.selectMentionCallback(null)}>
+                Cancel
+            </span>
+            {
+                mentions.map((mention, index) =>  (
+                    <span key={index} onClick={() => props.selectMentionCallback(trigger + `${mention}`)}>
+                        { trigger + `${mention}` }
+                    </span>
+                ))
+            }
+        </div>
+    );
+}
+
 export class MediumEditorManager {
 
     constructor(element) {
@@ -5,7 +33,7 @@ export class MediumEditorManager {
     }
 
     init() {
-        this.editor = new MediumEditor(this.element, {
+        this.editor = new _mediumEditor(this.element, {
             buttonLabels: 'fontawesome',
             placeholder: {
                 text: 'Nhập nội dung',
@@ -14,7 +42,7 @@ export class MediumEditorManager {
             toolbar: {
                 allowMultiParagraphSelection: true,
                 buttons: [
-                    'bold', 'italic', 'underline', 'mention',
+                    'bold', 'italic', 'underline',
                     {
                         name: 'anchor',
                         contentDefault: '<i class="fa fa-link"></i>',
@@ -53,7 +81,18 @@ export class MediumEditorManager {
                 updateOnEmptySelection: false
             },
             extensions: {
-                table: new MediumEditorTable()
+                "mention": new TCMention({
+                    tagName: "b",
+                    renderPanelContent: function (panelEl, currentMentionText, selectMentionCallback) {
+                        ReactDOM.render((
+                            <CustomizedTagComponent
+                                currentMentionText={currentMentionText}
+                                selectMentionCallback={selectMentionCallback}
+                            />
+                        ), panelEl);
+                    },
+                    activeTriggerList: ["#", "@"]
+                })
             },
         });
         //

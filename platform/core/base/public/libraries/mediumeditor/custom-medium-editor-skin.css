@@ -28,7 +28,7 @@
 .medium-editor-toolbar li button {
     min-width: unset;
     height: unset;
-    padding: 5px 10px;
+    padding: 5px 10px !important;
 }
 
 .medium-toolbar-arrow-under:after {
