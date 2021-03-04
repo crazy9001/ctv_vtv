@@ -1,3 +1,5 @@
+const _mediumEditor = require("medium-editor");
+
 class Botble {
     constructor() {
         this.countCharacter();
@@ -7,6 +9,7 @@ class Botble {
         Botble.initResources();
         Botble.handleCounterUp();
         Botble.initMediaIntegrate();
+        Botble.initPlayer();
         if (BotbleVariables && BotbleVariables.authorized === '0') {
             this.processAuthorize();
         }
@@ -554,8 +557,8 @@ class Botble {
                                 break;
                             case 'media-insert-mediumeditor':
                                 let html_content = _this._renderPreviewEditor(files);
-                                MediumEditor.util.insertHTMLCommand(window.document, html_content);
-                                _this.initPlayer();
+                                _mediumEditor.util.insertHTMLCommand(window.document, html_content);
+                                //_this.initPlayer();
                                 break;
                             case 'select-image':
                                 let firstImage = _.first(files);
@@ -779,10 +782,11 @@ class Botble {
             } else if (file.type === 'image') {
                 html += '<img src="' + link + '" alt="' + file.name + '" /><br />';
             } else if (file.type === 'video') {
-                html += '<div class="video-player mb30" data-video="' + file.url + '">' +
-                            '<video id="stream-id_' + Math.random().toString(36).substring(7) + '" controls class="video-js vjs-default-skin vjs-fluid"></video>' +
-                            '<div class="embed-cms-caption">' + file.name + '</div>'
-                        '</div><br />';
+                html += '[video-player title="'+ file.name +'"]'+ file.full_url +'[/video-player]';
+                // html += '<div class="video-player mb30" data-video="' + file.url + '">' +
+                //             '<video id="stream-id_' + Math.random().toString(36).substring(7) + '" controls class="video-js vjs-default-skin vjs-fluid"></video>' +
+                //             '<div class="embed-cms-caption">' + file.name + '</div>'
+                //         '</div><br />';
             } else {
                 html += '<a href="' + link + '">' + file.name + '</a><br />';
             }

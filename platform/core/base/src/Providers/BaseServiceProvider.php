@@ -18,6 +18,8 @@ use Botble\Base\Supports\Helper;
 use Botble\Base\Traits\LoadAndPublishDataTrait;
 use Botble\Setting\Providers\SettingServiceProvider;
 use Botble\Setting\Supports\SettingStore;
+use Botble\Shortcode\Compilers\ShortcodeCompiler;
+use Botble\Shortcode\Shortcode;
 use DateTimeZone;
 use Event;
 use Illuminate\Contracts\Container\BindingResolutionException;
@@ -49,6 +51,12 @@ class BaseServiceProvider extends ServiceProvider
     {
         $this->app->bind(ResourceRegistrar::class, function ($app) {
             return new CustomResourceRegistrar($app['router']);
+        });
+
+        $this->app->singleton('shortcode.compiler', ShortcodeCompiler::class);
+
+        $this->app->singleton('shortcode', function ($app) {
+            return new Shortcode($app['shortcode.compiler']);
         });
 
         Helper::autoload(__DIR__ . '/../../helpers');
