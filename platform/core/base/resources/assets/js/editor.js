@@ -212,4 +212,5 @@ class EditorManagement {
 
 $(document).ready(() => {
     new EditorManagement().init();
+    Botble.initPlayer();
 });

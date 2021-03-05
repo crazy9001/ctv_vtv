@@ -14,6 +14,9 @@
     $attributes['class'] = Arr::get($attributes, 'class', '') . ' form-control editor-medium';
     $attributes['id'] = Arr::get($attributes, 'id', $name);
     $attributes['rows'] = Arr::get($attributes, 'rows', 4);
-
+    $filter = array('<br>','</br>');
+    $result = preg_replace('%(?:\A<br\s*/?\s*>)+|(?:<br\s*/?\s*>)+$%i', '', $value);
+    $data = str_replace($filter,'',$result);
 @endphp
-{!! Form::textarea($name, $value, $attributes) !!}
+
+{!! Form::textarea($name, str_replace("<br/>", " ",  do_shortcode($data)), $attributes) !!}

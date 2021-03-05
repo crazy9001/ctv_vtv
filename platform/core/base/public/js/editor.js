@@ -38870,6 +38870,7 @@ var EditorManagement = /*#__PURE__*/function () {
 
 $(document).ready(function () {
   new EditorManagement().init();
+  Botble.initPlayer();
 });
 })();
 

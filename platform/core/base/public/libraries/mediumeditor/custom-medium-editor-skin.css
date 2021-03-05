@@ -4,17 +4,24 @@
     overflow: auto;
     border: none;
 }
-.editor-medium .video-player {
-    width: 638px;
-    margin-bottom: 15px;
-    text-align: center;
-}
+
 
 .editor-medium .embed-cms-caption {
     padding: 13px;
     border: solid #ededed;
     border-width: 0 1px 1px 1px;
     background: #fafafa;
+    text-align: center;
+}
+
+.editor-medium .video-content-box {
+    width: 638px;
+    margin-bottom: 15px
+}
+
+.editor-medium .video-content-box .video-player {
+    width: 100%;
+    text-align: center;
 }
 
 .editor-medium p {

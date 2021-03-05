@@ -9,7 +9,6 @@ class Botble {
         Botble.initResources();
         Botble.handleCounterUp();
         Botble.initMediaIntegrate();
-        Botble.initPlayer();
         if (BotbleVariables && BotbleVariables.authorized === '0') {
             this.processAuthorize();
         }
@@ -672,7 +671,8 @@ class Botble {
             controls: true,
         });
         if (data_video && data_video !== '') {
-            let sources = [{"type": "video/mp4", "src": BotbleVariables.storage_url + data_video}];
+            let sources = [{"type": "video/mp4", "src": data_video}];
+            //let sources = [{"type": "video/mp4", "src": BotbleVariables.storage_url + data_video}];
             //let sources = [{"type": "application/x-mpegURL", "src": 'https://nmxlive.akamaized.net/hls/live/529965/Live_1/index.m3u8'}];
             player.pause();
             player.src(sources);
@@ -776,20 +776,39 @@ class Botble {
         let html = '';
         $.each(data, (index, file) => {
             let link = file.full_url;
-            if (file.type === 'youtube') {
-                link = link.replace('watch?v=', 'embed/');
-                html += '<iframe width="420" height="315" src="' + link + '" frameborder="0" allowfullscreen></iframe><br />';
-            } else if (file.type === 'image') {
-                html += '<img src="' + link + '" alt="' + file.name + '" /><br />';
-            } else if (file.type === 'video') {
-                html += '[video-player title="'+ file.name +'"]'+ file.full_url +'[/video-player]';
-                // html += '<div class="video-player mb30" data-video="' + file.url + '">' +
-                //             '<video id="stream-id_' + Math.random().toString(36).substring(7) + '" controls class="video-js vjs-default-skin vjs-fluid"></video>' +
-                //             '<div class="embed-cms-caption">' + file.name + '</div>'
-                //         '</div><br />';
-            } else {
-                html += '<a href="' + link + '">' + file.name + '</a><br />';
+            switch (file.type) {
+                case 'document' :
+                    html += '<iframe width="420" height="315" src="' + link + '" frameborder="0" allowfullscreen></iframe>';
+                    break;
+                case 'youtube' :
+                    link = link.replace('watch?v=', 'embed/');
+                    html += '<iframe width="420" height="315" src="' + link + '" frameborder="0" allowfullscreen></iframe>';
+                    break;
+                case 'image' :
+                    html += '<img src="' + link + '" alt="' + file.name + '" />';
+                    break;
+                case 'video' :
+                    html += '[video-player title="'+ file.name +'"]'+ link +'[/video-player]';
+                    break;
+                default :
+                    html += '<a href="' + link + '">' + file.name + '</a>';
+                    break;
             }
+
+            // if (file.type === 'youtube') {
+            //     link = link.replace('watch?v=', 'embed/');
+            //     html += '<iframe width="420" height="315" src="' + link + '" frameborder="0" allowfullscreen></iframe><br />';
+            // } else if (file.type === 'image') {
+            //     html += '<img src="' + link + '" alt="' + file.name + '" /><br />';
+            // } else if (file.type === 'video') {
+            //     html += '[video-player title="'+ file.name +'"]'+ file.full_url +'[/video-player]';
+            //     // html += '<div class="video-player mb30" data-video="' + file.url + '">' +
+            //     //             '<video id="stream-id_' + Math.random().toString(36).substring(7) + '" controls class="video-js vjs-default-skin vjs-fluid"></video>' +
+            //     //             '<div class="embed-cms-caption">' + file.name + '</div>'
+            //     //         '</div><br />';
+            // } else {
+            //     html += '<a href="' + link + '">' + file.name + '</a><br />';
+            // }
         });
         return html;
     }

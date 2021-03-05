@@ -39,6 +39,7 @@ export class MediumEditorManager {
                 text: 'Nhập nội dung',
                 hideOnClick: true
             },
+
             toolbar: {
                 allowMultiParagraphSelection: true,
                 buttons: [

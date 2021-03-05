@@ -101,7 +101,8 @@ class PostController extends BaseController
         /**
          * @var Post $post
          */
-        $post = $this->postRepository->createOrUpdate(array_merge($request->input(), [
+        $post = $this->postRepository->createOrUpdate(array_merge($request->except('content'), [
+            'content' => process_content_before_insert($request->input('content')),
             'author_id' => Auth::user()->getKey(),
         ]));
 
@@ -150,8 +151,9 @@ class PostController extends BaseController
         BaseHttpResponse $response
     ) {
         $post = $this->postRepository->findOrFail($id);
-
-        $post->fill($request->input());
+        $post->fill(array_merge([
+            'content' => process_content_before_insert($request->input('content'))
+        ], $request->except('content')));
 
         $this->postRepository->createOrUpdate($post);
 
