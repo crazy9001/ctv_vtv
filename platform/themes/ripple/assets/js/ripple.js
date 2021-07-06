@@ -33,7 +33,25 @@ export class Ripple {
             });
         }, 500);
     }
-
+    loadPlayer = (el, url) => {
+        let player = videojs(el, {
+            autoplay: false,
+            sources: [{
+                type: "video/mp4",
+                //type: "application/x-mpegURL",
+                src: url
+            }]
+        });
+        player.hlsQualitySelector();
+        player.play();
+    };
+    initVideoPlayer() {
+        let videos = document.getElementsByTagName('video');
+        for (let i = 0; i < videos.length; i++) {
+            let video = videos[i];
+            this.loadPlayer(video.id, $(video).closest('div.video-player').data('video'));
+        }
+    }
     bindActionToElement() {
         closeSearch.on('click', event => {
             event.preventDefault();
@@ -57,6 +75,8 @@ export class Ripple {
             searchInput.val(e.target.value);
             this.searchFunction(e.target.value);
         });
+
+        this.initVideoPlayer();
     }
 }
 

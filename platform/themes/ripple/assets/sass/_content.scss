@@ -1288,6 +1288,22 @@ p:empty {
     font-size: 13px
 }
 
+.post--single .post__content .embed-cms-caption {
+    padding: 13px;
+    border: solid #ededed;
+    border-width: 0 1px 1px 1px;
+    background: #fafafa;
+}
+
+.post--single .post__content .embed-cms-caption p {
+    font-size: 12px;
+    line-height: 18px;
+    color: #666;
+    font-family: Arial !important;
+    text-align: center;
+    margin: 0;
+}
+
 .post--single .post__relate-group {
     text-align: left
 }

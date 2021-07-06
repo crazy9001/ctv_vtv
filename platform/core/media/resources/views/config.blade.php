@@ -10,5 +10,6 @@
             'has_more' =>  true,
         ],
         'chunk' => config('core.media.media.chunk'),
-    ]) !!}
+    ]) !!};
+    MEDIA_ENABLE_HLS = {!! json_encode(false) !!}
 </script>

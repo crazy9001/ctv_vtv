@@ -19,7 +19,17 @@ export class MediaDetails {
 
     renderData(data) {
         let _self = this;
-        let thumb = data.type === 'image' ? '<img src="' + data.full_url + '" alt="' + data.name + '">' : '<i class="' + data.icon + '"></i>';
+
+        let thumb = '';
+        if (data.type === 'image') {
+            thumb = '<img src="' + data.full_url + '" alt="' + data.name + '">'
+        } else if (data.type === 'video') {
+            thumb = $('<div class="video-player mb30" data-video="'+ data.url +'"><video id="stream-id_'+ Math.random().toString(36).substring(7) +'" class="video-js vjs-fluid vjs-default-skin"></video></div>');
+            thumb.attr('id', 'stream-id_' + Math.random().toString(36).substring(7));
+        } else {
+            thumb = '<i class="' + data.icon + '"></i>'
+        }
+        //let thumb = data.type === 'image' ? '<img src="' + data.full_url + '" alt="' + data.name + '">' : '<i class="' + data.icon + '"></i>';
         let description = '';
         let useClipboard = false;
         _.forEach(data, (val, index) => {
@@ -46,5 +56,6 @@ export class MediaDetails {
                     $(this).tooltip('hide');
                 });
         }
+        Botble.initPlayer();
     }
 }

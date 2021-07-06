@@ -1,0 +1,9 @@
+{
+    "name": "LiveTemplate",
+    "namespace": "Botble\\LiveTemplate\\",
+    "provider": "Botble\\LiveTemplate\\Providers\\LiveTemplateServiceProvider",
+    "author": "N/A",
+    "url": "N/A",
+    "version": "1.0",
+    "description": "The description for module live_template"
+}

@@ -86,8 +86,8 @@
     }
 
     .rv-media-details {
-        width: 250px;
-        min-width: 250px;
+        width: 350px;
+        min-width: 350px;
         border-left: 1px solid $color-lighter-black;
         @include lib-css(flex-direction, column);
         @include lib-css(transition, all 0.3s ease-in-out);
@@ -96,8 +96,8 @@
 
         .rv-media-thumbnail,
         .rv-media-description {
-            width: 250px;
-            min-width: 250px;
+            width: 350px;
+            min-width: 350px;
         }
 
         .rv-media-thumbnail {

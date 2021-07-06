@@ -109,6 +109,12 @@ class FormServiceProvider extends ServiceProvider
             'attributes' => [],
         ]);
 
+        Form::component('mediumeditor', 'core/base::forms.partials.mediumeditor', [
+            'name',
+            'value'      => null,
+            'attributes' => [],
+        ]);
+
         Form::component('customSelect', 'core/base::forms.partials.custom-select', [
             'name',
             'list'                => [],
