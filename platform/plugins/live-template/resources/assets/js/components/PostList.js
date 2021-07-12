@@ -118,7 +118,7 @@ const PostList = ({props}) => {
                                     <SENewsSearchWrapper>
                                         <form onSubmit={handleSubmitSearch}>
                                             <SESearchNewsPublishedStyled
-                                                placeholder={`Từ khóa`}
+                                                placeholder={`Nhập từ khóa`}
                                                 value={searchTerm}
                                                 onChange={handleChangeSearchInput}
                                             />

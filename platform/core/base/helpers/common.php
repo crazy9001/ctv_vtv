@@ -130,23 +130,25 @@ if (!function_exists('process_content_before_insert')) {
 
     function process_content_before_insert($content)
     {
-       //x dd(mb_convert_encoding(trim(preg_replace('/\s\s+/', ' ', $content)),'UTF-8'), LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
-        $doc = new DOMDocument();
-        libxml_use_internal_errors(true);
-        $doc->loadHTML(mb_convert_encoding(trim(preg_replace('/\s\s+/', ' ', $content)), 'HTML-ENTITIES', 'UTF-8'), LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
-        libxml_clear_errors();
-        $xpath = new DOMXpath($doc);
-        //dd($doc);
-        foreach ($xpath->query('//div[contains(attribute::class, "video-content-box")]') as $node) {
+        if($content){
+        //x dd(mb_convert_encoding(trim(preg_replace('/\s\s+/', ' ', $content)),'UTF-8'), LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
+            $doc = new DOMDocument();
+            libxml_use_internal_errors(true);
+            $doc->loadHTML(mb_convert_encoding(trim(preg_replace('/\s\s+/', ' ', $content)), 'HTML-ENTITIES', 'UTF-8'), LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
+            libxml_clear_errors();
+            $xpath = new DOMXpath($doc);
+            //dd($doc);
+            foreach ($xpath->query('//div[contains(attribute::class, "video-content-box")]') as $node) {
 
-            $title = isset($node->childNodes->item(3)->textContent) ? isset($node->childNodes->item(3)->textContent) : '';
-            $url_video = $node->childNodes->item(1)->getAttribute('data-video');
-            $newHtml = '[video-player title="' . $title. '"]' . $url_video . '[/video-player]';
-            //$node->parentNode->removeChild($node);
-            $node->parentNode->replaceChild($doc->createElement('div', $newHtml), $node);
-            //$doc->appendChild($doc->createElement('div', $newHtml));
+                $title = isset($node->childNodes->item(3)->textContent) ? isset($node->childNodes->item(3)->textContent) : '';
+                $url_video = $node->childNodes->item(1)->getAttribute('data-video');
+                $newHtml = '[video-player title="' . $title. '"]' . $url_video . '[/video-player]';
+                //$node->parentNode->removeChild($node);
+                $node->parentNode->replaceChild($doc->createElement('div', $newHtml), $node);
+                //$doc->appendChild($doc->createElement('div', $newHtml));
+            }
+            return $doc->C14N();
         }
-        return $doc->C14N();
         //return htmlspecialchars_decode(html_entity_decode($doc->C14N()));
     }
 }

@@ -57,6 +57,12 @@ class LiveTemplateController extends BaseController
     {
         page_title()->setTitle(trans('plugins/live-template::live-template.name'));
 
+        Assets::addStylesDirectly(['/vendor/core/plugins/live-template/assets/library/css/bootstrap.min.css', 
+        '/vendor/core/plugins/live-template/assets/library/css/all.css',
+        '/vendor/core/plugins/live-template/assets/library/css/fontawesome.css',
+        '/vendor/core/plugins/live-template/assets/library/css/brands.css',
+        '/vendor/core/plugins/live-template/assets/library/css/solid.css',
+        '/vendor/core/plugins/live-template/assets/main.css']);
         Assets::addScriptsDirectly(['/vendor/core/plugins/live-template/js/index.js']);
 
         return view('plugins/live-template::index');

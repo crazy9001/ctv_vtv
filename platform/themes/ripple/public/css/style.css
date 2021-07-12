@@ -16,7 +16,8 @@
 a,
 input,
 textarea,
-button {
+button,
+select {
   outline: none;
 }
 
@@ -31,6 +32,7 @@ h5:focus {
 
 a:focus,
 button:focus,
+select:focus,
 input:focus,
 textarea:focus {
   outline: none;
@@ -209,6 +211,7 @@ img {
  */
 button,
 input,
+select,
 textarea {
   font: inherit;
   /* 1 */
@@ -234,7 +237,8 @@ input {
  * Remove the inheritance of text transform in Edge, Firefox, and IE.
  * 1. Remove the inheritance of text transform in Firefox.
  */
-button {
+button,
+select {
   /* 1 */
   text-transform: none;
 }

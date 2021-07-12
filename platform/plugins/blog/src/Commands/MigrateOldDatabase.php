@@ -53,7 +53,8 @@ class MigrateOldDatabase extends Command
     public function handle()
     {
 
-        $response = Http::get('http://apictv.vtv.vn/api/v1/public/post/list/dao-tao?per_page=2');
+        $response = Http::get('http://apictv.vtv.vn/api/v1/public/post/list/dao-tao?per_page=200');
+
         $parseResponse = json_decode($response->body(), false);
 
         foreach ($parseResponse->data->data as $post) {
@@ -69,7 +70,7 @@ class MigrateOldDatabase extends Command
                 'author_id' => 1,
             ]));
             event(new CreatedContentEvent(POST_MODULE_SCREEN_NAME, $request, $post));
-            break;
+            //break;
         }
     }
 
