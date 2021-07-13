@@ -55,11 +55,11 @@ const FrontEndHeader = ({props}) => {
                     </div>
                 </div>
                 <div className="menu-mobile">
-                    <i onclick="openNav()" className="fas fa-bars" style={{color: '#fff'}} />
+                    <i className="fas fa-bars" style={{color: '#fff'}} />
                 </div>
                 <div id="mySidenav" className="sidenav">
                     <div className="d-flex flex-row-reverse align-items-center item-menu">
-                    <a href="javascript:void(0)" className="text-white" onclick="closeNav()">×</a>
+                    <a href="#" className="text-white">×</a>
                     </div>
                     <a href="#">Giới thiệu</a>
                     <a href="#">Tin tức &amp; sự kiện</a>

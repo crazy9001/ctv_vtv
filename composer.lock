@@ -64,16 +64,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.185.7",
+            "version": "3.185.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "7c0cd260e749374b5df247c4768c8f33f9a604e4"
+                "reference": "667a83e4a18cb75db3ce74162efc97123da96261"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/7c0cd260e749374b5df247c4768c8f33f9a604e4",
-                "reference": "7c0cd260e749374b5df247c4768c8f33f9a604e4",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/667a83e4a18cb75db3ce74162efc97123da96261",
+                "reference": "667a83e4a18cb75db3ce74162efc97123da96261",
                 "shasum": ""
             },
             "require": {
@@ -148,9 +148,9 @@
             "support": {
                 "forum": "https://forums.aws.amazon.com/forum.jspa?forumID=80",
                 "issues": "https://github.com/aws/aws-sdk-php/issues",
-                "source": "https://github.com/aws/aws-sdk-php/tree/3.185.7"
+                "source": "https://github.com/aws/aws-sdk-php/tree/3.185.10"
             },
-            "time": "2021-07-06T18:16:14+00:00"
+            "time": "2021-07-09T19:21:22+00:00"
         },
         {
             "name": "barryvdh/laravel-dompdf",
@@ -220,7 +220,7 @@
         },
         {
             "name": "botble/api",
-            "version": "dev-dev",
+            "version": "dev-fe-live-template",
             "dist": {
                 "type": "path",
                 "url": "./platform/packages/api",
@@ -314,7 +314,7 @@
         },
         {
             "name": "botble/menu",
-            "version": "dev-dev",
+            "version": "dev-fe-live-template",
             "dist": {
                 "type": "path",
                 "url": "./platform/packages/menu",
@@ -347,7 +347,7 @@
         },
         {
             "name": "botble/optimize",
-            "version": "dev-dev",
+            "version": "dev-fe-live-template",
             "dist": {
                 "type": "path",
                 "url": "./platform/packages/optimize",
@@ -376,7 +376,7 @@
         },
         {
             "name": "botble/page",
-            "version": "dev-dev",
+            "version": "dev-fe-live-template",
             "dist": {
                 "type": "path",
                 "url": "./platform/packages/page",
@@ -406,7 +406,7 @@
         },
         {
             "name": "botble/platform",
-            "version": "dev-dev",
+            "version": "dev-fe-live-template",
             "dist": {
                 "type": "path",
                 "url": "./platform/core",
@@ -492,7 +492,7 @@
         },
         {
             "name": "botble/plugin-management",
-            "version": "dev-dev",
+            "version": "dev-fe-live-template",
             "dist": {
                 "type": "path",
                 "url": "./platform/packages/plugin-management",
@@ -521,7 +521,7 @@
         },
         {
             "name": "botble/revision",
-            "version": "dev-dev",
+            "version": "dev-fe-live-template",
             "dist": {
                 "type": "path",
                 "url": "./platform/packages/revision",
@@ -550,7 +550,7 @@
         },
         {
             "name": "botble/seo-helper",
-            "version": "dev-dev",
+            "version": "dev-fe-live-template",
             "dist": {
                 "type": "path",
                 "url": "./platform/packages/seo-helper",
@@ -583,7 +583,7 @@
         },
         {
             "name": "botble/shortcode",
-            "version": "dev-dev",
+            "version": "dev-fe-live-template",
             "dist": {
                 "type": "path",
                 "url": "./platform/packages/shortcode",
@@ -612,7 +612,7 @@
         },
         {
             "name": "botble/sitemap",
-            "version": "dev-dev",
+            "version": "dev-fe-live-template",
             "dist": {
                 "type": "path",
                 "url": "./platform/packages/sitemap",
@@ -641,7 +641,7 @@
         },
         {
             "name": "botble/slug",
-            "version": "dev-dev",
+            "version": "dev-fe-live-template",
             "dist": {
                 "type": "path",
                 "url": "./platform/packages/slug",
@@ -673,7 +673,7 @@
         },
         {
             "name": "botble/theme",
-            "version": "dev-dev",
+            "version": "dev-fe-live-template",
             "dist": {
                 "type": "path",
                 "url": "./platform/packages/theme",
@@ -714,7 +714,7 @@
         },
         {
             "name": "botble/widget",
-            "version": "dev-dev",
+            "version": "dev-fe-live-template",
             "dist": {
                 "type": "path",
                 "url": "./platform/packages/widget",
@@ -2266,16 +2266,16 @@
         },
         {
             "name": "google/apiclient-services",
-            "version": "v0.202.0",
+            "version": "v0.203.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/googleapis/google-api-php-client-services.git",
-                "reference": "c72cb04fde47a2cc3336c1f513f9ff5db27ccc35"
+                "reference": "e397f35251a49e0f4284d5f7d934164ca1274066"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/googleapis/google-api-php-client-services/zipball/c72cb04fde47a2cc3336c1f513f9ff5db27ccc35",
-                "reference": "c72cb04fde47a2cc3336c1f513f9ff5db27ccc35",
+                "url": "https://api.github.com/repos/googleapis/google-api-php-client-services/zipball/e397f35251a49e0f4284d5f7d934164ca1274066",
+                "reference": "e397f35251a49e0f4284d5f7d934164ca1274066",
                 "shasum": ""
             },
             "require": {
@@ -2304,9 +2304,9 @@
             ],
             "support": {
                 "issues": "https://github.com/googleapis/google-api-php-client-services/issues",
-                "source": "https://github.com/googleapis/google-api-php-client-services/tree/v0.202.0"
+                "source": "https://github.com/googleapis/google-api-php-client-services/tree/v0.203.0"
             },
-            "time": "2021-07-03T11:20:23+00:00"
+            "time": "2021-07-10T11:20:23+00:00"
         },
         {
             "name": "google/auth",
@@ -3897,16 +3897,16 @@
         },
         {
             "name": "league/oauth1-client",
-            "version": "v1.9.0",
+            "version": "v1.9.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/oauth1-client.git",
-                "reference": "1e7e6be2dc543bf466236fb171e5b20e1b06aee6"
+                "reference": "19a3ce488bb1547c906209e8293199ec34eaa5b1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/oauth1-client/zipball/1e7e6be2dc543bf466236fb171e5b20e1b06aee6",
-                "reference": "1e7e6be2dc543bf466236fb171e5b20e1b06aee6",
+                "url": "https://api.github.com/repos/thephpleague/oauth1-client/zipball/19a3ce488bb1547c906209e8293199ec34eaa5b1",
+                "reference": "19a3ce488bb1547c906209e8293199ec34eaa5b1",
                 "shasum": ""
             },
             "require": {
@@ -3966,9 +3966,9 @@
             ],
             "support": {
                 "issues": "https://github.com/thephpleague/oauth1-client/issues",
-                "source": "https://github.com/thephpleague/oauth1-client/tree/v1.9.0"
+                "source": "https://github.com/thephpleague/oauth1-client/tree/v1.9.1"
             },
-            "time": "2021-01-20T01:40:53+00:00"
+            "time": "2021-07-07T22:54:46+00:00"
         },
         {
             "name": "league/oauth2-server",
@@ -4059,16 +4059,16 @@
         },
         {
             "name": "maatwebsite/excel",
-            "version": "3.1.31",
+            "version": "3.1.32",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Maatwebsite/Laravel-Excel.git",
-                "reference": "cbe6370af70f93bd017f77ef92d32bd492a47fcb"
+                "reference": "9dc29b63a77fb7f2f514ef754af3a1b57e83cadf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Maatwebsite/Laravel-Excel/zipball/cbe6370af70f93bd017f77ef92d32bd492a47fcb",
-                "reference": "cbe6370af70f93bd017f77ef92d32bd492a47fcb",
+                "url": "https://api.github.com/repos/Maatwebsite/Laravel-Excel/zipball/9dc29b63a77fb7f2f514ef754af3a1b57e83cadf",
+                "reference": "9dc29b63a77fb7f2f514ef754af3a1b57e83cadf",
                 "shasum": ""
             },
             "require": {
@@ -4121,7 +4121,7 @@
             ],
             "support": {
                 "issues": "https://github.com/Maatwebsite/Laravel-Excel/issues",
-                "source": "https://github.com/Maatwebsite/Laravel-Excel/tree/3.1.31"
+                "source": "https://github.com/Maatwebsite/Laravel-Excel/tree/3.1.32"
             },
             "funding": [
                 {
@@ -4133,7 +4133,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-06-02T17:31:29+00:00"
+            "time": "2021-07-08T10:11:21+00:00"
         },
         {
             "name": "maennchen/zipstream-php",
@@ -10372,7 +10372,7 @@
         },
         {
             "name": "botble/dev-tool",
-            "version": "dev-dev",
+            "version": "dev-fe-live-template",
             "dist": {
                 "type": "path",
                 "url": "./platform/packages/dev-tool",
@@ -10468,7 +10468,7 @@
         },
         {
             "name": "botble/plugin-generator",
-            "version": "dev-dev",
+            "version": "dev-fe-live-template",
             "dist": {
                 "type": "path",
                 "url": "./platform/packages/plugin-generator",
@@ -10498,7 +10498,7 @@
         },
         {
             "name": "botble/theme-generator",
-            "version": "dev-dev",
+            "version": "dev-fe-live-template",
             "dist": {
                 "type": "path",
                 "url": "./platform/packages/theme-generator",
@@ -10528,7 +10528,7 @@
         },
         {
             "name": "botble/widget-generator",
-            "version": "dev-dev",
+            "version": "dev-fe-live-template",
             "dist": {
                 "type": "path",
                 "url": "./platform/packages/widget-generator",

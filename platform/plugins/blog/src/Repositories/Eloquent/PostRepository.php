@@ -9,6 +9,7 @@ use Eloquent;
 use Exception;
 use Illuminate\Database\Query\Builder;
 use Illuminate\Support\Arr;
+use DB;
 
 class PostRepository extends RepositoriesAbstract implements PostInterface
 {
@@ -29,14 +30,19 @@ class PostRepository extends RepositoriesAbstract implements PostInterface
         return $this->applyBeforeExecuteQuery($data)->get();
     }
 
-    public function getListPostInList(array $selected = [], $limit = 5, array $with = [])
+    public function getListPostInList(array $selected = [], $limit = 5, array $with = [], $orderByRaw = false)
     {
         $data = $this->model
             ->where('posts.status', BaseStatusEnum::PUBLISHED)
             ->whereIn('posts.id', $selected)
             ->limit($limit)
-            ->with($with)
-            ->orderBy('posts.created_at', 'desc');
+            ->with($with);
+        if($orderByRaw){
+            $imploded_strings = implode("','", $selected);
+            $data->orderByRaw(DB::raw("FIELD(id, '$imploded_strings')"));
+        }else{
+            $data->orderBy('posts.created_at', 'desc');
+        }
 
         return $this->applyBeforeExecuteQuery($data)->get();
     }

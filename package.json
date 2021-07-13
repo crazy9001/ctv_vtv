@@ -40,6 +40,7 @@
         "@types/react": "^16.9.0",
         "@types/react-dom": "^16.9.0",
         "bootstrap-vue": "^2.21.1",
+        "immutability-helper": "^3.1.1",
         "medium-editor": "^5.23.3",
         "medium-editor-tc-mention": "^2.2.4",
         "moment": "^2.29.1",
@@ -49,6 +50,7 @@
         "react-dnd-html5-backend": "^12.1.0",
         "react-dropdown-tree-select": "^2.5.1",
         "react-infinite-scroll-component": "^6.0.0",
+        "recoil": "^0.3.1",
         "sanitize-html": "^1.27.5",
         "styled-components": "^5.1.1",
         "vue-template-compiler": "^2.6.12"

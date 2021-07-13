@@ -32,8 +32,9 @@ const App = () => {
                         renderThumbVertical={renderThumb}
                         autoHide
                         style={{ width: `calc(100vw - 300px)`}}
-                    > <FrontEndLiveTemplateWrapper>
-                        <ContentWrapper/>
+                    >
+                        <FrontEndLiveTemplateWrapper>
+                            <ContentWrapper/>
                         </FrontEndLiveTemplateWrapper>
                     </Scrollbars>
             </LiveTemplateWrapper>
