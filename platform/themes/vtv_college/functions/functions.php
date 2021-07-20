@@ -33,14 +33,17 @@ register_sidebar([
 ]);
 
 
+add_shortcode('google-map', __('Google map'), __('Custom map'), function ($shortCode) {
+    return Theme::partial('short-codes.google-map', ['address' => $shortCode->content]);
+});
+
+shortcode()->setAdminConfig('google-map', Theme::partial('short-codes.google-map-admin-config'));
 
 add_shortcode('box-new', __('Box Tin Tức'), __('Box Tin Tức'), function ($shortCode) {
     return Theme::partial('short-codes.box-new', ['category' => $shortCode->category, 'title' => $shortCode->title, 'type' => $shortCode->type, 'paginate' => $shortCode->paginate]);
 });
 
 shortcode()->setAdminConfig('box-new', Theme::partial('short-codes.box-new-admin-config'));
-
-
 
 add_shortcode('gallery-media', __('Thư viện media'), __('Thư viện media'),
     function ($shortCode) {
