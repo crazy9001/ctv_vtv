@@ -156,5 +156,9 @@ export const FrontEndLiveTemplateWrapper = styled.div`
         position: unset !important
     }
 
+    main {
+        padding: 0
+    }
+
 `
 

@@ -62,7 +62,7 @@ const PostList = ({props}) => {
         if (hasMore) {
             axios.get(nextPage, {
                 params: {
-                    categories: [currentCategoryId, 2]
+                    categories: [currentCategoryId]
                 }
             })
                 .then(res => {
@@ -71,6 +71,8 @@ const PostList = ({props}) => {
                         if (data.length) {
                             setPostPublished([...postPublished, ...data]);
                             setNexPage(links.next);
+                        } else {
+                            setPostPublished([]);
                         }
                         if (!links.next) {
                             setHasmore(false)
@@ -111,9 +113,17 @@ const PostList = ({props}) => {
     }
 
     const onChangeCategory = (currentNode, selectedNodes) => {
-        console.log('onChange::', currentNode, selectedNodes)
         setCurrentCategoryId((state) => ({ ...state, currentCategoryId: currentNode.id }));
+        resetLocalState();
     }
+
+    const resetLocalState = () => {
+        setPostPublished([]);
+        setHasmore(true);
+        setNexPage(API_FILTER_POST);
+        fetchPostData();
+    }
+
 
     return (
         <ItemSettingsStyled>

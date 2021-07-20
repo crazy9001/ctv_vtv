@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 import OtherHighLightItem from "../components/OtherHighLightItem";
 import update from "immutability-helper";
 import _some from 'lodash/some';
-import {API_FILTER_POST, API_GET_HIGH_LIGHT_CATEGORY} from "../config/const";
+import {API_GET_HIGH_LIGHT_CATEGORY, API_UPDATE_HIGH_LIGHT_CATEGORY} from "../config/const";
 import FirstHighLightItem from "../components/FirstHighLightItem";
 import { useRecoilValue } from 'recoil';
 import {LIVE_TEMPLATE_STATE} from "../atom";
@@ -12,8 +12,34 @@ const HighLightBox = ({props}) => {
     const { currentCategoryId } = useRecoilValue(LIVE_TEMPLATE_STATE);
 
     const [state, setState] = useState({
+        isUpdate: false,
         posts: []
     })
+
+    useEffect(() => {
+        if(state.isUpdate){
+            let ids = state.posts.map((item, index) => {
+                return item.id;
+            })
+            axios.post(API_UPDATE_HIGH_LIGHT_CATEGORY , {
+                category: currentCategoryId,
+                ids: ids
+            })
+                .then(res => {
+                    if (!res.data.error) {
+                        //setDataPost(res.data.data)
+                        setState({
+                            ...state,
+                            isUpdate: false
+                        })
+                    }
+                })
+                .catch(res => {
+                    Botble.handleError(res.response.data);
+                })
+        }
+
+    }, [state.isUpdate])
 
     useEffect(() => {
         axios.get(API_GET_HIGH_LIGHT_CATEGORY, {
@@ -45,7 +71,8 @@ const HighLightBox = ({props}) => {
             });
             setState({
                 ...state,
-                posts: [...postState]
+                posts: [...postState],
+                isUpdate: true
             })
         }
     }

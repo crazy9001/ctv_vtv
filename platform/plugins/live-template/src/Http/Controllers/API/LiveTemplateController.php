@@ -105,8 +105,9 @@ class LiveTemplateController extends Controller
     public function getHighLightCategoryConfig(GetCategoryHighLightRequest $request, BaseHttpResponse $response)
     {
         $setting = json_decode(setting('theme-high-light-category'), true);
+        $limitPost = 5;
         if($setting && isset ($setting[$this->currentLocale][$request->category])){
-            $data = $this->postRepository->getListPostInList($setting[$this->currentLocale][$request->category]["ids"], 5, [], true);
+            $data = $this->postRepository->getListPostInList($setting[$this->currentLocale][$request->category]["ids"], $limitPost, [], true);
 
         }else{
             $data = $this->postRepository->getByCategory($request->category, 5);

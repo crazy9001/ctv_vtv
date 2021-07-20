@@ -298,6 +298,6 @@ class PostRepository extends RepositoriesAbstract implements PostInterface
 
         $this->model->where('posts.status', BaseStatusEnum::PUBLISHED)->orderBy($orderBy, $order);
 
-        return $this->applyBeforeExecuteQuery($this->model)->paginate((int)$filters['per_page']);
+        return $this->applyBeforeExecuteQuery($this->model)->paginate((int)$filters['per_page'])->appends($filters['categories']);
     }
 }

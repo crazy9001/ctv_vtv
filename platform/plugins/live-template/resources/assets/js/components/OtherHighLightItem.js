@@ -17,7 +17,7 @@ const OtherHighLightItem = (props) => {
                     <span className="ml-2">27/03/2021 - 15:30:17</span>
                 </div>
                 <div className="content-new-item" title={droppedItem.name || ''}>
-                    {droppedItem.name || ''}
+                    <h3>{droppedItem.name || ''}</h3>
                 </div>
             </div>
         </div>
