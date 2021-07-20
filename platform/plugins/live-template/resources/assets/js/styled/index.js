@@ -107,6 +107,8 @@ export const SENewsItemContent = styled.div`
         width: 20%;
         -webkit-box-flex: 1;
         flex-grow: 1;
+        border-radius: 6px;
+        background-size: cover
     }
 `
 
@@ -145,4 +147,18 @@ export const SENewsItemInfo = styled.div`
     }
 `
 
+export const FrontEndLiveTemplateWrapper = styled.div`
+    position: absolute;
+    width: 100%;
+
+    #header-home {
+        width: 100%;
+        position: unset !important
+    }
+
+    main {
+        padding: 0
+    }
+
+`
 

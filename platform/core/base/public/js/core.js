@@ -1318,7 +1318,7 @@ var Botble = /*#__PURE__*/function () {
 
                 CKEDITOR.instances[$el.data('result')].insertHtml(content);
 
-                _this.initPlayer();
+                _this.initPlayerIframe();
 
                 break;
 
@@ -1435,6 +1435,16 @@ var Botble = /*#__PURE__*/function () {
       }
     }
   }, {
+    key: "initPlayerIframe",
+    value: function initPlayerIframe() {
+      var videos = document.querySelector('.cke_wysiwyg_frame').contentWindow.document.getElementsByTagName('video');
+
+      for (var i = 0; i < videos.length; i++) {
+        var video = videos[i];
+        Botble.initVideoPlayer(video, $(video).closest('div.video-player').data('video'));
+      }
+    }
+  }, {
     key: "initVideoPlayer",
     value: function initVideoPlayer(element, data_video) {
       var player = videojs(element, {
@@ -1442,12 +1452,12 @@ var Botble = /*#__PURE__*/function () {
       });
 
       if (data_video && data_video !== '') {
+        //let sources = [{"type": "video/mp4", "src": data_video}];
+        //let sources = [{"type": "video/mp4", "src": BotbleVariables.storage_url + data_video}];
         var sources = [{
-          "type": "video/mp4",
-          "src": data_video
-        }]; //let sources = [{"type": "video/mp4", "src": BotbleVariables.storage_url + data_video}];
-        //let sources = [{"type": "application/x-mpegURL", "src": 'https://nmxlive.akamaized.net/hls/live/529965/Live_1/index.m3u8'}];
-
+          "type": "application/x-mpegURL",
+          "src": 'https://nmxlive.akamaized.net/hls/live/529965/Live_1/index.m3u8'
+        }];
         player.pause();
         player.src(sources);
         player.load();
@@ -1527,7 +1537,8 @@ var Botble = /*#__PURE__*/function () {
             break;
 
           case 'video':
-            html += '[video-player title="' + file.name + '"]' + link + '[/video-player]';
+            //html += '[video-player title="'+ file.name +'"]'+ link +'[/video-player]';
+            html += '<div class="video-player" id="video-player-' + file.id + '" data-video="' + link + '"><video class="vjs-tech video-js"></video></div>';
             break;
 
           default:
@@ -9672,8 +9683,9 @@ process.umask = function() { return 0; };
 /******/ 	// The require function
 /******/ 	function __webpack_require__(moduleId) {
 /******/ 		// Check if module is in cache
-/******/ 		if(__webpack_module_cache__[moduleId]) {
-/******/ 			return __webpack_module_cache__[moduleId].exports;
+/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
+/******/ 		if (cachedModule !== undefined) {
+/******/ 			return cachedModule.exports;
 /******/ 		}
 /******/ 		// Create a new module (and put it into the cache)
 /******/ 		var module = __webpack_module_cache__[moduleId] = {

@@ -25,7 +25,7 @@ export default class DropdownContainer extends Component {
     render() {
         const {data, ...rest} = this.props
         return (
-            <DropdownTreeSelect data={this.state.data} {...rest} className="mdl-demo"/>
+            <DropdownTreeSelect data={this.state.data} {...rest} className="mdl-demo" mode="radioSelect" />
         )
     }
 }

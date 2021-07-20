@@ -16,6 +16,7 @@ class EditorManagement {
         if (RV_MEDIA_URL.media_upload_from_editor) {
             config.filebrowserImageUploadUrl = RV_MEDIA_URL.media_upload_from_editor + '?method=ckeditor&type=image&_token=' + $('meta[name="csrf-token"]').attr('content');
         }
+        config.contentsCss = ['//vjs.zencdn.net/5.4.6/video-js.min.css'];
 
         let mergeConfig = {};
         $.extend(mergeConfig, config, extraConfig);

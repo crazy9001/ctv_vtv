@@ -547,7 +547,7 @@ class Botble {
                             case 'media-insert-ckeditor':
                                 let content = _this._renderPreviewEditor(files);
                                 CKEDITOR.instances[$el.data('result')].insertHtml(content);
-                                _this.initPlayer();
+                                _this.initPlayerIframe();
                                 break;
                             case 'media-insert-tinymce':
                                 let html = _this._renderPreviewEditor(files);
@@ -666,14 +666,23 @@ class Botble {
         }
     }
 
+    static initPlayerIframe() {
+        let videos = document.querySelector('.cke_wysiwyg_frame').contentWindow.document.getElementsByTagName('video');
+        for (let i = 0; i < videos.length; i++) {
+            let video = videos[i];
+
+            Botble.initVideoPlayer(video,$(video).closest('div.video-player').data('video') )
+        }
+    }
+
     static initVideoPlayer(element, data_video) {
         let player = videojs(element, {
             controls: true,
         });
         if (data_video && data_video !== '') {
-            let sources = [{"type": "video/mp4", "src": data_video}];
+            //let sources = [{"type": "video/mp4", "src": data_video}];
             //let sources = [{"type": "video/mp4", "src": BotbleVariables.storage_url + data_video}];
-            //let sources = [{"type": "application/x-mpegURL", "src": 'https://nmxlive.akamaized.net/hls/live/529965/Live_1/index.m3u8'}];
+            let sources = [{"type": "application/x-mpegURL", "src": 'https://nmxlive.akamaized.net/hls/live/529965/Live_1/index.m3u8'}];
             player.pause();
             player.src(sources);
             player.load();
@@ -788,7 +797,8 @@ class Botble {
                     html += '<img src="' + link + '" alt="' + file.name + '" />';
                     break;
                 case 'video' :
-                    html += '[video-player title="'+ file.name +'"]'+ link +'[/video-player]';
+                    //html += '[video-player title="'+ file.name +'"]'+ link +'[/video-player]';
+                    html += '<div class="video-player" id="video-player-'+file.id+'" data-video="'+ link +'"><video class="vjs-tech video-js"></video></div>'
                     break;
                 default :
                     html += '<a href="' + link + '">' + file.name + '</a>';

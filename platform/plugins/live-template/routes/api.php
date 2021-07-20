@@ -21,6 +21,17 @@ Route::group([
             ]);
 
 
+            Route::get('category', [
+                'as'   => 'settings.high_light.category',
+                'uses' => 'LiveTemplateController@getHighLightCategoryConfig',
+            ]);
+
+            Route::post('category', [
+                'as'   => 'settings.high_light.category.edit',
+                'uses' => 'LiveTemplateController@postHighLightCategoryConfig',
+            ]);
+
+
         });
 
     });

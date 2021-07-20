@@ -119,6 +119,14 @@ class BlogService
                     [$category->id]
                 ));
 
+                if(is_plugin_active('live-template')){
+                    $featured = get_high_light_post_category($category->id ,5, [
+                        'author',
+                        'categories' => function ($query) { $query->limit(1); },
+                    ]);
+                } else {
+                    $featured = get_posts_by_category($category->id, 5);
+                }
                 $posts = app(PostInterface::class)
                     ->getByCategory($allRelatedCategoryIds, theme_option('number_of_posts_in_a_category', 12));
 
@@ -131,7 +139,7 @@ class BlogService
                 return [
                     'view'         => 'category',
                     'default_view' => 'plugins/blog::themes.category',
-                    'data'         => compact('category', 'posts'),
+                    'data'         => compact('category', 'posts', 'featured'),
                     'slug'         => $category->slug,
                 ];
             case Tag::class:

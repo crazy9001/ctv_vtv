@@ -3,10 +3,11 @@ import React, {Fragment} from 'react';
 import {HTML5Backend} from 'react-dnd-html5-backend';
 import {DndProvider} from 'react-dnd';
 
-import {LiveTemplateWrapper} from './styled/index';
+import {LiveTemplateWrapper, FrontEndLiveTemplateWrapper} from './styled/index';
 import {Scrollbars} from "react-custom-scrollbars";
 
 import PostList from './components/PostList';
+import ContentWrapper from "./layout/ContentWrapper";
 
 const App = () => {
 
@@ -27,15 +28,15 @@ const App = () => {
         <DndProvider backend={HTML5Backend}>
             <LiveTemplateWrapper>
                 <PostList/>
-                <Fragment>
                     <Scrollbars
                         renderThumbVertical={renderThumb}
                         autoHide
-                        style={{ width: `250px`}}
+                        style={{ width: `calc(100vw - 300px)`}}
                     >
-
+                        <FrontEndLiveTemplateWrapper>
+                            <ContentWrapper/>
+                        </FrontEndLiveTemplateWrapper>
                     </Scrollbars>
-                </Fragment>
             </LiveTemplateWrapper>
         </DndProvider>
     )

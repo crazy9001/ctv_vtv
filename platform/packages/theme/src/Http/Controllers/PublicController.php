@@ -39,7 +39,7 @@ class PublicController extends Controller
 
         SeoHelper::setTitle(theme_option('site_title'));
 
-        Theme::breadcrumb()->add(__('Home'), url('/'));
+       Theme::breadcrumb()->add(__('Home'), url('/'));
 
         event(RenderingHomePageEvent::class);
 

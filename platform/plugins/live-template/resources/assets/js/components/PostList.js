@@ -3,7 +3,8 @@ import {
     API_GET_POST_PUBLISH,
     API_SEARCH_POST,
     API_GET_HIGH_LIGHT_HOME,
-    API_GET_POST_CATEGORIES
+    API_GET_POST_CATEGORIES,
+    API_FILTER_POST
 } from './../config/const'
 import InfiniteScroll from "react-infinite-scroll-component";
 
@@ -22,22 +23,27 @@ import {
 import PostItem from "./PostItem";
 
 import DropdownContainer from "./Dropdown/DropdownContainer";
-
+import { useRecoilValue, useSetRecoilState } from 'recoil';
+import {LIVE_TEMPLATE_STATE} from "../atom";
 
 const PostList = ({props}) => {
 
     const [postPublished, setPostPublished] = useState([])
-    const [nextPage, setNexPage] = useState(API_GET_POST_PUBLISH)
+    const [nextPage, setNexPage] = useState(API_FILTER_POST)
     const [hasMore, setHasmore] = useState(true)
     const [searchTerm, setSearchTerm] = useState('')
 
     const [dataCategories, setDataCategories] = useState({})
 
+    const { currentCategoryId } = useRecoilValue(LIVE_TEMPLATE_STATE);
+    const setCurrentCategoryId = useSetRecoilState(LIVE_TEMPLATE_STATE);
+
+    //console.log('currentCategoryId', currentCategoryId);
+
     useEffect(() => {
         fetchPostData();
-        getHighLightHome();
         getCategories();
-    }, [])
+    }, [currentCategoryId])
 
     const getCategories = () => {
         axios.get(API_GET_POST_CATEGORIES)
@@ -54,13 +60,19 @@ const PostList = ({props}) => {
 
     const fetchPostData = () => {
         if (hasMore) {
-            axios.get(nextPage)
+            axios.get(nextPage, {
+                params: {
+                    categories: [currentCategoryId]
+                }
+            })
                 .then(res => {
                     if (!res.data.error) {
                         const {links, data} = res.data
                         if (data.length) {
                             setPostPublished([...postPublished, ...data]);
                             setNexPage(links.next);
+                        } else {
+                            setPostPublished([]);
                         }
                         if (!links.next) {
                             setHasmore(false)
@@ -101,8 +113,17 @@ const PostList = ({props}) => {
     }
 
     const onChangeCategory = (currentNode, selectedNodes) => {
-        console.log('onChange::', currentNode, selectedNodes)
+        setCurrentCategoryId((state) => ({ ...state, currentCategoryId: currentNode.id }));
+        resetLocalState();
     }
+
+    const resetLocalState = () => {
+        setPostPublished([]);
+        setHasmore(true);
+        setNexPage(API_FILTER_POST);
+        fetchPostData();
+    }
+
 
     return (
         <ItemSettingsStyled>
@@ -118,7 +139,7 @@ const PostList = ({props}) => {
                                     <SENewsSearchWrapper>
                                         <form onSubmit={handleSubmitSearch}>
                                             <SESearchNewsPublishedStyled
-                                                placeholder={`Từ khóa`}
+                                                placeholder={`Nhập từ khóa`}
                                                 value={searchTerm}
                                                 onChange={handleChangeSearchInput}
                                             />

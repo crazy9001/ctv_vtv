@@ -69,7 +69,7 @@ class MediaServiceProvider extends ServiceProvider
             ->loadMigrations()
             ->loadAndPublishTranslations()
             ->loadAndPublishViews()
-            ->loadRoutes()
+            ->loadRoutes(['web', 'api'])
             ->publishAssets();
 
         $config = $this->app->make('config');
