@@ -57,13 +57,6 @@ add_shortcode('all-galleries', __('All Galleries'), __('All Galleries'), functio
 shortcode()->setAdminConfig('all-galleries', Theme::partial('short-codes.all-galleries-admin-config'));
 
 
-add_shortcode('event-categories-posts', __('Event categories posts'), __('Event categories posts'),
-    function ($shortCode) {
-        return Theme::partial('short-codes.event-categories-posts', ['category' => $shortCode->category]);
-    });
-
-    shortcode()->setAdminConfig('event-categories-posts', Theme::partial('short-codes.event-categories-posts-admin-config'));
-
 theme_option()
     ->setField([
         'id'         => 'primary_font',
