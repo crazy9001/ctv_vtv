@@ -2032,7 +2032,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "API_GET_HIGH_LIGHT_CATEGORY": () => (/* binding */ API_GET_HIGH_LIGHT_CATEGORY),
 /* harmony export */   "API_UPDATE_HIGH_LIGHT_CATEGORY": () => (/* binding */ API_UPDATE_HIGH_LIGHT_CATEGORY)
 /* harmony export */ });
-var API_URL = 'http://localhost:8000';
+var API_URL = BotbleVariables.base_url;
 var API_GET_POST_PUBLISH = API_URL + '/admin/live-templates/posts/published';
 var API_GET_HIGH_LIGHT_HOME = API_URL + '/admin/live-templates/posts/high_light/home';
 var API_SEARCH_POST = API_URL + '/api/v1/search';
