@@ -1,7 +1,7 @@
 <script type="text/javascript">
     var BotbleVariables = BotbleVariables || {};
-    BotbleVariables.storage_url = {{ env('APP_URL').'/storage/' }};
-    BotbleVariables.base_url = {{ env('APP_URL') }}
+    BotbleVariables.storage_url = {!! env('APP_URL').'/storage/' !!};
+        var base_url = "{{ env('APP_URL') }}"
     @if (Auth::check())
         BotbleVariables.languages = {
             tables: {!! json_encode(trans('core/base::tables'), JSON_HEX_APOS) !!},

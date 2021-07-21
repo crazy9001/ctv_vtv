@@ -44,7 +44,7 @@ const PostList = ({props}) => {
         fetchPostData();
         getCategories();
     }, [currentCategoryId])
-
+    console.log('API_GET_POST_CATEGORIES', API_GET_POST_CATEGORIES);
     const getCategories = () => {
         axios.get(API_GET_POST_CATEGORIES)
             .then(res => {
