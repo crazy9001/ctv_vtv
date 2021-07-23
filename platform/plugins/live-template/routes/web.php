@@ -35,12 +35,12 @@ Route::group(['namespace' => 'Botble\LiveTemplate\Http\Controllers', 'middleware
                 });
             });
 
-            Route::group(['prefix' => 'categories'], function () {
-                Route::get('/', [
-                    'uses'       => 'LiveTemplateController@getCategories',
-                    'permission' => 'live-template.index',
-                ]);
-            });
+//            Route::group(['prefix' => 'categories'], function () {
+//                Route::get('/', [
+//                    'uses'       => 'LiveTemplateController@getCategories',
+//                    'permission' => 'live-template.index',
+//                ]);
+//            });
 
         });
     });

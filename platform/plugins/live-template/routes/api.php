@@ -10,6 +10,7 @@ Route::group([
 
         Route::group(['prefix' => 'categories'], function () {
             Route::get('/', [
+                'as'   => 'live-templates.categories',
                 'uses'       => 'LiveTemplateController@getCategories',
                 'permission' => 'live-template.index',
             ]);
