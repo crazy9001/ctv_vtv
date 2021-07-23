@@ -50,6 +50,7 @@ const PostList = ({props}) => {
             .then(res => {
                 if (!res.data.error) {
                     const {data} = res;
+                    console.log('data', data);
                     setDataCategories(data.data);
                 }
             })

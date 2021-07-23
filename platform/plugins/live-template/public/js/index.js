@@ -1888,6 +1888,7 @@ var PostList = function PostList(_ref) {
     axios.get(_config_const__WEBPACK_IMPORTED_MODULE_1__.API_GET_POST_CATEGORIES).then(function (res) {
       if (!res.data.error) {
         var data = res.data;
+        console.log('data', data);
         setDataCategories(data.data);
       }
     })["catch"](function (res) {
