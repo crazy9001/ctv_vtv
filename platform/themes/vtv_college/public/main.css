@@ -1633,3 +1633,25 @@ main a:hover {
     top: 0;
     left: 0;
 }
+.pagination .page-item {
+    border-radius: 10px;
+}
+.pagination {
+    border-radius: unset;
+}
+.page-item.disabled .page-link {
+    border-radius: 10px;
+    margin-right: 10px;
+}
+.page-item.active .page-link {
+    border-radius: 10px;
+    margin-right: 10px;
+    background: linear-gradient(#ed2323, #cc0505);
+    border: 0;
+    color: #ffffff !important;
+}
+.page-link:not(:disabled):not(.disabled) {
+    border-radius: 10px;
+    margin-right: 10px;
+    color: #3e3e3e;
+}
