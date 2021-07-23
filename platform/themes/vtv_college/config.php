@@ -65,6 +65,7 @@ return [
                 ->usePath()->add('brands', 'library/js/brands.min.js')
                 ->usePath()->add('all', 'library/js/all.js')
                 ->usePath()->add('slick', 'library/js/slick.min.js')
+                ->usePath()->add('jscroll', 'library/js/masonry.pkgd.min.js')
                 ->usePath()->add('slider', 'scripts/slider-3d.js');
 
             $theme
@@ -76,6 +77,7 @@ return [
                 ->usePath()->add('brands', 'library/css/brands.css')
                 ->usePath()->add('slick-theme', 'library/css/slick-theme.css')
                 ->usePath()->add('slick', 'library/css/slick.css')
+                ->usePath()->add('intlTelInput', 'library/css/intlTelInput.css')
                 ->usePath()->add('main', 'main.css')
                 ->usePath()->add('style', 'css/style.css');
 

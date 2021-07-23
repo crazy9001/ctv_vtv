@@ -1,4 +1,3 @@
-@php Theme::layout('no-slider') @endphp
 @php Theme::set('section-name', $post->name) @endphp
 
 <div class="bg-banner-gioithieu d-flex flex-column justify-content-center align-items-center">

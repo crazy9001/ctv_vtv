@@ -1,4 +1,3 @@
-@php Theme::layout('no-slider') @endphp
 @php Theme::set('section-name', $category->name) @endphp
 
 <div class="bg-banner-gioithieu d-flex flex-column justify-content-center align-items-center ">
@@ -38,9 +37,6 @@
                                     </div>
                                     <div class="post__description_in_category">
                                         {{ $featureItem->description }}
-                                        {{--                                    <h5 class="the-le">--}}
-                                        {{--                                        Thể lệ cuộc thi “ MV CỦA TÔI” lần thứ 3--}}
-                                        {{--                                    </h5>--}}
                                     </div>
                                 </div>
                                 <div class="col-lg-4">
@@ -86,6 +82,7 @@
                                 <div class="section-banner">
                                     <div class="row">
                                         <div class="col-lg-8 gioi-thieu-item-1">
+
                                             @foreach ($posts as $index => $post)
                                                 <div class="category__post_item">
                                                     <h3>
@@ -111,7 +108,9 @@
                                                     </div>
                                                 </div>
                                             @endforeach
-                                            <button class="mt-4 button-add">Xem thêm</button>
+
+{{--                                            <button class="mt-4 button-add">Xem thêm</button>--}}
+                                            {{ $posts->links() }}
                                         </div>
                                         <div class="col-lg-4 item-right-1">
                                             {!! dynamic_sidebar('category_sidebar') !!}

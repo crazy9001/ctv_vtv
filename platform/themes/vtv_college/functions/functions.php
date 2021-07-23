@@ -4,14 +4,21 @@ register_page_template([
     'default' => 'Default',
 ]);
 
-register_page_template([
-    'no-slider' => __('No Slider'),
-]);
+//register_page_template([
+//    'no-slider' => __('No Slider'),
+//]);
 
 register_sidebar([
     'id'          => 'category_sidebar',
     'name'        => 'Category sidebar',
-    'description' => 'Side bar hiển thị trong chuyên mục',
+    'description' => 'Nội dung tin tức hiển thị sidebar chuyên mục',
+]);
+
+
+register_sidebar([
+    'id'          => 'tag_sidebar',
+    'name'        => 'Tag sidebar',
+    'description' => 'Nội dung tin tức hiển thị sidebar trong tag',
 ]);
 
 register_sidebar([

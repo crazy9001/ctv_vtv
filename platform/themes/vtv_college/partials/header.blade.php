@@ -19,15 +19,15 @@
         {!! Theme::header() !!}
     </head>
     <body @if (BaseHelper::siteLanguageDirection() == 'rtl') dir="rtl" @endif>
-        <div class="div-button">
-            <div class="d-flex flex-row h-100 justify-content-center align-items-center">
-                <i class="fas fa-comment-alt" style="color: #fff; width: 33px; height: 29px"></i>
-                <p>Chat trực tuyến</p>
-            </div>
-            <div class="up-top" onclick="topFunction()" id="btnUpTop">
-                <img src="../assets/images/up-top.png" class="img-fluid"/>
-            </div>
-        </div>
+{{--        <div class="div-button">--}}
+{{--            <div class="d-flex flex-row h-100 justify-content-center align-items-center">--}}
+{{--                <i class="fas fa-comment-alt" style="color: #fff; width: 33px; height: 29px"></i>--}}
+{{--                <p>Chat trực tuyến</p>--}}
+{{--            </div>--}}
+{{--            <div class="up-top" onclick="topFunction()" id="btnUpTop">--}}
+{{--                <img src="../assets/images/up-top.png" class="img-fluid"/>--}}
+{{--            </div>--}}
+{{--        </div>--}}
 
         <header id="header-home">
             <div class="container" style="height: 100%">
@@ -55,7 +55,7 @@
                                 <div class="col-3 d-flex align-items-center">
                                     <span class="text-fanpage">Email</span>
                                 </div>
-                                <div class="col-1 d-flex align-items-center">
+                                <div onclick="openSearch()" style="cursor: pointer" class="col-1 d-flex align-items-center">
                                     <i class="fas fa-search" style="color: #fff"></i>
                                 </div>
                             </div>
@@ -92,6 +92,24 @@
                         <a href="#">Cơ hội việc làm</a>
                         <a href="#">Thông báo</a>
                     </div>
+                </div>
+            </div>
+            <div id="header-search">
+                <div class="container">
+                    <form class="row" action="{{ route('public.search') }}">
+                        <input
+                            id="inputSearch"
+                            class="header-search-input d-search-none"
+                            type="text" name="q" placeholder="{{ __('Type to search...') }}"
+                        />
+                        <div
+                            onclick="closeSearch()"
+                            id="closeSearch"
+                            class="p-2 align-items-center"
+                        >
+                            <i class="fas fa-times"></i>
+                        </div>
+                    </form>
                 </div>
             </div>
         </header>
