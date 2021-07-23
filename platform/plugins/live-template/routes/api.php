@@ -6,6 +6,18 @@ Route::group([
     'namespace'  => 'Botble\LiveTemplate\Http\Controllers\API',
 ], function () {
 
+    Route::group(['prefix' => 'live-templates'], function () {
+
+        Route::group(['prefix' => 'categories'], function () {
+            Route::get('/', [
+                'uses'       => 'LiveTemplateController@getCategories',
+                'permission' => 'live-template.index',
+            ]);
+        });
+
+    });
+
+
     Route::group(['prefix' => 'settings'], function () {
 
         Route::group(['prefix' => 'high_light', 'permission' => 'settings.high_light'], function () {

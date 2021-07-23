@@ -9,6 +9,7 @@ use Botble\Blog\Repositories\Interfaces\PostInterface;
 use Botble\LiveTemplate\Http\Requests\CategoryConfigRequest;
 use Botble\LiveTemplate\Http\Requests\GetCategoryHighLightRequest;
 use Botble\LiveTemplate\Http\Requests\HomeConfigRequest;
+use Botble\LiveTemplate\Http\Resources\ListCategoryResource;
 use Botble\Setting\Http\Requests\SettingRequest;
 use Botble\Setting\Supports\SettingStore;
 use Illuminate\Http\Request;
@@ -118,5 +119,13 @@ class LiveTemplateController extends Controller
 
     }
 
+    public function getCategories(Request $request, BaseHttpResponse $response)
+    {
+        //$data = $this->categoriesRepository->getAllCategoriesWithChildren(['status' => BaseStatusEnum::PUBLISHED], [], ['id', 'name', 'parent_id']);
+        $data = get_categories_with_children();
+        return $response
+            ->setData(ListCategoryResource::collection($data))
+            ->toApiResponse();
+    }
 
 }
