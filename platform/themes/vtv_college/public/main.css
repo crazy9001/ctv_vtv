@@ -190,8 +190,8 @@ main a:hover {
 }
 .up-top {
     position: fixed;
-    bottom: 100;
-    right: 20;
+    bottom: 100px;
+    right: 20px;
     z-index: 1909;
     cursor: pointer;
     display: none;
@@ -432,6 +432,9 @@ main a:hover {
 .slick-list {
     margin: 50px 0 0 0 !important;
 }
+.slick-dots {
+    width: 90% !important;
+}
 .slick-dots li button:before {
     font-size: 40px !important;
     color: #fff !important;
@@ -466,31 +469,31 @@ main a:hover {
 .bg-footer2 ul {
     list-style-type: none;
 }
-.footer .bg-footer1 {
+.register-container .bg-footer1 {
     height: 120px;
     display: flex;
     align-items: center;
     background-image: url("./images/bg-footer2.png");
     background-repeat: no-repeat, repeat;
 }
-.footer .bg-footer1 input {
+.register-container .bg-footer1 input {
     width: 350px;
     height: 43px;
 }
-.footer .bg-footer1 .view-button {
+.register-container .bg-footer1 .view-button {
     display: flex;
     justify-content: center;
     border: 0;
     cursor: pointer;
     align-items: center;
-    min-width: 130;
+    min-width: 130px;
     min-height: 43px;
     background-color: #d72025;
 }
-.footer .bg-footer1 .view-button:focus {
+.register-container .bg-footer1 .view-button:focus {
     border-color: #d72025;
 }
-.footer .bg-footer1 .view-button .button-register {
+.register-container .bg-footer1 .view-button .button-register {
     font-size: 14px;
     color: #ffffff;
     margin-left: 11.35px;
@@ -1170,6 +1173,7 @@ main a:hover {
 }
 
 .bg-media {
+    position: relative;
     height: 780px;
     background-image: url("./images/bg-tuyensinh-bottom.png");
     background-repeat: no-repeat, repeat;
@@ -1625,14 +1629,14 @@ main a:hover {
     transform: translate(-50%, -50%) rotate(45deg);
 }
 
-.title {
-    font-size: 20px;
-    color: #000;
-    z-index: 1000;
-    position: absolute;
-    top: 0;
-    left: 0;
-}
+/* .title {
+  font-size: 20px;
+  color: #000;
+  z-index: 1000;
+  position: absolute;
+  top: 0;
+  left: 0;
+} */
 .pagination .page-item {
     border-radius: 10px;
 }
@@ -1654,4 +1658,78 @@ main a:hover {
     border-radius: 10px;
     margin-right: 10px;
     color: #3e3e3e;
+}
+.card-image {
+    display: block;
+    width: 100%;
+    position: relative;
+    height: 0;
+    padding: 56.25% 0 0 0;
+    overflow: hidden;
+    background-color: unset;
+}
+.card-image .img-resize {
+    object-fit: cover;
+    border-radius: 10px;
+    position: absolute;
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+.bg-prev-slick {
+    width: 50px;
+    height: 50px;
+    border: 2px solid #ffffff;
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 30%;
+    left: -3%;
+    cursor: pointer;
+}
+.bg-next-slick {
+    width: 50px;
+    height: 50px;
+    border: 2px solid #ffffff;
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 30%;
+    right: -3%;
+    cursor: pointer;
+}
+.bg-prev {
+    width: 50px;
+    height: 50px;
+    border: 2px solid #ffffff;
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 55%;
+    left: 3%;
+    cursor: pointer;
+}
+.bg-next {
+    width: 50px;
+    height: 50px;
+    border: 2px solid #ffffff;
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 55%;
+    right: 3%;
+    cursor: pointer;
 }

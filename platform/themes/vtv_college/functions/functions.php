@@ -66,6 +66,12 @@ add_shortcode('upcoming-events', __('Sự kiện sắp diễn ra'), __('Sự ki�
 
 shortcode()->setAdminConfig('upcoming-events', Theme::partial('short-codes.upcoming-events-admin-config'));
 
+add_shortcode('new-letter', __('Đăng ký nhận tin'), __('Đăng ký nhận tin'),
+    function ($shortCode) {
+        return Theme::partial('short-codes.new-letter');
+    });
+
+
 theme_option()
     ->setField([
         'id'         => 'copyright',

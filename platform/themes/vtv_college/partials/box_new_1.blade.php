@@ -43,7 +43,7 @@
                     @else
                         <div class="col-xl-3 p-0 col-lg-4 col-md-6 pr-2 flex-column item-new-ps">
                             <div class="bg-img h-100">
-                                <div class="d-flex align-items-center justify-content-center">
+                                <div class="d-flex align-items-center justify-content-center card-image">
                                     <a href="{{ $featureItem->url }}" title="{{ $featureItem->name }}">
                                         <img src="{{ RvMedia::getImageUrl($featureItem->image, 'featured', false, RvMedia::getDefaultImage()) }}"
                                              alt="{{ $featureItem->name }}" class="img-resize img-shadow-top" title="{{ $featureItem->name }}"/>

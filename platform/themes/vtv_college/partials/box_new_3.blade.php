@@ -39,10 +39,12 @@
                     @else
                         <div class="tuyensinh-item row mb-4">
                         <div class="col-sm-6 p-0 img-tuyensinh-item d-flex justify-content-center">
-                            <a href="{{ $featureItem->url }}">
-                                <img src="{{ RvMedia::getImageUrl($featureItem->image, 'featured', false, RvMedia::getDefaultImage()) }}"
-                                     alt="{{ $featureItem->name }}" class="img-resize img-border-radius-left" title="{{ $featureItem->name }}"/>
-                            </a>
+                            <div class="w-100 h-100 card-image">
+                                <a href="{{ $featureItem->url }}">
+                                    <img src="{{ RvMedia::getImageUrl($featureItem->image, 'featured', false, RvMedia::getDefaultImage()) }}"
+                                         alt="{{ $featureItem->name }}" class="img-resize img-border-radius-left" title="{{ $featureItem->name }}"/>
+                                </a>
+                            </div>
                         </div>
                         <div class="col-sm-6 d-flex flex-column">
                             <div class="time-item-ps d-flex flex-row align-items-center">

@@ -1,43 +1,5 @@
 <footer>
     <div class="footer">
-        @if (is_plugin_active('newsletter'))
-        <div class="bg-footer1">
-            <div class="container">
-                <div class="row d-flex align-items-center">
-                    <div class="col-xl-6 d-flex justify-content-center">
-                        <div class="row d-flex align-items-center">
-                            <img src="{{ Theme::asset()->url('images/email.png') }}" class="img-fluid"/>
-                            <h3>Đăng ký email nhận thông báo mới nhất từ CTV</h3>
-                        </div>
-                    </div>
-                    <div class="col-xl-6 d-flex justify-content-center">
-                        <div class="row">
-                            <form class="form-inline" action="{{ route('public.newsletter.subscribe') }}" method="post">
-                                @csrf
-                                <div class="form-group">
-                                    <input
-                                        type="email"
-                                        id="newsletter_email"
-                                        class="form-control"
-                                        name="email"
-                                        aria-describedby="emailHelp"
-                                        placeholder="{{ __('Your email') }}"
-                                    />
-                                </div>
-                                @if (setting('enable_captcha') && is_plugin_active('captcha'))
-                                    {!! Captcha::display() !!}
-                                @endif
-                                <button class="row view-button" type="submit">
-                                    <i class="fas fa-paper-plane" style="color: #fff"></i>
-                                    <div class="button-register">Đăng ký</div>
-                                </button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        @endif
         <div class="bg-footer2 d-flex align-items-center">
             <div class="container row h-100 d-flex align-items-center">
                 <div class="col-md-4">
@@ -104,14 +66,114 @@
     function closeNav() {
         document.getElementById("mySidenav").style.width = "0";
     }
+</script>
+<script>
+    function openSearch() {
+        document.getElementById("header-search").style.height = "60px";
+        setTimeout(() => {
+            document.getElementById("inputSearch").style.display = "block";
+            document.getElementById("closeSearch").style.display = "flex";
+        }, [500]);
+    }
+
+    function closeSearch() {
+        document.getElementById("header-search").style.height = "0px";
+        document.getElementById("inputSearch").style.display = "none";
+        document.getElementById("closeSearch").style.display = "none";
+    }
+</script>
+<script>
+    document.getElementById("defaultOpen").click();
+
+    function openCity(evt, cityName) {
+        // Declare all variables
+        var i, tabcontent, tablinks;
+
+        // Get all elements with class="tabcontent" and hide them
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+
+        // Get all elements with class="tablinks" and remove the class "active"
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+
+        // Show the current tab, and add an "active" class to the button that opened the tab
+        document.getElementById(cityName).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+</script>
+<script>
+    //Get the button
+    var mybutton = document.getElementById("btnUpTop");
+
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function () {
+        scrollFunction();
+    };
+
+    function scrollFunction() {
+        if (
+            document.body.scrollTop > 200 ||
+            document.documentElement.scrollTop > 200
+        ) {
+            mybutton.style.display = "block";
+        } else {
+            mybutton.style.display = "none";
+        }
+    }
+
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+</script>
+<script>
+    const slider = document.querySelector(".block-column");
+    let mouseDown = false;
+    let startX, scrollLeft;
+
+    let startDragging = function (e) {
+        mouseDown = true;
+        startX = e.pageX - slider.offsetLeft;
+        scrollLeft = slider.scrollLeft;
+    };
+    let stopDragging = function (event) {
+        mouseDown = false;
+    };
+
+    slider.addEventListener("mousemove", (e) => {
+        e.preventDefault();
+        if (!mouseDown) {
+            return;
+        }
+        const x = e.pageX - slider.offsetLeft;
+        const scroll = x - startX;
+        slider.scrollLeft = scrollLeft - scroll;
+    });
+
+    // Add the event listeners
+    slider.addEventListener("mousedown", startDragging, false);
+    slider.addEventListener("mouseup", stopDragging, false);
+    slider.addEventListener("mouseleave", stopDragging, false);
+</script>
+<script>
     $(".responsive").slick({
         dots: true,
         infinite: false,
         speed: 300,
         slidesToShow: 4,
         slidesToScroll: 4,
-        autoplay: true,
+        // autoplay: true,
         autoplaySpeed: 2000,
+        prevArrow:
+            '<div class="bg-prev-slick" onclick="onPrev()"><i class="fas fa-chevron-left" style="color: #fff"></i></div>',
+        nextArrow:
+            '<div class="bg-next-slick" onclick="onNext()"><i class="fas fa-chevron-right" style="color: #fff"></i></div>',
         responsive: [
             {
                 breakpoint: 1024,
@@ -141,94 +203,33 @@
             // instead of a settings object
         ],
     });
-    function openSearch() {
-        document.getElementById("header-search").style.height = "60px";
-        setTimeout(() => {
-            document.getElementById("inputSearch").style.display = "block";
-            document.getElementById("closeSearch").style.display = "flex";
-        }, [500]);
-    }
-
-    function closeSearch() {
-        document.getElementById("header-search").style.height = "0px";
-        document.getElementById("inputSearch").style.display = "none";
-        document.getElementById("closeSearch").style.display = "none";
-    }
-
-    // $(window).load(function () {
-    //     $("section img").click(function () {
-    //         $(".lightbox").fadeIn(300);
-    //         $(".lightbox").append(
-    //             "<img src='" +
-    //             $(this).attr("src") +
-    //             "' alt='" +
-    //             $(this).attr("alt") +
-    //             "' />"
-    //         );
-    //         $(".filter").css(
-    //             "background-image",
-    //             "url(" + $(this).attr("src") + ")"
-    //         );
-    //         /$(".title").append("<h1>" + $(this).attr("alt") + "</h1>");/
-    //         $("html").css("overflow", "hidden");
-    //         if ($(this).is(":last-child")) {
-    //             $(".arrowr").css("display", "none");
-    //             $(".arrowl").css("display", "block");
-    //         } else if ($(this).is(":first-child")) {
-    //             $(".arrowr").css("display", "block");
-    //             $(".arrowl").css("display", "none");
-    //         } else {
-    //             $(".arrowr").css("display", "block");
-    //             $(".arrowl").css("display", "block");
-    //         }
-    //     });
-    //
-    //     $(".close").click(function () {
-    //         $(".lightbox").fadeOut(300);
-    //         $("h1").remove();
-    //         $(".lightbox img").remove();
-    //         $("html").css("overflow", "auto");
-    //     });
-    //
-    //     $(document).keyup(function (e) {
-    //         if (e.keyCode == 27) {
-    //             $(".lightbox").fadeOut(300);
-    //             $(".lightbox img").remove();
-    //             $("html").css("overflow", "auto");
-    //         }
-    //     });
-    //
-    //     $(".arrowr").click(function () {
-    //         var imgSrc = $(".lightbox img").attr("src");
-    //         var search = $("section").find("img[src$='" + imgSrc + "']");
-    //         var newImage = search.next().attr("src");
-    //         $(".lightbox img").attr("src", search.next());
-    //         $(".lightbox img").attr("src", newImage);
-    //         $(".filter").css("background-image", "url(" + newImage + ")");
-    //
-    //         if (!search.next().is(":last-child")) {
-    //             $(".arrowl").css("display", "block");
-    //         } else {
-    //             $(".arrowr").css("display", "none");
-    //         }
-    //     });
-    //
-    //     $(".arrowl").click(function () {
-    //         var imgSrc = $(".lightbox img").attr("src");
-    //         var search = $("section").find("img[src$='" + imgSrc + "']");
-    //         var newImage = search.prev().attr("src");
-    //         /$(".lightbox img").attr("src", search.next());/
-    //         $(".lightbox img").attr("src", newImage);
-    //         $(".filter").css("background-image", "url(" + newImage + ")");
-    //
-    //         if (!search.prev().is(":first-child")) {
-    //             $(".arrowr").css("display", "block");
-    //         } else {
-    //             $(".arrowl").css("display", "none");
-    //         }
-    //     });
-    // });
-
+</script>
+<script>
+    $(".center").slick({
+        centerMode: true,
+        centerPadding: "60px",
+        slidesToShow: 3,
+        responsive: [
+            {
+                breakpoint: 768,
+                settings: {
+                    arrows: false,
+                    centerMode: true,
+                    centerPadding: "40px",
+                    slidesToShow: 3,
+                },
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    arrows: false,
+                    centerMode: true,
+                    centerPadding: "40px",
+                    slidesToShow: 1,
+                },
+            },
+        ],
+    });
 </script>
 </body>
 </html>

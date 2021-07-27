@@ -18,10 +18,6 @@
                         <div id="bu{{$index +1}}">
                             <div class="w-100 h-100" style="position: relative">
                                 <img class="img-resize" src="{{ RvMedia::getImageUrl($gallery->image, 'featured') }}" alt="{{ $gallery->name }}">
-                                <div class="gallery-detail">
-                                    <div class="gallery-title"><a href="{{ $gallery->url }}">{{ $gallery->name }}</a></div>
-                                    <div class="gallery-author">{{ trans('plugins/gallery::gallery.by') }} {{ $gallery->user ? $gallery->user->getFullName() : '' }}</div>
-                                </div>
                             </div>
                         </div>
                     @endforeach
