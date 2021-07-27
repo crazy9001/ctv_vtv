@@ -15,10 +15,13 @@
                 <div class="row p-2">
                     @if(count($posts) > 0)
                         @foreach ($posts as $post)
-                            <div class="col-lg-4 col-md-6 d-flex flex-column justify-content-center">
-                                <a href="{{ $post->url }}">
-                                    <img src="{{ RvMedia::getImageUrl($post->image, 'featured', false, RvMedia::getDefaultImage()) }}" class="img-fluid"/>
-                                </a>
+                            <div class="col-lg-4 col-md-6 d-flex flex-column">
+                                <div class="card-image">
+                                    <a href="{{ $post->url }}">
+                                        <img src="{{ RvMedia::getImageUrl($post->image, 'featured', false, RvMedia::getDefaultImage()) }}"
+                                             alt="{{ $post->name }}" class="img-resize img-border-radius-left" title="{{ $post->name }}"/>
+                                    </a>
+                                </div>
                                 <h3 class="text-roboto-medium font-size-18 mt-2">
                                     <a href="{{ $post->url }}" title="{{ $post->name }}">{{ $post->name }}</a>
                                 </h3>
