@@ -190,8 +190,8 @@ main a:hover {
 }
 .up-top {
     position: fixed;
-    bottom: 100px;
-    right: 20px;
+    bottom: 100;
+    right: 20;
     z-index: 1909;
     cursor: pointer;
     display: none;
@@ -483,7 +483,7 @@ main a:hover {
     border: 0;
     cursor: pointer;
     align-items: center;
-    min-width: 130px;
+    min-width: 130;
     min-height: 43px;
     background-color: #d72025;
 }

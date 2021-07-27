@@ -76,22 +76,25 @@
                             </div>
                         </div>
                     </div>
-                    <div class="menu-mobile">
-                        <i onclick="openNav()" class="fas fa-bars" style="color: #fff"></i>
-                    </div>
-                    <div id="mySidenav" class="sidenav">
-                        <div class="d-flex flex-row-reverse align-items-center item-menu">
-                            <a href="javascript:void(0)" class="text-white" onclick="closeNav()">&times;</a>
+                        <div class="menu-mobile">
+                            <i onclick="openNav()" class="fas fa-bars" style="color: #fff"></i>
                         </div>
-                        <a href="#">Giới thiệu</a>
-                        <a href="#">Tin tức & sự kiện</a>
-                        <a href="#">đào tạo</a>
-                        <a href="#">Tuyển sinh</a>
-                        <a href="#">Thư viện</a>
-                        <a href="#">Sinh viên</a>
-                        <a href="#">Cơ hội việc làm</a>
-                        <a href="#">Thông báo</a>
-                    </div>
+                        <div id="mySidenav" class="sidenav">
+                            <div class="d-flex flex-row-reverse align-items-center item-menu">
+                                <a
+                                    href="javascript:void(0)"
+                                    class="text-white"
+                                    onclick="closeNav()"
+                                >&times;</a
+                                >
+                            </div>
+                            {!!
+                                    Menu::renderMenuLocation('main-menu', [
+                                        'options' => ['class' => ''],
+                                        'view'    => 'main-menu-mobile',
+                                    ])
+                                !!}
+                        </div>
                 </div>
             </div>
             <div id="header-search">
