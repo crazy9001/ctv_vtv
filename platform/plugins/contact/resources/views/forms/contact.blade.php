@@ -105,33 +105,33 @@
                 </div>
             </div>
             <div class="col-lg-7 mt-2">
-                <form class="from-input">
-                    <div class="row m-0">
-                        <div class="col">
-                            <label class="mb-1">Họ và tên</label>
-                            <input type="text" class="form-control" placeholder="Nhập họ tên">
+                {!! Form::open(['route' => 'public.send.contact', 'method' => 'POST', 'class' => 'from-input contact-form']) !!}
+                <div class="row m-0">
+                    <div class="col">
+                        <label class="mb-1">Họ và tên</label>
+                        <input type="text" class="form-control" placeholder="Nhập họ tên" name="name">
+                    </div>
+                    <div class="col">
+                        <label class="mb-1">Số Điện Thoại</label>
+                        <div class="d-flex flex-row">
+                            <input initialCountry="auto" id="phone" type="tel" name="phone"/>
                         </div>
-                        <div class="col">
-                            <label class="mb-1">Số Điện Thoại</label>
-                            <div class="d-flex flex-row">
-                                <input initialCountry="auto" id="phone" type="tel" name="phone"/>
-                            </div>
-                        </div>
                     </div>
-                    <div class="col mt-3">
-                        <label class="mb-1">Email</label>
-                        <input type="text" class="form-control" placeholder="Nhập email">
-                    </div>
-                    <div class="col mt-3">
-                        <label class="mb-1">Chủ đề</label>
-                        <input type="text" class="form-control" placeholder="Nhập chủ đề">
-                    </div>
-                    <div class="col mt-3">
-                        <label class="mb-1">Nội dung tin nhắn</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                    </div>
-                    <button class=" ml-3 mt-3">Gửi</button>
-                </form>
+                </div>
+                <div class="col mt-3">
+                    <label class="mb-1">Email</label>
+                    <input type="text" class="form-control" placeholder="Nhập email" name="email">
+                </div>
+                <div class="col mt-3">
+                    <label class="mb-1">Chủ đề</label>
+                    <input type="text" class="form-control" placeholder="Nhập chủ đề" name="subject">
+                </div>
+                <div class="col mt-3">
+                    <label class="mb-1">Nội dung tin nhắn</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="content"></textarea>
+                </div>
+                <button type="submit" class=" ml-3 mt-3">Gửi</button>
+                {!! Form::close() !!}
             </div>
         </div>
     </div>
