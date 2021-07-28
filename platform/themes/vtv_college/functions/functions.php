@@ -71,6 +71,10 @@ add_shortcode('new-letter', __('Đăng ký nhận tin'), __('Đăng ký nhận t
         return Theme::partial('short-codes.new-letter');
     });
 
+add_shortcode('menu-content', __('Menu content'), __('Menu content'),
+    function ($shortCode) {
+        return Theme::partial('short-codes.menu-content');
+    });
 
 theme_option()
     ->setField([

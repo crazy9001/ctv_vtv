@@ -190,52 +190,52 @@ main a:hover {
 }
 .up-top {
     position: fixed;
-    bottom: 100;
-    right: 20;
+    bottom: 100px;
+    right: 20px;
     z-index: 1909;
     cursor: pointer;
     display: none;
 }
 @font-face {
-    font-family: LatoBlack;
+    font-family: LatoBlack, sans-serif;
     src: url("./font/Lato/Lato-Black.ttf");
 }
 @font-face {
-    font-family: LatoBlackItalic;
+    font-family: LatoBlackItalic, sans-serif;
     src: url("./font/Lato/Lato-BlackItalic.ttf");
 }
 @font-face {
-    font-family: LatoBold;
+    font-family: LatoBold, sans-serif;
     src: url("./font/Lato/Lato-Bold.ttf");
 }
 
 @font-face {
-    font-family: LatoBoldItalic;
+    font-family: LatoBoldItalic, sans-serif;
     src: url("./font/Lato/Lato-BoldItalic.ttf");
 }
 @font-face {
-    font-family: LatoItalic;
+    font-family: LatoItalic, sans-serif;
     src: url("./font/Lato/Lato-Italic.ttf");
 }
 @font-face {
-    font-family: LatoLight;
+    font-family: LatoLight, sans-serif;
     src: url("./font/Lato/Lato-Light.ttf");
 }
 
 @font-face {
-    font-family: LatoLightItalic;
+    font-family: LatoLightItalic, sans-serif;
     src: url("./font/Lato/Lato-LightItalic.ttf");
 }
 @font-face {
-    font-family: LatoRegular;
+    font-family: LatoRegular, sans-serif;
     src: url("./font/Lato/Lato-Regular.ttf");
 }
 @font-face {
-    font-family: LatoThin;
+    font-family: LatoThin, sans-serif;
     src: url("./font/Lato/Lato-Thin.ttf");
 }
 @font-face {
-    font-family: LatoThinItalic;
+    font-family: LatoThinItalic, sans-serif;
     src: url("./font/Lato/Lato-ThinItalic.ttf");
 }
 @font-face {
