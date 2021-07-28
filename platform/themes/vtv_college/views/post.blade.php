@@ -8,13 +8,8 @@
         <div class="line2"></div>
     </div>
     <div class="d-flex flex-row align-items-center banner-slug">
-        <span class="mr-1">trang chủ</span>
-        <i class="fas fa-caret-right" style="color: #fff"></i>
-        <span class="ml-1">{{ $post->name }}</span>
+        {!! Theme::partial('breadcrumbs') !!}
     </div>
-{{--    <span class="text-roboto-white font-size-16">--}}
-{{--         {{ $post->name }}--}}
-{{--    </span>--}}
 </div>
 <section class="section-banner">
     <div class="container">

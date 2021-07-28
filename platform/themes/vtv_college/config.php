@@ -66,6 +66,7 @@ return [
                 ->usePath()->add('all', 'library/js/all.js')
                 ->usePath()->add('slick', 'library/js/slick.min.js')
                 ->usePath()->add('jscroll', 'library/js/masonry.pkgd.min.js')
+                ->usePath()->add('carousel', 'library/js/carousel.js')
                 ->usePath()->add('slider', 'scripts/slider-3d.js');
 
             $theme

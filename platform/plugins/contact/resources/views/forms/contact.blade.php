@@ -73,7 +73,7 @@
 {{--{!! Form::close() !!}--}}
 
 
-<section class="mt-4">
+<section class="mt-4" style="margin-bottom: 15px">
     <div class="container info__contact">
         <div class="row">
             <div class="col-lg-5 info__contact--info">

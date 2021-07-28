@@ -8,9 +8,7 @@
         <div class="line2"></div>
     </div>
     <div class="d-flex flex-row align-items-center banner-slug">
-        <span class="mr-1">Trang chủ</span>
-        <i class="fas fa-caret-right" style="color: #fff"></i>
-        <span class="ml-1">{{$category->name}}</span>
+        {!! Theme::partial('breadcrumbs') !!}
     </div>
 </div>
 <section class="section-banner">
