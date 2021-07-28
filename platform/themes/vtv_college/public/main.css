@@ -196,48 +196,7 @@ main a:hover {
     cursor: pointer;
     display: none;
 }
-@font-face {
-    font-family: LatoBlack, sans-serif;
-    src: url("./font/Lato/Lato-Black.ttf");
-}
-@font-face {
-    font-family: LatoBlackItalic, sans-serif;
-    src: url("./font/Lato/Lato-BlackItalic.ttf");
-}
-@font-face {
-    font-family: LatoBold, sans-serif;
-    src: url("./font/Lato/Lato-Bold.ttf");
-}
 
-@font-face {
-    font-family: LatoBoldItalic, sans-serif;
-    src: url("./font/Lato/Lato-BoldItalic.ttf");
-}
-@font-face {
-    font-family: LatoItalic, sans-serif;
-    src: url("./font/Lato/Lato-Italic.ttf");
-}
-@font-face {
-    font-family: LatoLight, sans-serif;
-    src: url("./font/Lato/Lato-Light.ttf");
-}
-
-@font-face {
-    font-family: LatoLightItalic, sans-serif;
-    src: url("./font/Lato/Lato-LightItalic.ttf");
-}
-@font-face {
-    font-family: LatoRegular, sans-serif;
-    src: url("./font/Lato/Lato-Regular.ttf");
-}
-@font-face {
-    font-family: LatoThin, sans-serif;
-    src: url("./font/Lato/Lato-Thin.ttf");
-}
-@font-face {
-    font-family: LatoThinItalic, sans-serif;
-    src: url("./font/Lato/Lato-ThinItalic.ttf");
-}
 @font-face {
     font-family: RobotBlack;
     src: url("./font/Roboto/Roboto-Black.ttf");
@@ -1457,12 +1416,12 @@ main a:hover {
 .info__contact .info__contact--info h3 {
     color: #191919;
     font-size: 30px;
-    font-family: LatoBold;
+    font-family: RobotoBold;
 }
 .info__contact .info__contact--info span {
     color: #8b0000;
     font-size: 20px;
-    font-family: Lato;
+    font-family: Roboto;
 }
 .bg-click {
     width: 100%;
@@ -1496,7 +1455,7 @@ main a:hover {
 .from-input label {
     color: #707070;
     text-transform: uppercase;
-    font-family: LatoBold;
+    font-family: RobotoBold;
 }
 .iti--allow-dropdown input,
 .iti--allow-dropdown input[type="text"],

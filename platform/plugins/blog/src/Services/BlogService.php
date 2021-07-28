@@ -72,10 +72,10 @@ class BlogService
 
                 Theme::breadcrumb()->add(__('Home'), url('/'));
 
-                $category = $post->categories->first();
-                if ($category) {
-                    Theme::breadcrumb()->add($category->name, $category->url);
-                }
+//                $category = $post->categories->first();
+//                if ($category) {
+//                    Theme::breadcrumb()->add($category->name, $category->url);
+//                }
 
                 Theme::breadcrumb()->add($post->name, $post->url);
 
