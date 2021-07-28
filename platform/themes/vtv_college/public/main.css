@@ -190,8 +190,8 @@ main a:hover {
 }
 .up-top {
     position: fixed;
-    bottom: 100px;
-    right: 20px;
+    bottom: 100;
+    right: 20;
     z-index: 1909;
     cursor: pointer;
     display: none;
@@ -1813,9 +1813,6 @@ main a:hover {
 }
 
 .gallery-item-3 {
-    box-shadow: 0 0 30px rgba(255, 255, 255, 0.6),
-    0 0 60px rgba(255, 255, 255, 0.45), 0 0 110px rgba(255, 255, 255, 0.25),
-    0 0 100px rgba(255, 255, 255, 0.1);
     height: 50vh;
     opacity: 1;
     left: 50%;
