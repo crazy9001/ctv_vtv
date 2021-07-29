@@ -1,4 +1,14 @@
-/******/ (() => { // webpackBootstrap
+(function webpackUniversalModuleDefinition(root, factory) {
+	if(typeof exports === 'object' && typeof module === 'object')
+		module.exports = factory();
+	else if(typeof define === 'function' && define.amd)
+		define([], factory);
+	else if(typeof exports === 'object')
+		exports["Comments"] = factory();
+	else
+		root["Comments"] = factory();
+})(self, function() {
+return /******/ (() => { // webpackBootstrap
 /******/ 	"use strict";
 /******/ 	// The require scope
 /******/ 	var __webpack_require__ = {};
@@ -152,5 +162,7 @@ var Ripple = /*#__PURE__*/function () {
 $(document).ready(function () {
   new Ripple().bindActionToElement();
 });
+/******/ 	return __webpack_exports__;
 /******/ })()
 ;
+});

@@ -1,4 +1,14 @@
-/******/ (() => { // webpackBootstrap
+(function webpackUniversalModuleDefinition(root, factory) {
+	if(typeof exports === 'object' && typeof module === 'object')
+		module.exports = factory();
+	else if(typeof define === 'function' && define.amd)
+		define([], factory);
+	else if(typeof exports === 'object')
+		exports["Comments"] = factory();
+	else
+		root["Comments"] = factory();
+})(self, function() {
+return /******/ (() => { // webpackBootstrap
 var __webpack_exports__ = {};
 /*!*********************************************************************!*\
   !*** ./platform/plugins/analytics/resources/assets/js/analytics.js ***!
@@ -89,5 +99,7 @@ $(document).ready(function () {
   BDashboard.loadWidget($('#widget_analytics_browser').find('.widget-content'), route('analytics.browser'));
   BDashboard.loadWidget($('#widget_analytics_referrer').find('.widget-content'), route('analytics.referrer'));
 });
+/******/ 	return __webpack_exports__;
 /******/ })()
 ;
+});

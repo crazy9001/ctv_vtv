@@ -1,4 +1,14 @@
-/******/ (() => { // webpackBootstrap
+(function webpackUniversalModuleDefinition(root, factory) {
+	if(typeof exports === 'object' && typeof module === 'object')
+		module.exports = factory();
+	else if(typeof define === 'function' && define.amd)
+		define([], factory);
+	else if(typeof exports === 'object')
+		exports["Comments"] = factory();
+	else
+		root["Comments"] = factory();
+})(self, function() {
+return /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
 /***/ "./platform/core/base/resources/assets/js/medium-editor-manager.js":
@@ -149,9 +159,9 @@ var MediumEditorManager = /*#__PURE__*/function () {
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-50[0].rules[0].use[1]!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-50[0].rules[0].use[2]!./node_modules/medium-editor-tc-mention/lib/mention-panel.min.css":
+/***/ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-53[0].rules[0].use[1]!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-53[0].rules[0].use[2]!./node_modules/medium-editor-tc-mention/lib/mention-panel.min.css":
 /*!***********************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-50[0].rules[0].use[1]!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-50[0].rules[0].use[2]!./node_modules/medium-editor-tc-mention/lib/mention-panel.min.css ***!
+  !*** ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-53[0].rules[0].use[1]!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-53[0].rules[0].use[2]!./node_modules/medium-editor-tc-mention/lib/mention-panel.min.css ***!
   \***********************************************************************************************************************************************************************************************************************************/
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
@@ -173,9 +183,9 @@ ___CSS_LOADER_EXPORT___.push([module.id, ".medium-editor-mention-panel{font-fami
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-50[0].rules[0].use[1]!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-50[0].rules[0].use[2]!./node_modules/medium-editor/dist/css/medium-editor.css":
+/***/ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-53[0].rules[0].use[1]!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-53[0].rules[0].use[2]!./node_modules/medium-editor/dist/css/medium-editor.css":
 /*!*************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-50[0].rules[0].use[1]!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-50[0].rules[0].use[2]!./node_modules/medium-editor/dist/css/medium-editor.css ***!
+  !*** ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-53[0].rules[0].use[1]!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-53[0].rules[0].use[2]!./node_modules/medium-editor/dist/css/medium-editor.css ***!
   \*************************************************************************************************************************************************************************************************************************/
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
@@ -38228,7 +38238,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
 /* harmony import */ var _style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _css_loader_dist_cjs_js_clonedRuleSet_50_0_rules_0_use_1_postcss_loader_dist_cjs_js_clonedRuleSet_50_0_rules_0_use_2_mention_panel_min_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../css-loader/dist/cjs.js??clonedRuleSet-50[0].rules[0].use[1]!../../postcss-loader/dist/cjs.js??clonedRuleSet-50[0].rules[0].use[2]!./mention-panel.min.css */ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-50[0].rules[0].use[1]!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-50[0].rules[0].use[2]!./node_modules/medium-editor-tc-mention/lib/mention-panel.min.css");
+/* harmony import */ var _css_loader_dist_cjs_js_clonedRuleSet_53_0_rules_0_use_1_postcss_loader_dist_cjs_js_clonedRuleSet_53_0_rules_0_use_2_mention_panel_min_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../css-loader/dist/cjs.js??clonedRuleSet-53[0].rules[0].use[1]!../../postcss-loader/dist/cjs.js??clonedRuleSet-53[0].rules[0].use[2]!./mention-panel.min.css */ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-53[0].rules[0].use[1]!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-53[0].rules[0].use[2]!./node_modules/medium-editor-tc-mention/lib/mention-panel.min.css");
 
             
 
@@ -38237,11 +38247,11 @@ var options = {};
 options.insert = "head";
 options.singleton = false;
 
-var update = _style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_css_loader_dist_cjs_js_clonedRuleSet_50_0_rules_0_use_1_postcss_loader_dist_cjs_js_clonedRuleSet_50_0_rules_0_use_2_mention_panel_min_css__WEBPACK_IMPORTED_MODULE_1__.default, options);
+var update = _style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_css_loader_dist_cjs_js_clonedRuleSet_53_0_rules_0_use_1_postcss_loader_dist_cjs_js_clonedRuleSet_53_0_rules_0_use_2_mention_panel_min_css__WEBPACK_IMPORTED_MODULE_1__.default, options);
 
 
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_css_loader_dist_cjs_js_clonedRuleSet_50_0_rules_0_use_1_postcss_loader_dist_cjs_js_clonedRuleSet_50_0_rules_0_use_2_mention_panel_min_css__WEBPACK_IMPORTED_MODULE_1__.default.locals || {});
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_css_loader_dist_cjs_js_clonedRuleSet_53_0_rules_0_use_1_postcss_loader_dist_cjs_js_clonedRuleSet_53_0_rules_0_use_2_mention_panel_min_css__WEBPACK_IMPORTED_MODULE_1__.default.locals || {});
 
 /***/ }),
 
@@ -38258,7 +38268,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
 /* harmony import */ var _style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _css_loader_dist_cjs_js_clonedRuleSet_50_0_rules_0_use_1_postcss_loader_dist_cjs_js_clonedRuleSet_50_0_rules_0_use_2_medium_editor_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../css-loader/dist/cjs.js??clonedRuleSet-50[0].rules[0].use[1]!../../../postcss-loader/dist/cjs.js??clonedRuleSet-50[0].rules[0].use[2]!./medium-editor.css */ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-50[0].rules[0].use[1]!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-50[0].rules[0].use[2]!./node_modules/medium-editor/dist/css/medium-editor.css");
+/* harmony import */ var _css_loader_dist_cjs_js_clonedRuleSet_53_0_rules_0_use_1_postcss_loader_dist_cjs_js_clonedRuleSet_53_0_rules_0_use_2_medium_editor_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../css-loader/dist/cjs.js??clonedRuleSet-53[0].rules[0].use[1]!../../../postcss-loader/dist/cjs.js??clonedRuleSet-53[0].rules[0].use[2]!./medium-editor.css */ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-53[0].rules[0].use[1]!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-53[0].rules[0].use[2]!./node_modules/medium-editor/dist/css/medium-editor.css");
 
             
 
@@ -38267,11 +38277,11 @@ var options = {};
 options.insert = "head";
 options.singleton = false;
 
-var update = _style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_css_loader_dist_cjs_js_clonedRuleSet_50_0_rules_0_use_1_postcss_loader_dist_cjs_js_clonedRuleSet_50_0_rules_0_use_2_medium_editor_css__WEBPACK_IMPORTED_MODULE_1__.default, options);
+var update = _style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_css_loader_dist_cjs_js_clonedRuleSet_53_0_rules_0_use_1_postcss_loader_dist_cjs_js_clonedRuleSet_53_0_rules_0_use_2_medium_editor_css__WEBPACK_IMPORTED_MODULE_1__.default, options);
 
 
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_css_loader_dist_cjs_js_clonedRuleSet_50_0_rules_0_use_1_postcss_loader_dist_cjs_js_clonedRuleSet_50_0_rules_0_use_2_medium_editor_css__WEBPACK_IMPORTED_MODULE_1__.default.locals || {});
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_css_loader_dist_cjs_js_clonedRuleSet_53_0_rules_0_use_1_postcss_loader_dist_cjs_js_clonedRuleSet_53_0_rules_0_use_2_medium_editor_css__WEBPACK_IMPORTED_MODULE_1__.default.locals || {});
 
 /***/ }),
 
@@ -38876,5 +38886,7 @@ $(document).ready(function () {
 });
 })();
 
+/******/ 	return __webpack_exports__;
 /******/ })()
 ;
+});

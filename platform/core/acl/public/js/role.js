@@ -1,4 +1,14 @@
-/******/ (() => { // webpackBootstrap
+(function webpackUniversalModuleDefinition(root, factory) {
+	if(typeof exports === 'object' && typeof module === 'object')
+		module.exports = factory();
+	else if(typeof define === 'function' && define.amd)
+		define([], factory);
+	else if(typeof exports === 'object')
+		exports["Comments"] = factory();
+	else
+		root["Comments"] = factory();
+})(self, function() {
+return /******/ (() => { // webpackBootstrap
 var __webpack_exports__ = {};
 /*!*******************************************************!*\
   !*** ./platform/core/acl/resources/assets/js/role.js ***!
@@ -51,5 +61,7 @@ var Role = /*#__PURE__*/function () {
 $(document).ready(function () {
   new Role().init();
 });
+/******/ 	return __webpack_exports__;
 /******/ })()
 ;
+});

@@ -1,0 +1,9 @@
+{
+    "name": "Comment",
+    "namespace": "Botble\\Comment\\",
+    "provider": "Botble\\Comment\\Providers\\CommentServiceProvider",
+    "author": "Trung tâm bản quyền số VTVLive",
+    "url": "https://facebook.com/Spacy2804",
+    "version": "1.0",
+    "description": "The description for module comment"
+}
