@@ -5,6 +5,9 @@
         <i class="fas fa-book-open" style="color: #fff"></i>
         <div class="line2"></div>
     </div>
+    <div class="d-flex flex-row align-items-center banner-slug">
+        {!! Theme::partial('breadcrumbs') !!}
+    </div>
 </div>
 
 <section class="section-banner">

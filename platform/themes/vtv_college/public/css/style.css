@@ -132,3 +132,26 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 .footer {
   height: unset !important;
 }
+
+.title h3 {
+  text-transform: uppercase;
+}
+
+#btn-up-top {
+  display: inline-block;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+}
+
+.breadcrumbs__search--content span {
+  font-family: RobotoBold;
+  font-size: 24px;
+  color: #666666;
+  margin-left: 5px;
+}
+
+.input__search input {
+  outline: none;
+  padding: 0 10px;
+}

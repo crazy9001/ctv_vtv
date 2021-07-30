@@ -24,10 +24,11 @@
 {{--                <i class="fas fa-comment-alt" style="color: #fff; width: 33px; height: 29px"></i>--}}
 {{--                <p>Chat trực tuyến</p>--}}
 {{--            </div>--}}
-{{--            <div class="up-top" onclick="topFunction()" id="btnUpTop">--}}
-{{--                <img src="../assets/images/up-top.png" class="img-fluid"/>--}}
-{{--            </div>--}}
+{{--           --}}
 {{--        </div>--}}
+        <div id="btn-up-top" class="up-top" onclick="topFunction()" id="btnUpTop">
+            <img src="{{ Theme::asset()->url('images/up-top.png') }}" class="img-fluid"/>
+        </div>
 
         <header id="header-home">
             <div class="container" style="height: 100%">

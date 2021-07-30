@@ -41,14 +41,28 @@
             <div class="row">
                 <div class="col-lg-6">
                     <div class=" breadcrumbs__search--content d-flex flex-row justify-content-start">
-                        <h3>Search results for:</h3>
-                        <h3>{{ Request::input('q') }}</h3>
+                        <h3>Kết quả tìm kiếm cho: </h3>
+                        <span>{{ Request::input('q') }}</span>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+<section class="mt-4">
+    <div class="container">
+        <div class="input__search">
+            <div class="d-flex flex-row">
+                <form class="d-flex flex-row w-100" action="{{ route('public.search') }}">
+                    <input type="text" name="q" placeholder="{{ __('Type to search...') }}" />
+                    <button type="submit" class="p-3">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
 <section class="mt-4 mb-4">
     <div class="container result">
         <h3>{{ $posts->count() }} kết quả tìm kiếm cho "{{ Request::input('q') }}"</h3>
