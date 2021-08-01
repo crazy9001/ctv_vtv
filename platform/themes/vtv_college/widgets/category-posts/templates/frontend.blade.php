@@ -5,21 +5,18 @@
     @endphp
     <div class="item-hd p-2">
         <h3>{{ $config['name'] }}</h3>
-        <div class="hd-ct"></div>
+        <div class="hd-ct mb-4"></div>
         @foreach ($posts as $post)
-            <div class="mt-4">
+            <div class="student-activities-border d-flex flex-row mb-4">
                 @if($config['show_image'] == 1)
-                    <div class="card-image">
-                        <a href="{{ $post->url }}" data-number-line="2" title="{{ $post->name }}">
-                            <img src="{{ RvMedia::getImageUrl($post->image, 'featured', false, RvMedia::getDefaultImage()) }}" class="img-resize img-fluid mx-auto d-block" title="{{ $post->name }}"/>
-                        </a>
-                    </div>
+                    <a href="{{ $post->url }}"  title="{{ $post->name }}">
+                        <img src="{{ RvMedia::getImageUrl($post->image, 'featured', false, RvMedia::getDefaultImage()) }}"/>
+                    </a>
                 @endif
-                <h5 class="text-center">
-                    <a href="{{ $post->url }}" data-number-line="2" title="{{ $post->name }}">{{ $post->name }}</a>
-                </h5>
+                <h5> <a href="{{ $post->url }}"  title="{{ $post->name }}">{{ $post->name }}</a></h5>
             </div>
         @endforeach
     </div>
+
 @endif
 

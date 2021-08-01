@@ -92,6 +92,7 @@ video {
 main {
     padding-top: 100px;
 }
+
 @media only screen and (max-width: 1200px) {
     main {
         padding-top: 50px;
@@ -123,7 +124,7 @@ main a:hover {
     border-radius: 10px 10px 0 0;
 }
 .img-border-radius-left {
-    border-radius: 10px 0 0 10px;
+    border-radius: 10px;
 }
 .font-size-14 {
     font-size: 14px !important;
@@ -141,7 +142,7 @@ main a:hover {
     font-size: 24px !important;
 }
 .font-size-30 {
-    font-size: 30px !important;
+    font-size: 30 !important;
 }
 .text-roboto-medium {
     font-family: RobotoMedium;
@@ -320,34 +321,46 @@ main a:hover {
     background-image: url("./images/bg-banner.png");
     background-repeat: no-repeat, repeat;
 }
-.gioi-thieu-content-1 h3 {
+.introduce-content h3 {
     margin-top: 20px;
 }
-.gioi-thieu-content-1 h3 a {
+.introduce-content .introduce-item h3 a {
     font-family: RobotoMedium;
-    font-size: 24px;
+    font-size: 18px;
     color: #000000 !important;
     line-height: 34px;
 }
-.gioi-thieu-content-1 h4 a {
+.introduce-content .introduce-item .bg-content-item img {
+    width: 170px;
+    height: 113px;
+}
+.introduce-content h4 a {
     font-family: RobotoMedium;
     font-size: 18px;
     color: #333333 !important;
     line-height: 26px;
 }
-.gioi-thieu-content-1 .time-view {
-    margin-top: 10px;
+.introduce-content .time-view {
+    margin-top: 0px;
     font-family: "Roboto";
     color: #666666;
 }
-.gioi-thieu-content-1 h5 {
+.introduce-content h5 {
+    padding-top: 15px;
+}
+.introduce-content h5 a {
     margin-top: 10px;
-    font-family: "Roboto";
+    font-family: Roboto;
     color: #707070;
     line-height: 26px;
     font-size: 18px;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
-.gioi-thieu-content-1 .gioi-thieu-item-1 h3 a {
+.introduce-content .gioi-thieu-item-1 h3 a {
     font-family: RobotoMedium;
     font-size: 18px;
     color: #333333 !important;
@@ -372,17 +385,37 @@ main a:hover {
     font-size: 18px;
     color: #333333;
 }
-.item-right-1 {
-}
+
 .item-right-1 .item-hd {
     background-color: #f4f4f8;
     box-shadow: 0px 3px 6px #27347d1f;
     border-radius: 5px;
 }
+.item-right-1 .item-hd img {
+    width: 100px;
+    height: 75px;
+}
 .item-right-1 .item-hd h5 a {
     font-family: RobotoMedium;
-    font-size: 18px;
+    font-size: 16px;
     color: #333333 !important;
+    margin-top: 0 !important;
+    margin-left: 10px;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.student-activities-border {
+    border-bottom-width: 1;
+    border-bottom-style: solid;
+    border-color: #c0c0c0;
+    height: 86px;
+}
+
+.item-right-1 .item-hd h5 {
+    padding-top: 0 !important;
 }
 .hd-ct {
     height: 2px;
@@ -390,12 +423,12 @@ main a:hover {
     height: 2px;
     background-color: #9a0000;
 }
-.item-right-1 h5 {
-    color: #333333;
-    font-size: 16px;
-    font-family: RobotoMedium;
-    line-height: 26px;
-}
+/* .item-right-1 h5 {
+  color: #333333;
+  font-size: 16px;
+  font-family: RobotoMedium;
+  line-height: 26px;
+} */
 .button-add {
     box-shadow: 0px 3px 6px #27347d1f;
     border: 1px solid #9a000034;
@@ -404,51 +437,129 @@ main a:hover {
     padding: 10px 30px 11px 30px;
     cursor: pointer;
     margin-bottom: 20px;
+    outline: none !important;
 }
-.the-le {
+.rules {
     color: #333333 !important;
     font-family: RobotoMedium !important;
+    -webkit-line-clamp: 1 !important;
 }
 /* end gioithieu */
 /* tin-tuc-su-kien */
 /** @format */
-
-.event-tin-tuc-sukien {
+.news-event-content {
+    margin-top: 20px;
 }
-.event-tin-tuc-sukien .bg-event-tin-tuc-sukien .bg-fake {
-    height: 10px;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    background-color: #9a0000;
+.news-content-container {
+    height: 680px;
 }
-.event-tin-tuc-sukien .bg-event-tin-tuc-sukien {
-    width: 100%;
-    background-color: #e4e6ef;
-    box-shadow: 0px 3px 6px #27347d1f;
-    border-radius: 10px;
-}
-.tin-tuc-su-kien-center {
-}
-.tin-tuc-su-kien-center .time-view {
-    margin-top: 10px;
-    font-family: "Roboto";
-    color: #666666;
-}
-.tin-tuc-su-kien-center {
-    background-color: #f4f4f8;
+.list-news-event {
+    height: 680px;
+    overflow-y: auto;
     box-shadow: 0px 3px 6px #27347d1f;
     border-radius: 5px;
+    background: #f4f4f8;
 }
-.tin-tuc-su-kien-center h5 a {
-    font-size: 20px;
-    color: #464646 !important;
-    font-family: RobotoMedium;
+.list-news-event::-webkit-scrollbar {
+    display: none;
 }
-.tin-tuc-su-kien-center span {
+
+/* Track */
+.list-news-event h5 {
+    padding-top: 10px;
+}
+.list-news-event .rules a {
+    color: #333333 !important;
+    font-family: RobotoMedium !important;
+    -webkit-line-clamp: 1 !important;
     font-size: 18px;
+}
+.upcoming-events {
+    box-shadow: 0px 3px 6px #27347d1f;
+    border-radius: 10px;
+    background: #e4e6ef;
+    margin-top: 50px;
+}
+.upcoming-events .card-image-upcoming-events {
+    display: block;
+    width: 100%;
+    position: relative;
+    height: 0;
+    padding: 180px 0 0 0;
+    overflow: hidden;
+    background-color: unset;
+}
+.upcoming-events h3 a {
+    color: #333333;
+    font-family: RobotoMedium;
+    font-size: 18px;
+    margin-top: 10px;
+    line-height: 26px;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.upcoming-events .card-image-upcoming-events img {
+    object-fit: cover;
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+.upcoming-events .bg-fake {
+    height: 10px;
+    background: #9a0000;
+    border-radius: 10px 10px 0px 0px;
+}
+.list-news-event h5 a {
+    color: #464646;
+    font-family: RobotoMedium;
+    font-size: 20px;
+    margin-top: 10px;
+}
+.list-news-event h6 {
     color: #707070;
     font-family: Roboto;
+    font-size: 18px;
+    padding-top: 10px;
 }
+.list-news-event .time-view {
+    margin-top: 17px;
+}
+.news-event-content h5 {
+    margin-top: 10px;
+    font-size: 18px;
+    font-family: Roboto;
+    color: #707070;
+    line-height: 26px;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.news-event-content h3 a {
+    font-size: 24px;
+    font-family: RobotoMedium;
+    color: #000000;
+    line-height: 34px;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.news-event-content .time-view {
+    margin-top: 10px;
+}
+
 .slick-slide {
     height: auto !important;
 }
@@ -512,7 +623,7 @@ main a:hover {
     border: 0;
     cursor: pointer;
     align-items: center;
-    min-width: 130px;
+    min-width: 130;
     min-height: 43px;
     background-color: #d72025;
 }
@@ -591,6 +702,23 @@ main a:hover {
         background-repeat: no-repeat, repeat;
         background-color: #be0005;
     }
+    .register-container .bg-footer1 {
+        background-image: none;
+        background-repeat: no-repeat, repeat;
+        background-color: #dce8ff;
+        height: auto;
+    }
+    .register-container .bg-footer1 .view-button {
+        margin: 10px 0;
+    }
+    .sv-tintuc .bg-sv-tintuc a img {
+        height: unset !important;
+        min-width: 100%;
+    }
+    .item-new-ps .bg-img {
+        width: 100% !important;
+        padding-bottom: 30px;
+    }
     .bg-footer2 .block-col-md {
         align-items: unset !important;
     }
@@ -600,6 +728,15 @@ main a:hover {
     }
 }
 @media only screen and (max-width: 540px) {
+    .footer .bg-footer1 h3 {
+        font-size: 14px;
+    }
+    .footer .bg-footer1 input {
+        width: unset;
+    }
+}
+
+@media only screen and (max-width: 576px) {
     .footer .bg-footer1 h3 {
         font-size: 14px;
     }
@@ -932,7 +1069,8 @@ main a:hover {
     display: none;
 }
 .w-percent-one {
-    height: 160px;
+    min-width: 384px;
+    min-height: 160px;
     background-color: #c4060b;
 }
 .w-percent-one img {
@@ -945,7 +1083,8 @@ main a:hover {
     font-family: RobotoBold;
 }
 .w-percent-tow {
-    height: 160px;
+    min-width: 384px;
+    min-height: 160px;
     background-color: #d50208;
 }
 .w-percent-tow .content {
@@ -1025,7 +1164,6 @@ main a:hover {
     line-height: 30px;
 }
 .item-new-ps {
-    height: 360px;
     margin-top: 30px;
 }
 .item-new-ps span {
@@ -1034,8 +1172,10 @@ main a:hover {
     color: #666666;
 }
 .item-new-ps .bg-img {
-    border-radius: 10px;
+    width: 270px;
+    height: 360px;
     box-shadow: 3px 5px 15px #27347d1f;
+    border-radius: 10px;
 }
 .time-item-ps {
     margin: 20px 0 0 20px;
@@ -1234,10 +1374,14 @@ main a:hover {
 .tab-sinhvien {
     margin-top: 61px;
 }
-.bg-sv-tintuc {
-}
+
 .sv-tintuc .bg-sv-tintuc {
     border-radius: 10px;
+}
+
+.sv-tintuc .bg-sv-tintuc a img {
+    height: 224px;
+    object-fit: contain;
 }
 .sv-tintuc .bg-sv-tintuc .time-item-ps {
     margin-top: 14px;
@@ -1277,19 +1421,33 @@ main a:hover {
     /* .item-new-ps {
       padding: 0px 20px 0px 20px !important;
     } */
+    .block-one {
+        margin-top: 33px;
+        width: 1170px;
+    }
+    .item-content-event {
+        width: 1170px;
+    }
 }
 @media only screen and (max-width: 1200px) {
     /* .shadow-sm {
       padding: 10px 0px 10px 0px;
     } */
-    .item-new-ps {
-        padding: 10px 0px 10px 0px;
-    }
+    /* .item-new-ps {
+      padding: 10px 0px 10px 0px;
+    } */
     .carousel-control-prev {
         display: none;
     }
     .carousel-control-next {
         display: none;
+    }
+    .block-one {
+        margin-top: 33px;
+        width: 100%;
+    }
+    .item-content-event {
+        width: 100%;
     }
     /* .tuyensinh-item {
       margin-top: 20px;
@@ -1331,10 +1489,6 @@ main a:hover {
     .block-one {
         margin-left: 10px;
         margin-right: 10px;
-    }
-    .bg-img {
-        margin-left: 20px;
-        margin-right: 20px;
     }
     .bg-tuyensinh {
         margin-left: 20px;
@@ -1688,6 +1842,47 @@ main a:hover {
     margin-right: 10px;
     color: #3e3e3e;
 }
+.card-image-train {
+    display: block;
+    width: 100%;
+    position: relative;
+    height: 0;
+    padding: 255px 0 0 0;
+    overflow: hidden;
+    background-color: unset;
+}
+.card-image-train-title {
+    display: block;
+    width: 100%;
+    position: relative;
+    height: 0;
+    padding: 350px 0 0 0;
+    overflow: hidden;
+    background-color: unset;
+}
+.card-image-train-title a img {
+    object-fit: cover;
+    position: absolute;
+    display: block;
+    width: 570px;
+    height: 100%;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+.img-resize-train {
+    object-fit: cover;
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
 .card-image {
     display: block;
     width: 100%;
@@ -1697,9 +1892,17 @@ main a:hover {
     overflow: hidden;
     background-color: unset;
 }
-.card-image .img-resize {
+.card-image-event {
+    display: block;
+    width: 100%;
+    position: relative;
+    height: 0;
+    padding: 200px 0 0 0;
+    overflow: hidden;
+    background-color: unset;
+}
+.img-resize {
     object-fit: cover;
-    border-radius: 10px;
     position: absolute;
     display: block;
     max-width: 100%;
@@ -1783,12 +1986,12 @@ main a:hover {
 }
 
 .gallery-item {
-    height: 30vh;
     opacity: 0;
     position: absolute;
     transition: all 0.3s ease-in-out;
-    width: 30vw;
     z-index: 0;
+    width: 24vw;
+    height: 288px;
 }
 
 .gallery-item-1 {
@@ -1800,9 +2003,9 @@ main a:hover {
 
 .gallery-item-2,
 .gallery-item-4 {
-    height: 40vh;
+    width: 30vw;
+    height: 366px;
     opacity: 1;
-    width: 35vw;
     z-index: 1;
 }
 
@@ -1817,8 +2020,9 @@ main a:hover {
     opacity: 1;
     left: 50%;
     transform: translateX(-50%);
-    width: 50vw;
     z-index: 2;
+    width: 38vw;
+    height: 450px;
 }
 
 .gallery-item-4 {
