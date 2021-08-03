@@ -4,9 +4,9 @@ register_page_template([
     'default' => 'Default',
 ]);
 
-//register_page_template([
-//    'no-slider' => __('No Slider'),
-//]);
+register_page_template([
+    'introduce' => __('Landing Page'),
+]);
 
 register_sidebar([
     'id'          => 'category_sidebar',
