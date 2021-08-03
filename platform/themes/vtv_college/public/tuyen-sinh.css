@@ -80,509 +80,517 @@ time,
 mark,
 audio,
 video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
 }
 body {
-  background: #f4f9ff;
+    background: #f4f9ff;
 }
 .container-fluid {
-  padding-right: 250px;
-  padding-left: 250px;
+    padding-right: 250px;
+    padding-left: 250px;
 }
 #header {
-  position: relative;
+    position: relative;
 }
 #header .header-mobile {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 0;
-  height: 50px;
-  background: linear-gradient(#9a0000, #9f000000);
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 0;
+    height: 50px;
+    background: linear-gradient(#9a0000, #9f000000);
 }
 #header .img-bg-header {
-  position: relative;
+    position: relative;
 }
 #header .bg-header2 {
-  width: 100%;
+    width: 100%;
 }
 .section-tuyen-sinh {
-  margin-top: 35px;
+    margin-top: 35px;
 }
 .bg-shadow {
-  box-shadow: 0px 5px 15px #27347d1f;
-  border-radius: 15px;
+    box-shadow: 0px 5px 15px #27347d1f;
+    border-radius: 15px;
 }
 .line {
-  width: 110px;
-  height: 1px;
-  background-color: #fff;
-  margin-right: 5px;
+    width: 110px;
+    height: 1px;
+    background-color: #fff;
+    margin-right: 5px;
 }
 .line2 {
-  width: 110px;
-  height: 1px;
-  background-color: #fff;
-  margin-left: 5px;
+    width: 110px;
+    height: 1px;
+    background-color: #fff;
+    margin-left: 5px;
 }
 .item-header-text a {
-  text-transform: uppercase;
-  font-family: RobotoMedium;
-  color: #ffffff;
-  font-size: 14px;
+    text-transform: uppercase;
+    font-family: RobotoMedium;
+    color: #ffffff;
+    font-size: 14px;
 }
 .img-bg {
-  width: 100%;
-  min-height: 40vw;
+    width: 100%;
+    min-height: 40vw;
 }
 .register-header {
-  outline: none !important;
-  width: 200px;
-  height: 50px;
-  box-shadow: 0px 3px 6px #27347d1f;
-  border-radius: 10px;
-  z-index: 1;
-  cursor: pointer;
-  border: 0;
-  position: absolute;
-  bottom: 0;
-  font-family: "Lato";
-  font-weight: bold;
-  text-transform: uppercase;
-  font-size: 20px;
+    outline: none !important;
+    width: 200px;
+    height: 50px;
+    box-shadow: 0px 3px 6px #27347d1f;
+    border-radius: 10px;
+    z-index: 1;
+    cursor: pointer;
+    border: 0;
+    position: absolute;
+    bottom: 0;
+    font-family: "Lato";
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 20px;
 
-  color: #9a0000;
+    color: #9a0000;
 }
 .landing-page-2 {
-  width: 100%;
-  min-height: 40vw;
-  position: absolute;
-  top: 35vw;
+    width: 100%;
+    min-height: 40vw;
+    position: absolute;
+    top: 35vw;
 }
 .line {
-  width: 110px;
-  height: 1px;
-  background-color: #9a0000;
-  margin-right: 5px;
+    width: 110px;
+    height: 1px;
+    background-color: #9a0000;
+    margin-right: 5px;
 }
 .line2 {
-  width: 110px;
-  height: 1px;
-  background-color: #9a0000;
-  margin-left: 5px;
+    width: 110px;
+    height: 1px;
+    background-color: #9a0000;
+    margin-left: 5px;
 }
 .bg-page-1 {
-  margin-top: 15%;
-  height: 1146px;
+    margin-top: 15%;
+    height: 1146px;
 }
 .bg-page-2 {
-  width: 100%;
-  min-height: 1046px;
-  display: flex !important;
-  justify-content: center;
+    width: 100%;
+    min-height: 1046px;
+    display: flex !important;
+    justify-content: center;
 }
 .bg-registor {
-  width: 100%;
-  background: #ffffff;
-  box-shadow: 3px 3px 20px #27347d1f;
-  border-radius: 10px;
+    width: 100%;
+    background: #ffffff;
+    box-shadow: 3px 3px 20px #27347d1f;
+    border-radius: 10px;
 }
 .round-thumnail {
-  box-shadow: 0px 5px 15px #27347d1f;
-  border: 10px solid #ffffff;
-  border-radius: 100%;
+    box-shadow: 0px 5px 15px #27347d1f;
+    border: 10px solid #ffffff;
+    border-radius: 100%;
 }
 .register-img {
-  z-index: -1;
-  right: 0;
-  top: 0;
+    z-index: -1;
+    right: 0;
+    top: 0;
 }
 .register-img img {
-  width: 85%;
+    width: 85%;
 }
 .btn-send {
-  width: 228px;
-  height: 50px;
-  box-shadow: 0px 3px 6px #27347d1f;
-  border: 1px solid #9a0000;
-  border-radius: 10px;
-  background: #ffffff;
+    width: 228px;
+    height: 50px;
+    box-shadow: 0px 3px 6px #27347d1f;
+    border: 1px solid #9a0000;
+    border-radius: 10px;
+    background: #ffffff;
 }
 .info-item {
-  box-shadow: 3px 5px 15px #27347d1f;
-  border-radius: 10px;
+    box-shadow: 3px 5px 15px #27347d1f;
+    border-radius: 10px;
 }
 .bg-danh-gia-sv {
-  box-shadow: 0px 3px 15px #27347d1f;
-  border-radius: 10px;
-  background: #ffffff;
-  position: relative;
+    box-shadow: 0px 3px 15px #27347d1f;
+    border-radius: 10px;
+    background: #ffffff;
+    position: relative;
 }
 .img-danh-gia-sv {
-  height: 100px;
-  width: 100px;
-  border: 5px solid #ff6f6f;
-  border-radius: 100%;
-  position: absolute;
-  left: 35%;
-  bottom: 85%;
+    height: 100px;
+    width: 100px;
+    border: 5px solid #ff6f6f;
+    border-radius: 100%;
+    position: absolute;
+    left: 35%;
+    bottom: 85%;
 }
 .carousel-indicators .active {
-  background-color: #d72025;
-  opacity: 1;
+    background-color: #d72025;
+    opacity: 1;
 }
 .carousel-indicators li {
-  width: 14px;
-  height: 14px;
-  border-radius: 60px;
-  background-color: #d72025;
-  opacity: 0.3;
+    width: 14px;
+    height: 14px;
+    border-radius: 60px;
+    background-color: #d72025;
+    opacity: 0.3;
 }
 .header-container h3 {
-  color: #ffffff;
-  text-transform: uppercase;
-  font-family: "Lato";
-  font-weight: bold;
-  font-size: 34px;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-family: "Lato";
+    font-weight: bold;
+    font-size: 34px;
 }
 .header-container h5 {
-  color: #ffffff;
-  font-family: "Lato";
-  line-height: 54px;
+    color: #ffffff;
+    font-family: "Lato";
+    line-height: 54px;
 }
 .admissions-title {
-  color: #9a0000;
-  text-transform: uppercase;
-  font-family: "Lato";
-  font-weight: bold;
-  font-size: 34px;
+    color: #9a0000;
+    text-transform: uppercase;
+    font-family: "Lato";
+    font-weight: bold;
+    font-size: 34px;
 }
 .title-content-header {
-  color: #ffffff;
-  font-family: "Lato";
-  font-size: 30px;
-  margin-left: 21px;
+    color: #ffffff;
+    font-family: "Lato";
+    font-size: 30px;
+    margin-left: 21px;
 }
 .content-header-text {
-  color: #ffffff;
-  font-size: 20px;
-  font-family: LatoItalic !important;
-  margin-left: 21px;
-  line-height: 24px !important;
+    color: #ffffff;
+    font-size: 20px;
+    font-family: LatoItalic !important;
+    margin-left: 21px;
+    line-height: 24px !important;
+}
+.form-control {
+    margin-top: 10px;
 }
 
 .font-size-14 {
-  font-size: 14px !important;
+    font-size: 14px !important;
 }
 .font-size-16 {
-  font-size: 16px !important;
+    font-size: 16px !important;
 }
 .font-size-18 {
-  font-size: 18px !important;
+    font-size: 18px !important;
 }
 .font-size-20 {
-  font-size: 20px !important;
+    font-size: 20px !important;
 }
 .font-size-24 {
-  font-size: 24px !important;
+    font-size: 24px !important;
 }
 .font-size-30 {
-  font-size: 30px !important;
+    font-size: 30px !important;
 }
 .font-size-34 {
-  font-size: 34px !important;
+    font-size: 34px !important;
 }
 .text-uppercase {
-  text-transform: uppercase;
+    text-transform: uppercase;
 }
 .text-roboto-medium {
-  font-family: RobotoMedium;
-  color: #333333;
+    font-family: RobotoMedium;
+    color: #333333;
 }
 .text-roboto-medium-black {
-  font-family: RobotoMedium !important;
-  color: #000000 !important;
+    font-family: RobotoMedium !important;
+    color: #000000 !important;
 }
 #carouselSlider {
-  min-height: 554px;
+    min-height: 554px;
 }
 .bg-giang-vien {
-  height: 902px;
-  background-image: url("./images/img-bg-giang-vien.png");
-  background-repeat: no-repeat, repeat;
+    height: 902px;
+    background-image: url("./images/img-bg-giang-vien.png");
+    background-repeat: no-repeat, repeat;
 }
 .slick-slide {
-  height: auto !important;
+    height: auto !important;
 }
 .slick-track {
-  /* top: 20px !important; */
-  padding: 20px 0 20px 0 !important;
+    /* top: 20px !important; */
+    padding: 20px 0 20px 0 !important;
 }
 .slick-list {
-  margin: 50px 0 0 0 !important;
+    margin: 50px 0 0 0 !important;
 }
 .slick-dots li button:before {
-  font-size: 40px !important;
-  color: #d72025 !important;
-  opacity: 1;
+    font-size: 40px !important;
+    color: #d72025 !important;
+    opacity: 1;
 }
 .slick-dots li.slick-active button:before {
-  color: #d72025 !important;
-  opacity: 0.3;
+    color: #d72025 !important;
+    opacity: 0.3;
 }
 .text-content h3 {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 3; /* number of lines to show */
-  -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* number of lines to show */
+    -webkit-box-orient: vertical;
 }
 /* .video-img img {
   padding: 100px;
 } */
 .text-roboto {
-  font-family: Roboto;
-  color: #707070;
+    font-family: Roboto;
+    color: #707070;
 }
 .text-helvetica {
-  font-family: Helvetica;
-  color: #333333;
+    font-family: Helvetica;
+    color: #333333;
 }
 .text-helvetica-bold {
-  font-family: HelveticaBold;
-  color: #333333;
+    font-family: HelveticaBold;
+    color: #333333;
 }
 .img-shadow-top {
-  box-shadow: 0px 5px 15px #27347d1f;
-  border-radius: 15px 15px 0 0;
+    box-shadow: 0px 5px 15px #27347d1f;
+    border-radius: 15px 15px 0 0;
 }
 .lecturers__main-text {
-  width: 100%;
-  height: 325px;
-  box-shadow: 5px 4px 30px #27347d1f;
-  border-radius: 10px;
-  background: #ffffff;
-  position: absolute;
-  right: 25%;
+    width: 100%;
+    height: 325px;
+    box-shadow: 5px 4px 30px #27347d1f;
+    border-radius: 10px;
+    background: #ffffff;
+    position: absolute;
+    right: 25%;
 }
 .lecturers__main-text h3 {
-  color: #333333;
-  font-family: Hevetica;
-  font-size: 24px;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 5;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
+    color: #333333;
+    font-family: Hevetica;
+    font-size: 24px;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 .card-image-event {
-  display: block;
-  width: 100%;
-  position: relative;
-  height: 0;
-  padding: 200px 0 0 0;
-  overflow: hidden;
-  background-color: unset;
+    display: block;
+    width: 100%;
+    position: relative;
+    height: 0;
+    padding: 200px 0 0 0;
+    overflow: hidden;
+    background-color: unset;
 }
 .img-resize {
-  object-fit: cover;
-  position: absolute;
-  display: block;
-  max-width: 100%;
-  max-height: 100%;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  margin: auto;
+    object-fit: cover;
+    position: absolute;
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
 }
 .img-resize {
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: cover;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover;
 }
 .text-Lato {
-  font-family: LatoRegular;
-  color: #fff;
+    font-family: LatoRegular;
+    color: #fff;
 }
 .text-color-9A0000 {
-  color: #9a0000 !important;
+    color: #9a0000 !important;
 }
 .text-Lato-Bold {
-  font-family: LatoBold;
-  color: #ffffff;
+    font-family: LatoBold;
+    color: #ffffff;
 }
 .text-lato-italic {
-  font-family: LatoItalic;
-  color: #ffffff;
+    font-family: LatoItalic;
+    color: #ffffff;
 }
 .text-color-9A0000 {
-  color: #9a0000 !important;
+    color: #9a0000 !important;
 }
 .text-color-07356A {
-  color: #07356a !important;
+    color: #07356a !important;
 }
 .text-color-464646 {
-  color: #464646 !important;
+    color: #464646 !important;
 }
 .text-color-333333 {
-  color: #333333 !important;
+    color: #333333 !important;
 }
 .text-uppercase {
-  text-transform: uppercase;
+    text-transform: uppercase;
 }
 .diamond {
-  width: 11px;
-  height: 11px;
-  background: #333333;
-  transform: matrix(0.71, -0.71, 0.71, 0.71, 0, 0);
+    width: 11px;
+    height: 11px;
+    background: #333333;
+    transform: matrix(0.71, -0.71, 0.71, 0.71, 0, 0);
 }
 .bg-daotao {
-  background-color: #ffffff;
-  box-shadow: 0px 3px 15px #27347d1f;
-  border-radius: 20px;
+    background-color: #ffffff;
+    box-shadow: 0px 3px 15px #27347d1f;
+    border-radius: 20px;
 }
 .btn-detail-info {
-  background: #d72025;
-  border-radius: 17px;
-  padding: 6px 30px 6px 30px;
-  border-width: 0;
-  color: #ffffff;
-  cursor: pointer;
+    background: #d72025;
+    border-radius: 17px;
+    padding: 6px 30px 6px 30px;
+    border-width: 0;
+    color: #ffffff;
+    cursor: pointer;
 }
 .slider-sv {
-  overflow-x: auto;
-  flex-wrap: nowrap;
+    overflow-x: auto;
+    flex-wrap: nowrap;
 }
 .slider-sv span {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 1; /* number of lines to show */
-  -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1; /* number of lines to show */
+    -webkit-box-orient: vertical;
 }
 .bg-tuyen-sinh-co-hoi-viec-lam {
-  padding: 140px 0 0 0;
-  width: 100%;
-  background-image: url("./images/bg-tuyen-sinh-co-hoi-viec-lam.png");
-  background-repeat: no-repeat, repeat;
+    padding: 140px 0 0 0;
+    width: 100%;
+    background-image: url("./images/bg-tuyen-sinh-co-hoi-viec-lam.png");
+    background-repeat: no-repeat, repeat;
 }
 .card-image {
-  display: block;
-  width: 100%;
-  position: relative;
-  height: 0;
-  padding: 56.25% 0 0 0;
-  overflow: hidden;
-  background-color: unset;
+    display: block;
+    width: 100%;
+    position: relative;
+    height: 0;
+    padding: 56.25% 0 0 0;
+    overflow: hidden;
+    background-color: unset;
 }
 .img-resize {
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: cover;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover;
 }
 
 .card-image .img-resize {
-  object-fit: cover;
-  border-radius: 10px 10px 0 0;
-  position: absolute;
-  display: block;
-  max-width: 100%;
-  max-height: 100%;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  margin: auto;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+    position: absolute;
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
 }
 @font-face {
-  font-family: RobotoMedium;
-  src: url("./font/Roboto/Roboto-Medium.ttf");
+    font-family: RobotoMedium;
+    src: url("./font/Roboto/Roboto-Medium.ttf");
 }
 @font-face {
-  font-family: Helvetica;
-  src: url("./font/Helvetica/Helvetica.ttf");
+    font-family: Helvetica;
+    src: url("./font/Helvetica/Helvetica.ttf");
 }
 @font-face {
-  font-family: HelveticaBold;
-  src: url("./font/Helvetica/Helvetica-Bold.ttf");
+    font-family: HelveticaBold;
+    src: url("./font/Helvetica/Helvetica-Bold.ttf");
 }
 @font-face {
-  font-family: LatoBlack;
-  src: url("./font/Roboto/Roboto-Black.ttf");
+    font-family: LatoBlack;
+    src: url("./font/Roboto/Roboto-Black.ttf");
 }
 @font-face {
-  font-family: LatoBlackItalic;
-  src: url("./font/Roboto/Roboto-BlackItalic.ttf");
+    font-family: LatoBlackItalic;
+    src: url("./font/Roboto/Roboto-BlackItalic.ttf");
 }
 @font-face {
-  font-family: LatoBold;
-  src: url("./font/Roboto/Roboto-Bold.ttf");
-}
-
-@font-face {
-  font-family: LatoBoldItalic;
-  src: url("./font/Roboto/Roboto-BoldItalic.ttf");
-}
-@font-face {
-  font-family: LatoItalic;
-  src: url("./font/Roboto/Roboto-Italic.ttf");
-}
-@font-face {
-  font-family: LatoLight;
-  src: url("./font/Roboto/Roboto-Light.ttf");
+    font-family: LatoBold;
+    src: url("./font/Roboto/Roboto-Bold.ttf");
 }
 
 @font-face {
-  font-family: LatoLightItalic;
-  src: url("./font/Roboto/Roboto-LightItalic.ttf");
+    font-family: LatoBoldItalic;
+    src: url("./font/Roboto/Roboto-BoldItalic.ttf");
 }
 @font-face {
-  font-family: LatoRegular;
-  src: url("./font/Roboto/Roboto-Regular.ttf");
+    font-family: LatoItalic;
+    src: url("./font/Roboto/Roboto-Italic.ttf");
 }
 @font-face {
-  font-family: LatoThin;
-  src: url("./font/Lato/Lato-Thin.ttf");
+    font-family: LatoLight;
+    src: url("./font/Roboto/Roboto-Light.ttf");
+}
+
+@font-face {
+    font-family: LatoLightItalic;
+    src: url("./font/Roboto/Roboto-LightItalic.ttf");
 }
 @font-face {
-  font-family: LatoThinItalic;
-  src: url("./font/Lato/Lato-ThinItalic.ttf");
+    font-family: LatoRegular;
+    src: url("./font/Roboto/Roboto-Regular.ttf");
+}
+@font-face {
+    font-family: LatoThin;
+    src: url("./font/Lato/Lato-Thin.ttf");
+}
+@font-face {
+    font-family: LatoThinItalic;
+    src: url("./font/Lato/Lato-ThinItalic.ttf");
 }
 
 @media only screen and (max-width: 992px) {
-  .bg-page-2 {
-    width: 100%;
-    min-height: unset;
-    display: flex !important;
-    justify-content: center;
-  }
-  .block-background {
-    height: unset;
-  }
+    .bg-page-2 {
+        width: 100%;
+        min-height: unset;
+        display: flex !important;
+        justify-content: center;
+    }
+    .block-background {
+        height: unset;
+    }
 }
 @media only screen and (max-width: 992px) {
-  #header .bg-header2 {
-    width: 100%;
-    background-color: #9a0000;
-  }
+    #header .bg-header2 {
+        width: 100%;
+        background-color: #9a0000;
+    }
 }
 
 @media only screen and (max-width: 1200px) {
-  .bg-page-1 {
-    margin-top: 40%;
-    height: unset;
-  }
+    .bg-page-1 {
+        margin-top: 40%;
+        height: unset;
+    }
 }
 @media only screen and (min-width: 1200px) {
-  .text-line-height-54 {
-    line-height: 54px;
-  }
+    .text-line-height-54 {
+        line-height: 54px;
+    }
+}
+.footer {
+    width: 100%;
+    height: 452px;
+    background: #071627;
 }
 /**
  * How to make 3-corner-rounded triangle in CSS (SO)
