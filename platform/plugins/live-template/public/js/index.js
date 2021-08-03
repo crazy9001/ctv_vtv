@@ -1,14 +1,4 @@
-(function webpackUniversalModuleDefinition(root, factory) {
-	if(typeof exports === 'object' && typeof module === 'object')
-		module.exports = factory();
-	else if(typeof define === 'function' && define.amd)
-		define([], factory);
-	else if(typeof exports === 'object')
-		exports["Comments"] = factory();
-	else
-		root["Comments"] = factory();
-})(self, function() {
-return /******/ (() => { // webpackBootstrap
+/******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
 /***/ "./node_modules/@babel/runtime/helpers/esm/defineProperty.js":
@@ -2655,9 +2645,9 @@ var FrontEndLiveTemplateWrapper = styled_components__WEBPACK_IMPORTED_MODULE_0__
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-53[0].rules[0].use[1]!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-53[0].rules[0].use[2]!./node_modules/react-dropdown-tree-select/dist/styles.css":
+/***/ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-50[0].rules[0].use[1]!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-50[0].rules[0].use[2]!./node_modules/react-dropdown-tree-select/dist/styles.css":
 /*!***************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-53[0].rules[0].use[1]!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-53[0].rules[0].use[2]!./node_modules/react-dropdown-tree-select/dist/styles.css ***!
+  !*** ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-50[0].rules[0].use[1]!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-50[0].rules[0].use[2]!./node_modules/react-dropdown-tree-select/dist/styles.css ***!
   \***************************************************************************************************************************************************************************************************************************/
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
@@ -2679,9 +2669,9 @@ ___CSS_LOADER_EXPORT___.push([module.id, ".tag{background-color:#f4f4f4;border:1
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-53[0].rules[0].use[1]!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-53[0].rules[0].use[2]!./platform/plugins/live-template/resources/assets/js/components/Dropdown/index.css":
+/***/ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-50[0].rules[0].use[1]!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-50[0].rules[0].use[2]!./platform/plugins/live-template/resources/assets/js/components/Dropdown/index.css":
 /*!****************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-53[0].rules[0].use[1]!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-53[0].rules[0].use[2]!./platform/plugins/live-template/resources/assets/js/components/Dropdown/index.css ***!
+  !*** ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-50[0].rules[0].use[1]!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-50[0].rules[0].use[2]!./platform/plugins/live-template/resources/assets/js/components/Dropdown/index.css ***!
   \****************************************************************************************************************************************************************************************************************************************************/
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
@@ -53617,7 +53607,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
 /* harmony import */ var _style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _css_loader_dist_cjs_js_clonedRuleSet_53_0_rules_0_use_1_postcss_loader_dist_cjs_js_clonedRuleSet_53_0_rules_0_use_2_styles_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../css-loader/dist/cjs.js??clonedRuleSet-53[0].rules[0].use[1]!../../postcss-loader/dist/cjs.js??clonedRuleSet-53[0].rules[0].use[2]!./styles.css */ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-53[0].rules[0].use[1]!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-53[0].rules[0].use[2]!./node_modules/react-dropdown-tree-select/dist/styles.css");
+/* harmony import */ var _css_loader_dist_cjs_js_clonedRuleSet_50_0_rules_0_use_1_postcss_loader_dist_cjs_js_clonedRuleSet_50_0_rules_0_use_2_styles_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../css-loader/dist/cjs.js??clonedRuleSet-50[0].rules[0].use[1]!../../postcss-loader/dist/cjs.js??clonedRuleSet-50[0].rules[0].use[2]!./styles.css */ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-50[0].rules[0].use[1]!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-50[0].rules[0].use[2]!./node_modules/react-dropdown-tree-select/dist/styles.css");
 
             
 
@@ -53626,11 +53616,11 @@ var options = {};
 options.insert = "head";
 options.singleton = false;
 
-var update = _style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_css_loader_dist_cjs_js_clonedRuleSet_53_0_rules_0_use_1_postcss_loader_dist_cjs_js_clonedRuleSet_53_0_rules_0_use_2_styles_css__WEBPACK_IMPORTED_MODULE_1__.default, options);
+var update = _style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_css_loader_dist_cjs_js_clonedRuleSet_50_0_rules_0_use_1_postcss_loader_dist_cjs_js_clonedRuleSet_50_0_rules_0_use_2_styles_css__WEBPACK_IMPORTED_MODULE_1__.default, options);
 
 
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_css_loader_dist_cjs_js_clonedRuleSet_53_0_rules_0_use_1_postcss_loader_dist_cjs_js_clonedRuleSet_53_0_rules_0_use_2_styles_css__WEBPACK_IMPORTED_MODULE_1__.default.locals || {});
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_css_loader_dist_cjs_js_clonedRuleSet_50_0_rules_0_use_1_postcss_loader_dist_cjs_js_clonedRuleSet_50_0_rules_0_use_2_styles_css__WEBPACK_IMPORTED_MODULE_1__.default.locals || {});
 
 /***/ }),
 
@@ -53647,7 +53637,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../../../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
 /* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _node_modules_css_loader_dist_cjs_js_clonedRuleSet_53_0_rules_0_use_1_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_53_0_rules_0_use_2_index_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../../../../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-53[0].rules[0].use[1]!../../../../../../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-53[0].rules[0].use[2]!./index.css */ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-53[0].rules[0].use[1]!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-53[0].rules[0].use[2]!./platform/plugins/live-template/resources/assets/js/components/Dropdown/index.css");
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_clonedRuleSet_50_0_rules_0_use_1_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_50_0_rules_0_use_2_index_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../../../../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-50[0].rules[0].use[1]!../../../../../../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-50[0].rules[0].use[2]!./index.css */ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-50[0].rules[0].use[1]!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-50[0].rules[0].use[2]!./platform/plugins/live-template/resources/assets/js/components/Dropdown/index.css");
 
             
 
@@ -53656,11 +53646,11 @@ var options = {};
 options.insert = "head";
 options.singleton = false;
 
-var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_clonedRuleSet_53_0_rules_0_use_1_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_53_0_rules_0_use_2_index_css__WEBPACK_IMPORTED_MODULE_1__.default, options);
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_clonedRuleSet_50_0_rules_0_use_1_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_50_0_rules_0_use_2_index_css__WEBPACK_IMPORTED_MODULE_1__.default, options);
 
 
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_clonedRuleSet_53_0_rules_0_use_1_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_53_0_rules_0_use_2_index_css__WEBPACK_IMPORTED_MODULE_1__.default.locals || {});
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_clonedRuleSet_50_0_rules_0_use_1_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_50_0_rules_0_use_2_index_css__WEBPACK_IMPORTED_MODULE_1__.default.locals || {});
 
 /***/ }),
 
@@ -54241,7 +54231,5 @@ react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/(0,react_jsx_runtime
 }), document.getElementById('main'));
 })();
 
-/******/ 	return __webpack_exports__;
 /******/ })()
 ;
-});
