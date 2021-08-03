@@ -2144,7 +2144,7 @@ var FrontEndContent = function FrontEndContent(_ref) {
       id: "child",
       className: "d-flex row mr-0 block-column",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-        className: "\r w-percent-one\r col-xl-3 col-lg-4 col-md-6 col-sm-6 col-8\r row\r m-0\r ",
+        className: "w-percent-one col-xl-3 col-lg-4 col-md-6 col-sm-6 col-8 row m-0",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
           className: "d-flex w-25 justify-content-center align-items-center",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
@@ -2154,7 +2154,7 @@ var FrontEndContent = function FrontEndContent(_ref) {
             alt: "Third slide"
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-          className: "\r content\r w-75\r d-flex\r flex-column\r justify-content-center\r p-auto\r ",
+          className: " content w-75 d-flex flex-column justify-content-center p-auto",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
             className: "text-title",
             children: "Chuy\xEAn ng\xE0nh \u0111\xE0o t\u1EA1o"
@@ -2174,7 +2174,7 @@ var FrontEndContent = function FrontEndContent(_ref) {
             alt: "Third slide"
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-          className: "\r content\r w-75\r d-flex\r flex-column\r justify-content-center\r p-auto\r ",
+          className: "content w-75 d-flex flex-column justify-content-center p-auto",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
             className: "text-title",
             children: "Tra c\u1EE9u \u0111i\u1EC3m thi"
@@ -2184,7 +2184,7 @@ var FrontEndContent = function FrontEndContent(_ref) {
           })]
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-        className: "\r w-percent-one\r col-xl-3 col-lg-4 col-md-6 col-sm-6 col-6\r row\r m-0\r ",
+        className: "w-percent-one col-xl-3 col-lg-4 col-md-6 col-sm-6 col-6 row m-0",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
           className: "d-flex w-25 justify-content-center align-items-center",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
@@ -2194,7 +2194,7 @@ var FrontEndContent = function FrontEndContent(_ref) {
             alt: "Third slide"
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-          className: "\r content\r w-75\r d-flex\r flex-column\r justify-content-center\r p-auto\r ",
+          className: "content w-75 d-flex flex-column justify-content-center p-auto",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
             className: "text-title",
             children: "H\xF2m th\u01B0 n\u1ED9i b\u1ED9"
@@ -2204,7 +2204,7 @@ var FrontEndContent = function FrontEndContent(_ref) {
           })]
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-        className: "\r w-percent-tow\r col-xl-3 col-lg-4 col-md-6 col-sm-6 col-6\r row\r m-0\r ",
+        className: "w-percent-tow col-xl-3 col-lg-4 col-md-6 col-sm-6 col-6 row m-0",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
           className: "d-flex w-25 justify-content-center align-items-center",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
@@ -2214,7 +2214,7 @@ var FrontEndContent = function FrontEndContent(_ref) {
             alt: "Third slide"
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-          className: "\r content\r w-75\r d-flex\r flex-column\r justify-content-center\r p-auto\r ",
+          className: "content w-75 d-flex flex-column justify-content-center p-auto",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
             className: "text-title",
             children: "024.3385.048"
@@ -2224,7 +2224,7 @@ var FrontEndContent = function FrontEndContent(_ref) {
           })]
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-        className: "\r w-percent-one\r col-xl-3 col-lg-4 col-md-6 col-sm-6 col-6\r row\r m-0\r ",
+        className: "w-percent-one col-xl-3 col-lg-4 col-md-6 col-sm-6 col-6 row m-0",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
           className: "d-flex w-25 justify-content-center align-items-center",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
@@ -2234,7 +2234,7 @@ var FrontEndContent = function FrontEndContent(_ref) {
             alt: "Third slide"
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-          className: "\r content\r w-75\r d-flex\r flex-column\r justify-content-center\r p-auto\r ",
+          className: "content w-75 d-flex flex-column justify-content-center p-auto",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
             className: "text-title",
             children: "Facebook"
@@ -2244,225 +2244,7 @@ var FrontEndContent = function FrontEndContent(_ref) {
           })]
         })]
       })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_HighLightBox__WEBPACK_IMPORTED_MODULE_1__.default, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("section", {
-      className: "section-home",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-        className: "daotao-view",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-          className: "datao-title",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
-            children: "\u0110\xE0o t\u1EA1o"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-            className: "d-flex justify-content-center text-center",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
-              children: "B\u1EA1n y\xEAu th\xEDch c\xF4ng vi\u1EC7c B\xE1o ch\xED - Truy\u1EC1n h\xECnh & Truy\u1EC1n th\xF4ng v\xE0 mu\u1ED1n tr\u1EDF th\xE0nh Ng\u01B0\u1EDDi d\u1EABn ch\u01B0\u01A1ng tr\xECnh truy\u1EC1n h\xECnh, Ph\xE1t thanh vi\xEAn, Ph\xF3ng vi\xEAn, Bi\xEAn t\u1EADp vi\xEAn l\xE0m vi\u1EC7c trong c\xE1c \u0110\xE0i Truy\u1EC1n h\xECnh - Ph\xE1t thanh - T\xF2a so\u1EA1n b\xE1o"
-            })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-            className: "\r d-flex\r flex-row\r justify-content-center\r align-items-center\r mt-3\r ",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-              className: "line"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("i", {
-              className: "fas fa-book-open",
-              style: {
-                color: '#fff'
-              }
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-              className: "line2"
-            })]
-          })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-          id: "carouseldaotao",
-          className: "carousel slide mt-4 px-auto",
-          "data-ride": "carousel",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("ol", {
-            className: "carousel-indicators",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("li", {
-              "data-target": "#carouseldaotao",
-              "data-slide-to": 0,
-              className: "active"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("li", {
-              "data-target": "#carouseldaotao",
-              "data-slide-to": 1
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("li", {
-              "data-target": "#carouseldaotao",
-              "data-slide-to": 2
-            })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-            className: "carousel-inner",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-              className: "carousel-item active",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-                className: "container",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-                  className: "row",
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-                    className: "col-4",
-                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("a", {
-                      href: "#",
-                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
-                        src: "/vendor/core/plugins/live-template/assets/images/img-daotao1.png",
-                        className: "img-fluid"
-                      })
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-                      className: "content-daotao",
-                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
-                        children: "Tr\u01B0\u1EDDng Cao \u0111\u1EB3ng Truy\u1EC1n h\xECnh th\xF4ng b\xE1o tuy\u1EC3n sinh Cao \u0111\u1EB3ng, Trung c\u1EA5p 2021"
-                      })
-                    })]
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-                    className: "col-4",
-                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
-                      src: "/vendor/core/plugins/live-template/assets/images/img-daotao2.png",
-                      className: "img-fluid"
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-                      className: "content-daotao",
-                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
-                        children: "Ch\u1EAFp c\xE1nh \u01B0\u1EDBc m\u01A1 cho b\u1EA1n l\xE0m truy\u1EC1n th\xF4ng, truy\u1EC1n h\xECnh"
-                      })
-                    })]
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-                    className: "col-4",
-                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
-                      src: "/vendor/core/plugins/live-template/assets/images/img-daotao3.png",
-                      className: "img-fluid"
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-                      className: "content-daotao",
-                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
-                        children: "Tr\u01B0\u1EDDng Cao \u0111\u1EB3ng Truy\u1EC1n h\xECnh th\xF4ng b\xE1o x\xE9t tuy\u1EC3n \u0111\u1EE3t 2 h\u1EC7 Cao \u0111\u1EB3ng ch\xEDnh quy"
-                      })
-                    })]
-                  })]
-                })
-              })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-              className: "carousel-item",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-                className: "container",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-                  className: "row",
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-                    className: "col-4",
-                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("a", {
-                      href: "#",
-                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
-                        src: "/vendor/core/plugins/live-template/assets/images/img-daotao1.png",
-                        className: "img-fluid"
-                      })
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-                      className: "content-daotao",
-                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
-                        children: "Tr\u01B0\u1EDDng Cao \u0111\u1EB3ng Truy\u1EC1n h\xECnh th\xF4ng b\xE1o tuy\u1EC3n sinh Cao \u0111\u1EB3ng, Trung c\u1EA5p 2021"
-                      })
-                    })]
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-                    className: "col-4",
-                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
-                      src: "/vendor/core/plugins/live-template/assets/images/img-daotao2.png",
-                      className: "img-fluid"
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-                      className: "content-daotao",
-                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
-                        children: "Ch\u1EAFp c\xE1nh \u01B0\u1EDBc m\u01A1 cho b\u1EA1n l\xE0m truy\u1EC1n th\xF4ng, truy\u1EC1n h\xECnh"
-                      })
-                    })]
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-                    className: "col-4",
-                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
-                      src: "/vendor/core/plugins/live-template/assets/images/img-daotao3.png",
-                      className: "img-fluid"
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-                      className: "content-daotao",
-                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
-                        children: "Tr\u01B0\u1EDDng Cao \u0111\u1EB3ng Truy\u1EC1n h\xECnh th\xF4ng b\xE1o x\xE9t tuy\u1EC3n \u0111\u1EE3t 2 h\u1EC7 Cao \u0111\u1EB3ng ch\xEDnh quy"
-                      })
-                    })]
-                  })]
-                })
-              })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-              className: "carousel-item",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-                className: "container",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-                  className: "row",
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-                    className: "col-4",
-                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("a", {
-                      href: "#",
-                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
-                        src: "/vendor/core/plugins/live-template/assets/images/img-daotao1.png",
-                        className: "img-fluid"
-                      })
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-                      className: "content-daotao",
-                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
-                        children: "Tr\u01B0\u1EDDng Cao \u0111\u1EB3ng Truy\u1EC1n h\xECnh th\xF4ng b\xE1o tuy\u1EC3n sinh Cao \u0111\u1EB3ng, Trung c\u1EA5p 2021"
-                      })
-                    })]
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-                    className: "col-4",
-                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
-                      src: "/vendor/core/plugins/live-template/assets/images/img-daotao2.png",
-                      className: "img-fluid"
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-                      className: "content-daotao",
-                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
-                        children: "Ch\u1EAFp c\xE1nh \u01B0\u1EDBc m\u01A1 cho b\u1EA1n l\xE0m truy\u1EC1n th\xF4ng, truy\u1EC1n h\xECnh"
-                      })
-                    })]
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-                    className: "col-4",
-                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
-                      src: "/vendor/core/plugins/live-template/assets/images/img-daotao3.png",
-                      className: "img-fluid"
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-                      className: "content-daotao",
-                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
-                        children: "Tr\u01B0\u1EDDng Cao \u0111\u1EB3ng Truy\u1EC1n h\xECnh th\xF4ng b\xE1o x\xE9t tuy\u1EC3n \u0111\u1EE3t 2 h\u1EC7 Cao \u0111\u1EB3ng ch\xEDnh quy"
-                      })
-                    })]
-                  })]
-                })
-              })
-            })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("a", {
-            className: "carousel-control-prev",
-            href: "#carouseldaotao",
-            role: "button",
-            "data-slide": "prev",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-              className: "view-icon",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("i", {
-                className: "fas fa-chevron-left",
-                style: {
-                  color: '#fff'
-                }
-              })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
-              className: "sr-only",
-              children: "Previous"
-            })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("a", {
-            className: "carousel-control-next",
-            href: "#carouseldaotao",
-            role: "button",
-            "data-slide": "next",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-              className: "view-icon",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("i", {
-                className: "fas fa-chevron-right",
-                style: {
-                  color: '#fff'
-                }
-              })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
-              className: "sr-only",
-              children: "Next"
-            })]
-          })]
-        })]
-      })
-    })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_HighLightBox__WEBPACK_IMPORTED_MODULE_1__.default, {})]
   });
 };
 

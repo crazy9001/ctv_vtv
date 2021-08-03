@@ -1,6 +1,6 @@
 @if (is_plugin_active('newsletter'))
     <div class="register-container">
-        <div class="bg-footer1">
+        <div class="bg-footer1 pt-3">
             <div class="container">
                 <div class="row d-flex align-items-center">
                     <div class="col-xl-6 d-flex justify-content-center mt-3 mt-md-3">

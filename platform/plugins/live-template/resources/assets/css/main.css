@@ -752,7 +752,7 @@ main a:hover {
 #header-home {
     height: 100px;
     width: 100vw;
-    background-image: url("../images/header.png");
+    background-image: url("../assets/images/header.png");
     background-repeat: no-repeat, repeat;
     position: fixed;
     z-index: 1080;
@@ -1761,44 +1761,6 @@ main a:hover {
 /*.lightbox:hover img{
   transform: translate(-50%, -50%) rotateY(180deg);
 }*/
-
-[class^="arrow"] {
-    height: 200px;
-    width: 50px;
-    background: rgba(0, 0, 0, 0.4);
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    cursor: pointer;
-}
-
-[class^="arrow"]:after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(-45deg);
-    width: 15px;
-    height: 15px;
-}
-
-.arrowr {
-    right: 0;
-}
-
-.arrowr:after {
-    border-right: 1px solid white;
-    border-bottom: 1px solid white;
-}
-
-.arrowl {
-    left: 0;
-}
-
-.arrowl:after {
-    border-left: 1px solid white;
-    border-top: 1px solid white;
-}
 
 .close {
     position: absolute;
