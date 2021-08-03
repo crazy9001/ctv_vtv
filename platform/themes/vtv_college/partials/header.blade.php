@@ -34,9 +34,10 @@
             <div class="container" style="height: 100%">
                 <div class="w-100 js-between h-100 d-flex flex-row">
                     @if (theme_option('logo'))
-                        <div id="idLogo" class="col-2 px-0">
+                        <div class="div-fake"></div>
+                        <div id="idLogo" class="px-0">
                             <a href="{{ route('public.single') }}" class="page-logo">
-                                <img src="{{ RvMedia::getImageUrl(theme_option('logo')) }}" class="img-logo img-fluid" alt="{{ theme_option('site_title') }}">
+                                <img src="{{ RvMedia::getImageUrl(theme_option('logo')) }}" class="img-logo" alt="{{ theme_option('site_title') }}">
                             </a>
                         </div>
                     @endif

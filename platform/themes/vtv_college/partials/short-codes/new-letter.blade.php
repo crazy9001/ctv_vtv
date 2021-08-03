@@ -3,14 +3,14 @@
         <div class="bg-footer1">
             <div class="container">
                 <div class="row d-flex align-items-center">
-                    <div class="col-xl-6 d-flex justify-content-center">
+                    <div class="col-xl-6 d-flex justify-content-center mt-3 mt-md-3">
                         <div class="row d-flex align-items-center">
                             <img src="{{ Theme::asset()->url('images/email.png') }}" class="img-fluid"/>
                             <h3>Đăng ký email nhận thông báo mới nhất từ CTV</h3>
                         </div>
                     </div>
                     <div class="col-xl-6 mt-3 d-flex justify-content-center">
-                        <div class="row">
+                        <div class="row d-flex justify-content-center">
                             <form class="form-inline" action="{{ route('public.newsletter.subscribe') }}" method="post">
                                 @csrf
                                 <input
