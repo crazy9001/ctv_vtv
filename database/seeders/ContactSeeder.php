@@ -3,8 +3,8 @@
 namespace Database\Seeders;
 
 use Botble\Base\Supports\BaseSeeder;
-use Botble\Contact\Enums\ContactStatusEnum;
-use Botble\Contact\Models\Contact;
+use Botble\Contact\Enums\AdmissionStatusEnum;
+use Botble\Contact\Models\Admission;
 use Faker\Factory;
 
 class ContactSeeder extends BaseSeeder
@@ -19,17 +19,17 @@ class ContactSeeder extends BaseSeeder
 
         $faker = Factory::create();
 
-        Contact::truncate();
+        Admission::truncate();
 
         for ($i = 0; $i < 10; $i++) {
-            Contact::create([
+            Admission::create([
                 'name'    => $faker->name,
                 'email'   => $faker->safeEmail,
                 'phone'   => $faker->phoneNumber,
                 'address' => $faker->address,
                 'subject' => $faker->text(50),
                 'content' => $faker->text(500),
-                'status'  => $faker->randomElement([ContactStatusEnum::READ, ContactStatusEnum::UNREAD]),
+                'status'  => $faker->randomElement([AdmissionStatusEnum::READ, AdmissionStatusEnum::UNREAD]),
             ]);
         }
     }

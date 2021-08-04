@@ -1,0 +1,9 @@
+{
+    "name": "Admissions",
+    "namespace": "Botble\\Admission\\",
+    "provider": "Botble\\Admission\\Providers\\AdmissionServiceProvider",
+    "author": "Botble Technologies",
+    "url": "https://botble.com",
+    "version": "5.8",
+    "description": "Form đăng ký tuyển sinh"
+}
