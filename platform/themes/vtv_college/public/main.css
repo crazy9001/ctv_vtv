@@ -624,7 +624,7 @@ main a:hover {
     border: 0;
     cursor: pointer;
     align-items: center;
-    min-width: 130;
+    min-width: 130px;
     min-height: 43px;
     background-color: #d72025;
 }
@@ -695,6 +695,15 @@ main a:hover {
     }
 }
 @media only screen and (max-width: 768px) {
+    .bg-media {
+        height: unset;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .bg-media {
+        height: unset !important;
+        padding-bottom: 20px;
+    }
     .footer .bg-footer2 {
         height: unset;
         display: flex;
@@ -703,6 +712,7 @@ main a:hover {
         background-repeat: no-repeat, repeat;
         background-color: #be0005;
     }
+
     .register-container .bg-footer1 {
         background-image: none;
         background-repeat: no-repeat, repeat;
@@ -779,7 +789,7 @@ main a:hover {
 }
 .title-heder-bottom {
     font-size: 14px;
-    color: #ffffff !important;
+    color: #ffffff;
     text-transform: uppercase;
     font-family: RobotoMedium;
 }
@@ -828,6 +838,9 @@ main a:hover {
     .menu-mobile {
         cursor: pointer;
     }
+    .ic-close-menu {
+        display: none;
+    }
     .img-logo {
         margin-top: 0px;
         padding: 5px;
@@ -845,7 +858,9 @@ main a:hover {
         display: none;
         cursor: pointer;
     }
-
+    .ic-close-menu {
+        display: none;
+    }
     .item-bottom {
         display: none !important;
     }
@@ -858,8 +873,8 @@ main a:hover {
 /** @format */
 
 .sidenav {
-    height: 100%;
-    width: 0;
+    height: 0;
+    width: 100%;
     position: fixed;
     z-index: 1;
     top: 0;
@@ -869,20 +884,30 @@ main a:hover {
     transition: 0.5s;
     box-shadow: 0 1px 1px 0 #888888;
 }
-
+.sidenav .up {
+    transform: rotate(180deg);
+}
+.sidenav .item-menu-mobile {
+    position: relative;
+}
 .sidenav a {
     padding: 8px 8px 8px 32px;
     text-decoration: none;
-    font-size: 25px;
+    font-size: 14px;
     color: #000;
     display: block;
     transition: 0.3s;
 }
 
-.sidenav a:hover {
-    color: #f1f1f1;
+.sidenav ul li a:hover .dropdown-content-mobile {
+    display: block;
 }
-
+.dropdown-content-mobile {
+    display: none;
+    z-index: 1;
+    padding-left: 10px;
+    border-radius: 5px;
+}
 .sidenav .closebtn {
     position: absolute;
     top: 0;
@@ -1092,6 +1117,20 @@ main a:hover {
 }
 .w-percent-one img {
     margin-left: 20px;
+}
+svg.fa-angle-down {
+    content: "";
+    position: absolute;
+    width: 20px !important;
+    height: 33px;
+    font-size: 14px;
+    line-height: 33px;
+    top: 5px;
+    color: #000 !important;
+    right: 15px;
+    text-align: center;
+    -webkit-transition: all 0.35s;
+    transition: all 0.35s;
 }
 .w-percent-one .content {
     padding-left: 10px;
@@ -2106,4 +2145,37 @@ main a:hover {
     right: 2%;
     cursor: pointer;
     z-index: 1080;
+}
+#header-home .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 5px;
+    top: 50px;
+}
+#header-home .dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+#header-home ul li:hover .dropdown-content {
+    display: block;
+}
+.title-heder-bottom:hover {
+    color: #ffdd00;
+}
+#header ul li svg {
+    color: #fff;
+}
+.svg-inline--fa.fa-w-10 {
+    color: #fff;
+}
+#header-home ul li:hover .svg-inline--fa.fa-w-10 {
+    color: #ffdd00;
 }

@@ -59,12 +59,50 @@
 </footer>
 {!! Theme::footer() !!}
 <script>
+    if (window.innerWidth < 768) {
+        var phantuchon = $(".item-menu-mobile");
+
+        function before_jquery() {
+            phantuchon.append("<i></i>");
+        }
+        before_jquery();
+        function add_class_i() {
+            $(".item-menu-mobile>i").addClass("pl-2 fa fa-angle-down");
+        }
+        add_class_i();
+        function hiddenCate(ul, icon) {
+            if (ul.is(":hidden") === true) {
+                icon.toggleClass("up");
+                ul.slideDown(200);
+            } else {
+                icon.toggleClass("up");
+                ul.slideUp();
+                ul.find("ul").slideUp(200);
+            }
+        }
+        $("ul.sidenav-menu-mobile li").click(function (event) {
+            var ul = $(this).children("ul");
+            var icon = $(this).children("svg");
+            hiddenCate(ul, icon);
+        });
+    }
+</script>
+<script>
     function openNav() {
-        document.getElementById("mySidenav").style.width = "350px";
+        document.getElementById("mySidenav").style.height = "350px";
+        document.getElementById("mySidenav").style.marginTop = "50px";
+        document.getElementsByClassName("ic-open-menu")[0].style.display =
+            "none";
+        document.getElementsByClassName("ic-close-menu")[0].style.display =
+            "block";
     }
 
     function closeNav() {
-        document.getElementById("mySidenav").style.width = "0";
+        document.getElementById("mySidenav").style.height = "0";
+        document.getElementsByClassName("ic-open-menu")[0].style.display =
+            "block";
+        document.getElementsByClassName("ic-close-menu")[0].style.display =
+            "none";
     }
 </script>
 <script>
@@ -187,6 +225,7 @@
             {
                 breakpoint: 768,
                 settings: {
+                    arrows: false,
                     slidesToShow: 1,
                     slidesToScroll: 1,
                 },
@@ -194,6 +233,7 @@
             {
                 breakpoint: 480,
                 settings: {
+                    arrows: false,
                     slidesToShow: 1,
                     slidesToScroll: 1,
                 },

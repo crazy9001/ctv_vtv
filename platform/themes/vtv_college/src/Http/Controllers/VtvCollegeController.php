@@ -8,9 +8,9 @@ use Theme;
 class VtvCollegeController extends PublicController
 {
 
-    public function getIntroduce()
-    {
-        return Theme::scope('introduce')->render();
-    }
+//    public function getIntroduce()
+//    {
+//        return Theme::scope('introduce')->render();
+//    }
 
 }

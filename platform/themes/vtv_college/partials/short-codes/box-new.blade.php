@@ -24,6 +24,10 @@
                 {!! Theme::partial('box_new_3', ['title' => $title, 'featured' => $featured]) !!}
             @break
 
+            @case(4)
+                {!! Theme::partial('box_new_4', ['title' => $title, 'featured' => $featured]) !!}
+            @break
+
             @default
                 {!! Theme::partial('box_new_1', ['title' => $title, 'featured' => $featured]) !!}
         @endswitch

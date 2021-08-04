@@ -30,6 +30,17 @@
                 </div>
             </div>
         </div>
+        <div class="container d-md-none slick-images responsive autoplay mt-5" data-slick='{"slidesToShow": 3, "slidesToScroll": 3}'>
+            @foreach($galleries as $index => $gallery)
+                <div class="col-4">
+                    <div class="card-image">
+                        <a href="{{ $gallery->url }}">
+                            <img src="{{ RvMedia::getImageUrl($gallery->image, 'featured') }}" class="img-resize img-border-radius"/>
+                        </a>
+                    </div>
+                </div>
+            @endforeach
+        </div>
     </div>
 </section>
 @endif

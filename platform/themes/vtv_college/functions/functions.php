@@ -76,6 +76,32 @@ add_shortcode('menu-content', __('Menu content'), __('Menu content'),
         return Theme::partial('short-codes.menu-content');
     });
 
+
+add_shortcode('college-slogan', __('Phương châm của trường'), __('Phương châm của trường'),
+    function ($shortCode) {
+        return Theme::partial('short-codes.college-slogan');
+    });
+
+add_shortcode('specialized-training', __('Chuyên ngành đào tạo'), __('Chuyên ngành đào tạo'),
+    function ($shortCode) {
+        return Theme::partial('short-codes.specialized-training');
+    });
+
+add_shortcode('lecturer-student', __('Giảng viên - Sinh viên'), __('Giảng viên - Sinh viên'),
+    function ($shortCode) {
+        return Theme::partial('short-codes.lecturer-student');
+    });
+
+add_shortcode('career-opportunities', __('Cơ hội việc làm'), __('Cơ hội việc làm'),
+    function ($shortCode) {
+        return Theme::partial('short-codes.career-opportunities');
+    });
+
+add_shortcode('student-reviews', __('Đánh giá của sinh viên'), __('Đánh giá của sinh viên'),
+    function ($shortCode) {
+        return Theme::partial('short-codes.student-reviews');
+    });
+
 theme_option()
     ->setField([
         'id'         => 'copyright',

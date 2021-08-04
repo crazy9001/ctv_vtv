@@ -63,11 +63,6 @@
                             </div>
                         </div>
                         <div class="d-flex flex-row w-100 h-50">
-{{--                            <div class="col-1 d-flex justify-content-center align-items-center">--}}
-{{--                                <a href="trang-chu.html">--}}
-{{--                                    <i class="fas fa-home" style="color: #ffdd00"></i>--}}
-{{--                                </a>--}}
-{{--                            </div>--}}
                             <div class="col-11 p-0 d-flex flex-row align-items-center">
                                 {!!
                                     Menu::renderMenuLocation('main-menu', [
@@ -79,23 +74,16 @@
                         </div>
                     </div>
                         <div class="menu-mobile">
-                            <i onclick="openNav()" class="fas fa-bars" style="color: #fff"></i>
+                            <i onclick="openNav()" class="fas fa-bars ic-open-menu"style="color: #fff"></i>
+                            <i onclick="closeNav()" class="fas fa-times ic-close-menu" style="color: #fff"></i>
                         </div>
                         <div id="mySidenav" class="sidenav">
-                            <div class="d-flex flex-row-reverse align-items-center item-menu">
-                                <a
-                                    href="javascript:void(0)"
-                                    class="text-white"
-                                    onclick="closeNav()"
-                                >&times;</a
-                                >
-                            </div>
                             {!!
-                                    Menu::renderMenuLocation('main-menu', [
-                                        'options' => ['class' => ''],
-                                        'view'    => 'main-menu-mobile',
-                                    ])
-                                !!}
+                                Menu::renderMenuLocation('main-menu', [
+                                    'options' => ['class' => 'sidenav-menu-mobile'],
+                                    'view'    => 'main-menu-mobile',
+                                ])
+                            !!}
                         </div>
                 </div>
             </div>

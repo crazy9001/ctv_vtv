@@ -7,8 +7,8 @@ Route::group(['namespace' => 'Theme\VtvCollege\Http\Controllers', 'middleware' =
 
         // Add your custom route here
         // Ex: Route::get('hello', 'VtvCollegeController@getHello');
-        Route::get('introduce', 'VtvCollegeController@getIntroduce')
-            ->name('public.introduce');
+//        Route::get('introduce', 'VtvCollegeController@getIntroduce')
+//            ->name('public.introduce');
     });
 });
 

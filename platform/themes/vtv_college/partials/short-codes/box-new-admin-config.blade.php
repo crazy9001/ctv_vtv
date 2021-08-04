@@ -12,6 +12,10 @@
        array(
            'key' => 3,
            'value'  =>  'Tuyển sinh'
+       ),
+       array(
+       'key'    => 4,
+       'value'  =>  'Thông tin tuyển sinh'
        )
     );
 
