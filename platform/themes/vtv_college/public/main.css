@@ -193,7 +193,7 @@ main a:hover {
     position: fixed;
     bottom: 100px;
     right: 20px;
-    z-index: 1909;
+    z-index: 1909px;
     cursor: pointer;
     display: none;
 }
@@ -696,13 +696,17 @@ main a:hover {
 }
 @media only screen and (max-width: 768px) {
     .bg-media {
-        height: unset;
-    }
-}
-@media only screen and (max-width: 768px) {
-    .bg-media {
         height: unset !important;
         padding-bottom: 20px;
+    }
+    .news-text-title h3 a {
+        font-size: 20px !important;
+    }
+    .block-one .time-view {
+        display: none !important;
+    }
+    .block-one .news-content-text {
+        display: none !important;
     }
     .footer .bg-footer2 {
         height: unset;
@@ -712,7 +716,28 @@ main a:hover {
         background-repeat: no-repeat, repeat;
         background-color: #be0005;
     }
-
+    .item-new-ps .bg-img {
+        height: auto !important;
+        box-shadow: unset !important;
+        border-radius: unset !important;
+    }
+    .item-new-ps {
+        padding: 10px !important;
+    }
+    .item-content-event .item-new-ps .bg-img .time-item-ps {
+        display: none !important;
+    }
+    .card-image-event {
+        padding: 150px 0 0 0 !important;
+    }
+    .content-new-item h3 a {
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+        font-size: 14px !important;
+    }
+    .img-shadow-top {
+        border-radius: 0px;
+    }
     .register-container .bg-footer1 {
         background-image: none;
         background-repeat: no-repeat, repeat;
@@ -759,7 +784,7 @@ main a:hover {
         height: auto;
     }
     .introduce-content .introduce-item .time-view {
-        margin-top: 20px;
+        margin-top: 2 0px;
     }
 }
 
@@ -1486,7 +1511,7 @@ svg.fa-angle-down {
     } */
     .block-one {
         margin-top: 33px;
-        width: 1170px;
+        width: 1150px;
     }
     .item-content-event {
         width: 1170px;
@@ -1538,6 +1563,14 @@ svg.fa-angle-down {
     .w-percent-tow img {
         width: 31px;
         height: 32px;
+    }
+    .card-image-train-title a img {
+        border-radius: 0 !important;
+        width: 100% !important;
+        height: auto;
+    }
+    .shadow-sm {
+        border-radius: 0px;
     }
 }
 @media only screen and (max-width: 540px) {
