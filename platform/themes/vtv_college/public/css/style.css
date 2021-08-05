@@ -163,3 +163,8 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 .btn-detail-info a {
   color: #fff;
 }
+
+#header-home .block-mobile .subMenu a {
+  display: inline-block;
+  color: #000 !important;
+}

@@ -5,13 +5,13 @@
                 @if ($row->icon_font)<i class='{{ trim($row->icon_font) }}'></i> @endif{{ $row->title }}
             </a>
             @if ($row->has_child)
-                <i class="fa fa-caret-down"></i>
+                <i class="fa fa-angle-right"></i>
                 {!!
                     Menu::generateMenu([
                         'menu'       => $menu,
                         'menu_nodes' => $row->child,
                         'view'       => 'main-menu',
-                        'options'    => ['class' => 'dropdown-content'],
+                        'options'    => ['class' => 'subMenu'],
                     ])
                 !!}
             @endif

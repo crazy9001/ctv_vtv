@@ -64,12 +64,16 @@
                         </div>
                         <div class="d-flex flex-row w-100 h-50">
                             <div class="col-11 p-0 d-flex flex-row align-items-center">
-                                {!!
-                                    Menu::renderMenuLocation('main-menu', [
-                                        'options' => ['class' => 'flex-row m-0 w-100 d-flex justify-content-lg-between'],
-                                        'view'    => 'main-menu',
-                                    ])
-                                !!}
+                                <div class="col-11 p-0 d-flex flex-row align-items-center header-web">
+                                    <div class="container">
+                                        {!!
+                                            Menu::renderMenuLocation('main-menu', [
+                                                'options' => ['class' => 'flex-row m-0 w-100 d-flex justify-content-lg-between'],
+                                                'view'    => 'main-menu',
+                                            ])
+                                        !!}
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
