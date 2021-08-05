@@ -168,21 +168,3 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   display: inline-block;
   color: #000 !important;
 }
-
-@media only screen and (max-width: 768px) {
-  .img-shadow-top {
-    border-radius: 0 !important;
-  }
-
-  .item-new-ps {
-    margin: 0 !important;
-  }
-
-  .item-new-ps .bg-img {
-    padding: 0 !important;
-  }
-
-  .time-item-ps {
-    display: none !important;
-  }
-}

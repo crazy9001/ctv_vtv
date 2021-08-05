@@ -193,7 +193,7 @@ main a:hover {
     position: fixed;
     bottom: 100px;
     right: 20px;
-    z-index: 1909px;
+    z-index: 1909;
     cursor: pointer;
     display: none;
 }
@@ -747,6 +747,21 @@ main a:hover {
     .register-container .bg-footer1 .view-button {
         margin: 10px 0;
     }
+    .tuyensinh .time-item-ps span {
+        font-size: 12px !important;
+    }
+    .content-item-tuyensinh span a {
+        font-size: 12px !important;
+    }
+    .tuyensinh-item {
+        border-radius: unset !important;
+    }
+    .tuyensinh-item .mt-4 {
+        margin-top: 0px !important;
+    }
+    .tuyensinh-item .img-border-radius-left {
+        border-radius: unset !important;
+    }
     .sv-tintuc .bg-sv-tintuc a img {
         height: unset !important;
         min-width: 100%;
@@ -761,6 +776,9 @@ main a:hover {
     .bg-footer2 .block-col-md-2 {
         align-items: unset !important;
         margin-bottom: 20px;
+    }
+    .tuyensinh-item .time-item-ps svg {
+        display: none !important;
     }
 }
 @media only screen and (max-width: 540px) {
@@ -1506,12 +1524,9 @@ svg.fa-angle-down {
   display: none;
 } */
 @media only screen and (min-width: 1200px) {
-    /* .item-new-ps {
-      padding: 0px 20px 0px 20px !important;
-    } */
     .block-one {
         margin-top: 33px;
-        width: 1150px;
+        width: 1150px !important;
     }
     .item-content-event {
         width: 1170px;
