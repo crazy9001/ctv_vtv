@@ -14,5 +14,5 @@ Post Scheduler is a plugin that allows you to modify the created time of posts.
 ![Screenshot](https://raw.githubusercontent.com/botble/post-scheduler/master/public/images/screenshot.png)
 
 # Contact us
-- Website: [https://botble.com](https://botble.com)
+- Website: [https://ctv.dev.ovptek.vn](https://ctv.dev.ovptek.vn)
 - Email: [contact@botble.com](mailto:contact@botble.com)

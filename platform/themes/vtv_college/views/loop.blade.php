@@ -42,7 +42,7 @@
                                                     </div>
                                                 </div>
                                             @endforeach
-                                            {{ $posts->links() }}
+{{--                                            {{ $posts->links() }}--}}
                                         </div>
                                         <div class="col-lg-4 item-right-1">
                                             {!! dynamic_sidebar('category_sidebar') !!}

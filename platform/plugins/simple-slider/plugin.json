@@ -3,7 +3,7 @@
   "namespace": "Botble\\SimpleSlider\\",
   "provider": "Botble\\SimpleSlider\\Providers\\SimpleSliderServiceProvider",
   "author": "Trung tâm bản quyền số VTVLive",
-  "url": "https://botble.com",
+  "url": "https://ctv.dev.ovptek.vn",
   "version": "5.4",
   "description": "A plugin to create sliders"
 }

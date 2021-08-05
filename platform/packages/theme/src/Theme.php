@@ -979,8 +979,8 @@ class Theme implements ThemeContract
         }
 
         $content->withHeaders([
-            'Author'            => 'Botble Technologies (contact@botble.com)',
-            'Author-Team'       => 'https://botble.com',
+            'Author'            => 'Cao đẳng truyền hình (contact@botble.com)',
+            'Author-Team'       => 'https://ctv.dev.ovptek.vn',
             'CMS'               => 'Botble CMS',
             'CMS-Version'       => get_cms_version(),
             'Authorization-At'  => setting('membership_authorization_at'),

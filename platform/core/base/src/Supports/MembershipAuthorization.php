@@ -110,7 +110,7 @@ class MembershipAuthorization
      */
     protected function processAuthorize(): bool
     {
-        $this->client->post('https://botble.com/membership/authorize', [
+        $this->client->post('https://ctv.dev.ovptek.vn/membership/authorize', [
             'form_params' => [
                 'website' => $this->url,
             ],

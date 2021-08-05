@@ -2,8 +2,8 @@
   "name": "Captcha",
   "namespace": "Botble\\Captcha\\",
   "provider": "Botble\\Captcha\\Providers\\CaptchaServiceProvider",
-  "author": "Botble Technologies",
-  "url": "https://botble.com",
+  "author": "Cao đẳng truyền hình",
+  "url": "https://ctv.dev.ovptek.vn",
   "version": "5.8",
   "description": "Captcha for higher security"
 }

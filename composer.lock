@@ -299,7 +299,7 @@
                 }
             ],
             "description": "Laravel assets management",
-            "homepage": "https://botble.com",
+            "homepage": "https://ctv.dev.ovptek.vn",
             "keywords": [
                 "botble",
                 "botble assets",
@@ -471,12 +471,12 @@
             },
             "authors": [
                 {
-                    "name": "Botble Technologies",
+                    "name": "Cao đẳng truyền hình",
                     "email": "contact@botble.com"
                 }
             ],
             "description": "The Botble Platform based on Laravel Framework.",
-            "homepage": "https://botble.com",
+            "homepage": "https://ctv.dev.ovptek.vn",
             "keywords": [
                 "botble",
                 "botble cms",
@@ -10463,7 +10463,7 @@
                 }
             ],
             "description": "Check coding standard & code syntax with Git pre-commit hook.",
-            "homepage": "https://botble.com",
+            "homepage": "https://ctv.dev.ovptek.vn",
             "keywords": [
                 "botble",
                 "botble cms",

@@ -110,7 +110,7 @@ theme_option()
         'label'      => __('Copyright'),
         'attributes' => [
             'name'    => 'copyright',
-            'value'   => '© 2020 Botble Technologies. All right reserved.',
+            'value'   => '© 2020 Cao đẳng truyền hình. All right reserved.',
             'options' => [
                 'class'        => 'form-control',
                 'placeholder'  => __('Change copyright'),

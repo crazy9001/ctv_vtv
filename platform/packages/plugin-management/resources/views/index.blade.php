@@ -21,9 +21,9 @@
                                 <button class="btn @if ($plugin->status) btn-warning @else btn-info @endif btn-trigger-change-status" data-plugin="{{ $plugin->path }}" data-status="{{ $plugin->status }}">@if ($plugin->status) {{ trans('packages/plugin-management::plugin.deactivate') }} @else {{ trans('packages/plugin-management::plugin.activate') }} @endif</button>
                             @endif
 
-                            @if (Auth::user()->hasPermission('plugins.remove'))
-                                <button class="btn btn-danger btn-trigger-remove-plugin" data-plugin="{{ $plugin->path }}">{{ trans('packages/plugin-management::plugin.remove') }}</button>
-                            @endif
+{{--                            @if (Auth::user()->hasPermission('plugins.remove'))--}}
+{{--                                <button class="btn btn-danger btn-trigger-remove-plugin" data-plugin="{{ $plugin->path }}">{{ trans('packages/plugin-management::plugin.remove') }}</button>--}}
+{{--                            @endif--}}
                         </div>
                     </div>
                 </div>

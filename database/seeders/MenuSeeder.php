@@ -34,7 +34,7 @@ class MenuSeeder extends BaseSeeder
                         ],
                         [
                             'title'  => 'Purchase',
-                            'url'    => 'https://botble.com/go/download-cms',
+                            'url'    => 'https://ctv.dev.ovptek.vn/go/download-cms',
                             'target' => '_blank',
                         ],
                         [
@@ -191,7 +191,7 @@ class MenuSeeder extends BaseSeeder
                         ],
                         [
                             'title'  => 'Mua ngay',
-                            'url'    => 'https://botble.com/go/download-cms',
+                            'url'    => 'https://ctv.dev.ovptek.vn/go/download-cms',
                             'target' => '_blank',
                         ],
                         [

@@ -2,8 +2,8 @@
     "name": "Blog",
     "namespace": "Botble\\Blog\\",
     "provider": "Botble\\Blog\\Providers\\BlogServiceProvider",
-    "author": "Botble Technologies",
-    "url": "https://botble.com",
+    "author": "Cao đẳng truyền hình",
+    "url": "https://ctv.dev.ovptek.vn",
     "version": "5.8",
     "description": "Manage posts, categories, tags"
 }

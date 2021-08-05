@@ -1,5 +1,5 @@
 /**
- * Created by Botble Technologies on 06/09/2015.
+ * Created by Cao đẳng truyền hình on 06/09/2015.
  */
 
 require('./cropper');

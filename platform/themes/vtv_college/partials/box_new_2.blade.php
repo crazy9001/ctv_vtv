@@ -18,9 +18,9 @@
         <div class="container slick-images responsive autoplay mt-5" data-slick='{"slidesToShow": 3, "slidesToScroll": 3}'>
             @foreach ($featured as $featureItem)
                 <div class="col-4">
-                    <div class="card-image">
+                    <div class="card-image-train">
                         <a href="{{ $featureItem->url }}">
-                            <img src="{{ RvMedia::getImageUrl($featureItem->image, 'featured', false, RvMedia::getDefaultImage()) }}"class="img-resize img-border-radius"/>
+                            <img src="{{ RvMedia::getImageUrl($featureItem->image, 'featured', false, RvMedia::getDefaultImage()) }}" class="img-resize img-border-radius"/>
                         </a>
                     </div>
                     <div class="content-daotao">
@@ -29,6 +29,7 @@
                         </h3>
                     </div>
                 </div>
+
             @endforeach
         </div>
     </div>

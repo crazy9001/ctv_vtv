@@ -1,7 +1,7 @@
 {
   "name": "botble/captcha",
   "description": "Captcha for higher security",
-  "homepage": "https://botble.com",
+  "homepage": "https://ctv.dev.ovptek.vn",
   "require": {
     "google/recaptcha": "^1.2"
   }

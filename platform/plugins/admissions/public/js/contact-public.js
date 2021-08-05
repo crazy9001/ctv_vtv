@@ -1,8 +1,8 @@
 /******/ (() => { // webpackBootstrap
 var __webpack_exports__ = {};
-/*!************************************************************************!*\
-  !*** ./platform/plugins/contact/resources/assets/js/contact-public.js ***!
-  \************************************************************************/
+/*!***************************************************************************!*\
+  !*** ./platform/plugins/admissions/resources/assets/js/contact-public.js ***!
+  \***************************************************************************/
 $(document).ready(function () {
   var showError = function showError(message) {
     $('.contact-error-message').html(message).show();

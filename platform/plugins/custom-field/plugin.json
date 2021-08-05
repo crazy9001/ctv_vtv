@@ -2,8 +2,8 @@
     "name": "Custom Fields",
     "namespace": "Botble\\CustomField\\",
     "provider": "Botble\\CustomField\\Providers\\CustomFieldServiceProvider",
-    "author": "Botble Technologies",
-    "url": "https://botble.com",
+    "author": "Cao đẳng truyền hình",
+    "url": "https://ctv.dev.ovptek.vn",
     "version": "5.8",
     "description": "Custom Fields"
 }
