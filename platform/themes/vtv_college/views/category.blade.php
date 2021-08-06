@@ -48,7 +48,7 @@
                             <div class="pt-3 pb-3">
                                 @if($index == 1)
                                     <img
-                                        src="{{ RvMedia::getImageUrl($featureItem->image, 'featured', false, RvMedia::getDefaultImage()) }}"
+                                        src="{{ RvMedia::getImageUrl($featureItem->image, 'medium', false, RvMedia::getDefaultImage()) }}"
                                         class="img-fluid"
                                     />
                                     <div class="time-view d-flex flex-row align-items-center">
@@ -72,7 +72,7 @@
                     @endforeach
                 </div>
                 <div class="mt-3 mb-3">
-                    {!! do_shortcode('[upcoming-events title="Sự kiện sắp diễn ra" category="8"][/upcoming-events]') !!}
+                    {!! do_shortcode('[upcoming-events title="Sự kiện sắp diễn ra" category="'. theme_option('id_upcoming_event', 1) .'"][/upcoming-events]') !!}
                     <section class="section-banner">
                         <div class="container">
                             <div class="row">

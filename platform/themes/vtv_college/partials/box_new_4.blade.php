@@ -34,7 +34,7 @@
                         <div class="info-item d-flex flex-column justify-content-center">
                             <div class="card-image-event w-100 h-100">
                                 <a href="{{ $featureItem->url }}" title="{{ $featureItem->name }}">
-                                    <img src="{{ RvMedia::getImageUrl($featureItem->image, 'featured', false, RvMedia::getDefaultImage()) }}" class="img-resize img-shadow-top"/>
+                                    <img src="{{ RvMedia::getImageUrl($featureItem->image, 'medium', false, RvMedia::getDefaultImage()) }}" class="img-resize img-shadow-top"/>
                                 </a>
                             </div>
                             <div class="p-3">

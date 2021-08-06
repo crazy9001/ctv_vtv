@@ -202,3 +202,5 @@ add_action('init', function () {
         'filesystems.disks.public.url'  => str_replace('/index.php', '', url('storage')),
     ]);
 }, 124);
+
+RvMedia::addSize('featured', 570, 350)->addSize('medium', 270, 200)->addSize('small', 100, 75);

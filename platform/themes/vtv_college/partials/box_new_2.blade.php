@@ -20,7 +20,7 @@
                 <div class="col-4">
                     <div class="card-image-train">
                         <a href="{{ $featureItem->url }}">
-                            <img src="{{ RvMedia::getImageUrl($featureItem->image, 'featured', false, RvMedia::getDefaultImage()) }}" class="img-resize img-border-radius"/>
+                            <img src="{{ RvMedia::getImageUrl($featureItem->image, 'medium', false, RvMedia::getDefaultImage()) }}" class="img-resize img-border-radius"/>
                         </a>
                     </div>
                     <div class="content-daotao">

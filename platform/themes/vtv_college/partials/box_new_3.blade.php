@@ -40,7 +40,7 @@
                     <div class="col-sm-6 col-6 p-0 img-tuyensinh-item d-flex justify-content-center">
                         <div class="w-100 h-100 card-image">
                             <a href="{{ $featureItem->url }}">
-                                <img src="{{ RvMedia::getImageUrl($featureItem->image, 'featured', false, RvMedia::getDefaultImage()) }}" class="img-resize img-border-radius-left"/>
+                                <img src="{{ RvMedia::getImageUrl($featureItem->image, 'medium', false, RvMedia::getDefaultImage()) }}" class="img-resize img-border-radius-left"/>
                             </a>
                         </div>
                     </div>

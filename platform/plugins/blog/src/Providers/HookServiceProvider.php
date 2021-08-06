@@ -111,6 +111,18 @@ class HookServiceProvider extends ServiceProvider
                             ],
                         ],
                     ],
+                    [
+                        'id'         => 'id_upcoming_event',
+                        'type'       => 'number',
+                        'label'      => 'Danh mục sự kiện sắp diễn ra',
+                        'attributes' => [
+                            'name'    => 'id_upcoming_event',
+                            'value'   => 1,
+                            'options' => [
+                                'class' => 'form-control',
+                            ],
+                        ],
+                    ],
                 ],
             ]);
     }

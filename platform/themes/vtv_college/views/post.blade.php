@@ -42,7 +42,7 @@
                         </div>
                     </div>
                 </div>
-                {!! do_shortcode('[upcoming-events title="Sự kiện sắp diễn ra" category="8"][/upcoming-events]') !!}
+                {!! do_shortcode('[upcoming-events title="Sự kiện sắp diễn ra" category="'. theme_option('id_upcoming_event', 1) .'"][/upcoming-events]') !!}
             </div>
 
             <div class="col-lg-3 position-relative">

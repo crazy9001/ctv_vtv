@@ -17,7 +17,7 @@
                         <div class="col-lg-4 col-md-6 d-flex flex-column justify-content-center">
                             <div class="card-image-upcoming-events">
                                 <a href="{{ $post->url }}">
-                                    <img src="{{ RvMedia::getImageUrl($post->image, 'featured', false, RvMedia::getDefaultImage()) }}" class="img-fluid">
+                                    <img src="{{ RvMedia::getImageUrl($post->image, 'medium', false, RvMedia::getDefaultImage()) }}" class="img-fluid">
                                 </a>
                             </div>
                             <h3>

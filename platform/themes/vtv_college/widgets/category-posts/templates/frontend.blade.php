@@ -10,7 +10,7 @@
             <div class="student-activities-border d-flex flex-row mb-4">
                 @if($config['show_image'] == 1)
                     <a href="{{ $post->url }}"  title="{{ $post->name }}">
-                        <img src="{{ RvMedia::getImageUrl($post->image, 'featured', false, RvMedia::getDefaultImage()) }}"/>
+                        <img src="{{ RvMedia::getImageUrl($post->image, 'small', false, RvMedia::getDefaultImage()) }}"/>
                     </a>
                 @endif
                 <h5> <a href="{{ $post->url }}"  title="{{ $post->name }}">{{ $post->name }}</a></h5>
