@@ -36,9 +36,6 @@
                                     </div>
                                     <div>
                                         <h5>{{ $featureItem->description }}</h5>
-{{--                                        <h5 class="rules">--}}
-{{--                                            Thể lệ cuộc thi “ MV CỦA TÔI” lần thứ 3--}}
-{{--                                        </h5>--}}
                                     </div>
                                 </div>
                             </div>
@@ -57,7 +54,7 @@
                                     </div>
                                 @endif
                                 <div class="border-bottom pb-3">
-                                    <h5>
+                                    <h5 class="rules font-size-18">
                                         <a href="#">{{ $featureItem->name }}</a>
                                     </h5>
                                     @if($index == 1)
@@ -74,38 +71,36 @@
                 <div class="mt-3 mb-3">
                     {!! do_shortcode('[upcoming-events title="Sự kiện sắp diễn ra" category="'. theme_option('id_upcoming_event', 1) .'"][/upcoming-events]') !!}
                     <section class="section-banner">
-                        <div class="container">
-                            <div class="row">
-                                <div class="introduce-content">
-                                    <div class="section-banner">
-                                        <div class="row">
-                                            <div class="col-lg-8 introduce-item">
-                                                @foreach($posts as $post)
-                                                    <div class="post__introduce_item">
-                                                        <h3><a href="{{ $post->url }}" title="{{ $post->name }}">{{ $post->name }}</a></h3>
-                                                        <div class="row mt-3 bg-content-item">
-                                                            <div class="col-lg-4">
-                                                                <a href="{{ $post->url }}">
-                                                                    <img src="{{ RvMedia::getImageUrl($post->image, 'medium', false, RvMedia::getDefaultImage()) }}"/>
-                                                                </a>
+                        <div class="row">
+                            <div class="introduce-content">
+                                <div class="section-banner">
+                                    <div class="row">
+                                        <div class="col-lg-8 introduce-item">
+                                            @foreach($posts as $post)
+                                                <div class="post__introduce_item">
+                                                    <h3><a href="{{ $post->url }}" title="{{ $post->name }}">{{ $post->name }}</a></h3>
+                                                    <div class="row mt-3 bg-content-item">
+                                                        <div class="col-lg-4">
+                                                            <a href="{{ $post->url }}">
+                                                                <img src="{{ RvMedia::getImageUrl($post->image, 'medium', false, RvMedia::getDefaultImage()) }}"/>
+                                                            </a>
+                                                        </div>
+                                                        <div class="col-lg-8">
+                                                            <div class="time-view d-flex flex-row align-items-center">
+                                                                <i class="far fa-calendar-alt" style=" color: #666666; width: 17px;height: 16px;"></i>
+                                                                <span class="ml-2">{{ $post->created_at->format('d/m/Y - H:i:s') }}</span>
                                                             </div>
-                                                            <div class="col-lg-8">
-                                                                <div class="time-view d-flex flex-row align-items-center">
-                                                                    <i class="far fa-calendar-alt" style=" color: #666666; width: 17px;height: 16px;"></i>
-                                                                    <span class="ml-2">{{ $post->created_at->format('d/m/Y - H:i:s') }}</span>
-                                                                </div>
-                                                                <h5>
-                                                                    <a href="{{ $post->url }}">{{ $post->description }}</a>
-                                                                </h5>
-                                                            </div>
+                                                            <h5>
+                                                                <a href="{{ $post->url }}">{{ $post->description }}</a>
+                                                            </h5>
                                                         </div>
                                                     </div>
-                                                @endforeach
-                                                {{ $posts->links() }}
-                                            </div>
-                                            <div class="col-lg-4 item-right-1">
-                                                {!! dynamic_sidebar('category_sidebar') !!}
-                                            </div>
+                                                </div>
+                                            @endforeach
+                                            {{ $posts->links() }}
+                                        </div>
+                                        <div class="col-lg-4 item-right-1">
+                                            {!! dynamic_sidebar('category_sidebar') !!}
                                         </div>
                                     </div>
                                 </div>

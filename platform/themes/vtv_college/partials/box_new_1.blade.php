@@ -11,7 +11,7 @@
         @foreach ($featured as $featureItem)
             @if($loop->first)
                 <div class="block-one row ml-0 mr-0 shadow-sm bg-white">
-                    <div class="d-flex col-lg-6 align-items-center justify-content-center">
+                    <div class="d-flex col-lg-6 align-items-center justify-content-center p-0">
                         <div class="card-image-train-title w-100 h-100">
                             <a href="{{ $featureItem->url }}" title="{{ $featureItem->name }}">
                                 <img src="{{ RvMedia::getImageUrl($featureItem->image, 'featured', false, RvMedia::getDefaultImage()) }}"

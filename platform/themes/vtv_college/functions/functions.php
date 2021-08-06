@@ -14,6 +14,13 @@ register_sidebar([
     'description' => 'Nội dung tin tức hiển thị sidebar chuyên mục',
 ]);
 
+register_sidebar([
+    'id'          => 'posts_sidebar',
+    'name'        => 'Posts sidebar',
+    'description' => 'Nội dung tin tức hiển thị sidebar trong trang tin tức tổng hợp',
+]);
+
+
 
 register_sidebar([
     'id'          => 'tag_sidebar',
@@ -38,6 +45,13 @@ register_sidebar([
     'name'        => 'Ads post sidebar',
     'description' => 'Nội dung quảng cáo hiển thị trong bài viết',
 ]);
+
+register_sidebar([
+    'id'          => 'ads_posts_sidebar',
+    'name'        => 'Ads posts sidebar',
+    'description' => 'Nội dung quảng cáo hiển thị trong trang tin tức tổng hợp',
+]);
+
 
 
 add_shortcode('google-map', __('Google map'), __('Custom map'), function ($shortCode) {
