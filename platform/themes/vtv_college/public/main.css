@@ -124,7 +124,7 @@ main a:hover {
     border-radius: 10px 10px 0 0;
 }
 .img-border-radius-left {
-    border-radius: 10px;
+    border-radius: 10px 0 0 10px !important;
 }
 .font-size-14 {
     font-size: 14px !important;
@@ -517,7 +517,7 @@ main a:hover {
 .upcoming-events .bg-fake {
     height: 10px;
     background: #9a0000;
-    border-radius: 10px 10px 0px 0px;
+    border-radius: 10px 10px 0 0;
 }
 .list-news-event h5 a {
     color: #464646;
@@ -708,6 +708,9 @@ main a:hover {
     .block-one .news-content-text {
         display: none !important;
     }
+    .gioi-thieu-content-1 .time-view {
+        margin-top: 20px !important;
+    }
     .footer .bg-footer2 {
         height: unset;
         display: flex;
@@ -736,7 +739,7 @@ main a:hover {
         font-size: 14px !important;
     }
     .img-shadow-top {
-        border-radius: 0px;
+        border-radius: 0px !important;
     }
     .register-container .bg-footer1 {
         background-image: none;
@@ -780,6 +783,9 @@ main a:hover {
     .tuyensinh-item .time-item-ps svg {
         display: none !important;
     }
+    .gioi-thieu-content-1 {
+        padding: 0 10px 0 10px !important;
+    }
 }
 @media only screen and (max-width: 540px) {
     .footer .bg-footer1 h3 {
@@ -802,7 +808,7 @@ main a:hover {
         height: auto;
     }
     .introduce-content .introduce-item .time-view {
-        margin-top: 2 0px;
+        margin-top: 20px;
     }
 }
 
@@ -857,8 +863,9 @@ main a:hover {
     font-family: "Roboto";
 }
 .gioi-thieu-content-1 .time-view {
-    margin-top: 0px !important;
+    margin-top: 0px;
 }
+
 .gioi-thieu-content-1 .news-event-content .time-view {
     margin-top: 0px !important;
     margin-left: 0px !important;
@@ -992,7 +999,7 @@ main a:hover {
 }
 
 .txt_Center {
-    margin: 50% 0% 0% 20%;
+    margin: 50% 0 0 20%;
 }
 
 .txt_h1 {
