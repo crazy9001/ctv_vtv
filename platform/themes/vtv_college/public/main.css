@@ -786,6 +786,10 @@ main a:hover {
     .gioi-thieu-content-1 {
         padding: 0 10px 0 10px !important;
     }
+    .post__content img {
+        height: 50vh !important;
+        object-fit: cover !important;
+    }
 }
 @media only screen and (max-width: 540px) {
     .footer .bg-footer1 h3 {

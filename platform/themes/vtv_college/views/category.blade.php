@@ -44,10 +44,12 @@
                             @else
                             <div class="pt-3 pb-3">
                                 @if($index == 1)
-                                    <img
-                                        src="{{ RvMedia::getImageUrl($featureItem->image, 'medium', false, RvMedia::getDefaultImage()) }}"
-                                        class="img-fluid"
-                                    />
+                                    <a href="{{ $featureItem->url }}">
+                                        <img
+                                            src="{{ RvMedia::getImageUrl($featureItem->image, 'medium', false, RvMedia::getDefaultImage()) }}"
+                                            class="img-fluid"
+                                        />
+                                    </a>
                                     <div class="time-view d-flex flex-row align-items-center">
                                         <i class="far fa-calendar-alt" style="color: #666666; width: 17px; height: 16px"></i>
                                         <span class="ml-2">{{ $featureItem->created_at->format('d/m/Y - H:i:s') }}</span>
@@ -55,7 +57,7 @@
                                 @endif
                                 <div class="border-bottom pb-3">
                                     <h5 class="rules font-size-18">
-                                        <a href="#">{{ $featureItem->name }}</a>
+                                        <a href="{{ $featureItem->url }}">{{ $featureItem->name }}</a>
                                     </h5>
                                     @if($index == 1)
                                         <h6>{{ $featureItem->description }}</h6>
