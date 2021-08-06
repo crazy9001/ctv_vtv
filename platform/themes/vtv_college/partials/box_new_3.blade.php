@@ -29,7 +29,7 @@
                             </h3>
                         </div>
                         <div class="content-tuyensinh">
-                            <span>{{ $featureItem->description }}</span>
+                            <span>{{  Str::limit($featureItem->description, 255) }}</span>
                         </div>
                     </div>
                 </div>

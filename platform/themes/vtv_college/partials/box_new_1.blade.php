@@ -32,7 +32,8 @@
                         </div>
                         <div class="news-content-text">
                             <span>
-                              {!! $featureItem->description !!}
+{{--                              {!! $featureItem->description !!}--}}
+                                {{  Str::limit($featureItem->description, 255) }}
                             </span>
                         </div>
                     </div>

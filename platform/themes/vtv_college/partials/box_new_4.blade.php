@@ -43,7 +43,7 @@
                                 </a>
                                 <h4 class="text-roboto font-size-14 mt-2">{{ $featureItem->created_at->format('d/m/Y - H:i:s') }}</h4>
                                 <div class="text-content mt-2">
-                                    <h3 class="text-roboto font-size-14">{{ $featureItem->description }}</h3>
+                                    <h3 class="text-roboto font-size-14">{{  Str::limit($featureItem->description, 255) }}</h3>
                                 </div>
                             </div>
                         </div>
