@@ -42,7 +42,7 @@ $(document).ready(function () {
         showError(message);
     }
 
-    $(document).on('click', '.contact-form button[type=submit]', function (event) {
+    $(document).on('click', '.admissions-form button[type=submit]', function (event) {
         event.preventDefault();
         event.stopPropagation();
 

@@ -94,19 +94,19 @@ class HookServiceProvider extends ServiceProvider
     {
         $view = apply_filters(CONTACT_FORM_TEMPLATE_VIEW, 'plugins/admissions::forms.contact');
 
-//        if (defined('THEME_OPTIONS_MODULE_SCREEN_NAME')) {
-//            $this->app->booted(function () {
-//                Theme::asset()
-//                    ->usePath(false)
-//                    ->add('contact-css', asset('vendor/core/plugins/contact/css/contact-public.css'), [], [], '1.0.0');
-//
-//                Theme::asset()
-//                    ->container('footer')
-//                    ->usePath(false)
-//                    ->add('contact-public-js', asset('vendor/core/plugins/contact/js/contact-public.js'),
-//                        ['jquery'], [], '1.0.0');
-//            });
-//        }
+        if (defined('THEME_OPTIONS_MODULE_SCREEN_NAME')) {
+            $this->app->booted(function () {
+                Theme::asset()
+                    ->usePath(false)
+                    ->add('contact-css', asset('vendor/core/plugins/contact/css/admissions-public.css'), [], [], '1.0.0');
+
+                Theme::asset()
+                    ->container('footer')
+                    ->usePath(false)
+                    ->add('contact-public-js', asset('vendor/core/plugins/admissions/js/admissions-public.js'),
+                        ['jquery'], [], '1.0.0');
+            });
+        }
 
         if ($shortcode->view && view()->exists($shortcode->view)) {
             $view = $shortcode->view;

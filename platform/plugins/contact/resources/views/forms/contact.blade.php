@@ -109,7 +109,16 @@
                 <div class="row m-0">
                     <div class="col">
                         <label class="mb-1">Họ và tên</label>
-                        <input type="text" class="form-control" placeholder="Nhập họ tên" name="name">
+{{--                        <input type="text" class="form-control" placeholder="Nhập họ tên" name="name">--}}
+{{--                        <div class="invalid-feedback">--}}
+{{--                            Vui lòng không để trống trường này!!!--}}
+{{--                        </div>--}}
+                        <div class="input-group has-validation">
+                            <input type="text" class="form-control" name="name" placeholder="Họ và tên" id="validationCustomUsername">
+{{--                            <div class="invalid-feedback">--}}
+{{--                                Vui lòng không để trống trường này!!!--}}
+{{--                            </div>--}}
+                        </div>
                     </div>
                     <div class="col">
                         <label class="mb-1">Số Điện Thoại</label>
@@ -129,6 +138,32 @@
                 <div class="col mt-3">
                     <label class="mb-1">Nội dung tin nhắn</label>
                     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="content"></textarea>
+                </div>
+
+                <div class="col mt-3">
+                    <div class="contact-form-group">
+                        @if(session()->has('success_msg') || session()->has('error_msg') || isset($errors))
+                            @if (session()->has('success_msg'))
+                                <div class="alert alert-success">
+                                    <p>{{ session('success_msg') }}</p>
+                                </div>
+                            @endif
+                            @if (session()->has('error_msg'))
+                                <div class="alert alert-danger">
+                                    <p>{{ session('error_msg') }}</p>
+                                </div>
+                            @endif
+                            @if (isset($errors) && count($errors))
+                                <div class="alert alert-danger">
+                                    @foreach ($errors->all() as $error)
+                                        <span>{{ $error }}</span> <br>
+                                    @endforeach
+                                </div>
+                            @endif
+                        @endif
+                        <div class="contact-message contact-success-message" style="display: none"></div>
+                        <div class="contact-message contact-error-message" style="display: none"></div>
+                    </div>
                 </div>
                 <button type="submit" class=" ml-3 mt-3">Gửi</button>
                 {!! Form::close() !!}

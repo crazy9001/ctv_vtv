@@ -99,7 +99,7 @@
                     </div>
                 </div>
                 <div class="d-none d-lg-block col-lg-7">
-                    {!! Form::open(['route' => 'public.send.admission', 'method' => 'POST', 'class' => 'bg-registor p-5']) !!}
+                    {!! Form::open(['route' => 'public.send.admission', 'method' => 'POST', 'class' => 'bg-registor p-5 admissions-form']) !!}
                         <div>
                             <h3 class=" text-Lato-Bold text-color-9A0000 text-uppercase text-center">
                                 đăng ký
@@ -171,8 +171,14 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="col mt-3">
+                            <div class="contact-form-group">
+                                <div class="contact-message contact-success-message" style="display: none"></div>
+                                <div class="contact-message contact-error-message" style="display: none"></div>
+                            </div>
+                        </div>
                         <div class="d-flex justify-content-center align-items-center">
-                            <button class="btn-send">GỬI</button>
+                            <button class="btn-send" type="submit">GỬI</button>
                         </div>
                     {!! Form::close() !!}
                 </div>

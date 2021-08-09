@@ -1,7 +1,7 @@
-.contact-form * {
+.admissions-form * {
   box-sizing: border-box;
 }
-.contact-form .button-loading {
+.admissions-form .button-loading {
   border: 1px solid #c4cdd5;
   cursor: default;
   text-shadow: none;
@@ -9,7 +9,7 @@
   position: relative;
   transition: border-color 0.2s ease-out;
 }
-.contact-form .button-loading:before {
+.admissions-form .button-loading:before {
   content: "";
   position: absolute;
   top: 50%;
@@ -26,10 +26,10 @@
   border-color: #ffffff;
   border-bottom-color: transparent;
 }
-.contact-form .button-loading:hover, .contact-form .button-loading:focus, .contact-form .button-loading:active {
+.admissions-form .button-loading:hover, .admissions-form .button-loading:focus, .admissions-form .button-loading:active {
   color: transparent;
 }
-.contact-form .contact-message {
+.admissions-form .contact-message {
   margin: 0 0 20px 0;
   padding: 15px 30px 15px 15px;
   border-left: 5px solid #eeeeee;
@@ -37,51 +37,51 @@
   display: block;
   width: 100%;
 }
-.contact-form .contact-message.contact-success-message {
+.admissions-form .contact-message.contact-success-message {
   background-color: #c0edf1;
   border-color: #58d0da;
   color: #000;
 }
-.contact-form .contact-message.contact-error-message {
+.admissions-form .contact-message.contact-error-message {
   background-color: #faeaa9;
   border-color: #f3cc31;
   color: #000;
 }
-.contact-form .contact-form-row {
+.admissions-form .contact-form-row {
   margin-right: -15px;
   margin-left: -15px;
 }
-.contact-form .contact-form-row:after, .contact-form .contact-form-row:before {
+.admissions-form .contact-form-row:after, .admissions-form .contact-form-row:before {
   box-sizing: border-box;
   display: table;
   content: " ";
 }
-.contact-form .contact-form-row:after {
+.admissions-form .contact-form-row:after {
   clear: both;
 }
-.contact-form .contact-form-group {
+.admissions-form .contact-form-group {
   margin-bottom: 15px;
 }
-.contact-form .contact-column-6, .contact-form .contact-column-12 {
+.admissions-form .contact-column-6, .admissions-form .contact-column-12 {
   position: relative;
   min-height: 1px;
   padding-right: 15px;
   padding-left: 15px;
 }
-.contact-form .contact-form-input-group {
+.admissions-form .contact-form-input-group {
   margin-bottom: 15px;
 }
-.contact-form .contact-label {
+.admissions-form .contact-label {
   display: inline-block;
   max-width: 100%;
   margin-bottom: 5px;
   font-weight: 700;
 }
-.contact-form .contact-label.required:after {
+.admissions-form .contact-label.required:after {
   content: " *";
   color: red;
 }
-.contact-form .contact-form-input {
+.admissions-form .contact-form-input {
   display: block;
   width: 100%;
   height: 34px;
@@ -96,29 +96,29 @@
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
 }
-.contact-form .contact-form-input:focus {
+.admissions-form .contact-form-input:focus {
   border-color: #66afe9;
   outline: 0;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
 }
-.contact-form .contact-form-input:focus::-moz-placeholder {
+.admissions-form .contact-form-input:focus::-moz-placeholder {
   color: #999999;
   opacity: 1;
 }
-.contact-form .contact-form-input:focus:-ms-input-placeholder {
+.admissions-form .contact-form-input:focus:-ms-input-placeholder {
   color: #999999;
 }
-.contact-form .contact-form-input:focus::-webkit-input-placeholder {
+.admissions-form .contact-form-input:focus::-webkit-input-placeholder {
   color: #999999;
 }
-.contact-form .contact-form-input:focus::-ms-expand {
+.admissions-form .contact-form-input:focus::-ms-expand {
   background-color: transparent;
   border: 0;
 }
-.contact-form textarea.contact-form-input {
+.admissions-form textarea.contact-form-input {
   height: auto;
 }
-.contact-form .contact-button {
+.admissions-form .contact-button {
   display: inline-block;
   padding: 6px 12px;
   margin-bottom: 0;
@@ -140,17 +140,17 @@
   color: #ffffff;
   background-color: #337ab7;
 }
-.contact-form .contact-button:hover, .contact-form .contact-button:focus {
+.admissions-form .contact-button:hover, .admissions-form .contact-button:focus {
   color: #ffffff;
   background-color: #286090;
   border-color: #204d74;
 }
 @media (min-width: 992px) {
-  .contact-form .contact-column-6 {
+  .admissions-form .contact-column-6 {
     width: 50%;
     float: left;
   }
-  .contact-form .contact-column-12 {
+  .admissions-form .contact-column-12 {
     width: 100%;
   }
 }

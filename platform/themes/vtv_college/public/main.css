@@ -1,94 +1,3 @@
-/** @format */
-/** @format */
-html,
-body,
-div,
-span,
-applet,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-b,
-u,
-i,
-center,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-embed,
-figure,
-figcaption,
-footer,
-header,
-hgroup,
-menu,
-nav,
-output,
-ruby,
-section,
-summary,
-time,
-mark,
-audio,
-video {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font-family: Roboto;
-    line-height: 24px;
-    vertical-align: baseline;
-}
 main {
     padding-top: 100px;
 }
@@ -193,7 +102,7 @@ main a:hover {
     position: fixed;
     bottom: 100px;
     right: 20px;
-    z-index: 1909;
+    z-index: 1909px;
     cursor: pointer;
     display: none;
 }
@@ -380,6 +289,7 @@ main a:hover {
     border-color: #e0e0e0 !important;
     padding-bottom: 15px;
 }
+
 .item-right-1 h3 {
     text-transform: uppercase;
     font-size: 18px;
@@ -701,9 +611,13 @@ main a:hover {
         height: unset !important;
         padding-bottom: 20px;
     }
+    .list-news-event {
+        margin-left: 10px !important;
+        margin-right: 10px !important;
+    }
     .introduce-content .introduce-item {
-        padding-left: 10px;
-        padding-right: 10px;
+        margin-left: 10px;
+        margin-right: 10px;
     }
     .post__title,
     .post__title a {
@@ -795,7 +709,19 @@ main a:hover {
     }
     .gioi-thieu-content-1 {
         padding: 0 10px 0 10px !important;
+        width: 100% !important;
     }
+    .post__content {
+        width: 100% !important;
+        word-wrap: break-word !important;
+    }
+    .gioi-thieu-content-1 .post__content p {
+        padding: 0 10px 0 10px !important;
+        width: 100% !important;
+    }
+}
+.sticky {
+    top: 100px;
 }
 @media only screen and (max-width: 540px) {
     .footer .bg-footer1 h3 {
@@ -1811,7 +1737,7 @@ svg.fa-angle-down {
     font-family: Roboto;
 }
 .img-media .position-absolute {
-    bottom: 0;
+    bottom: 10px;
 }
 .title-media-detail h3 {
     font-family: RobotoBold;
@@ -2270,14 +2196,6 @@ svg.fa-angle-down {
     transition: all 0.35s;
 }
 
-#header-home .block-mobile ul {
-    /* box-sizing: inherit;
-    margin: 0;
-    padding: 0;
-    border: none;
-    font: inherit;
-    vertical-align: baseline; */
-}
 #header-home .block-mobile ul li {
     position: relative;
     display: inline-block;
@@ -2350,3 +2268,20 @@ ul.subMenu li.active > a {
     }
 }
 /* ============ small devices .end// ============ */
+.my-gallery {
+    width: 100%;
+    float: left;
+}
+.my-gallery img {
+    width: 100%;
+    height: auto;
+}
+.my-gallery figure {
+    display: block;
+    float: left;
+    margin: 0 5px 5px 0;
+    width: 150px;
+}
+.my-gallery figcaption {
+    display: none;
+}
