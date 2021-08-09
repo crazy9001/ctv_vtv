@@ -63,8 +63,8 @@
                             </div>
                         </div>
                         <div class="d-flex flex-row w-100 h-50">
-                            <div class="col-11 p-0 d-flex flex-row align-items-center">
-                                <div class="col-11 p-0 d-flex flex-row align-items-center header-web">
+                            <div class="col-11 p-0 d-flex flex-row align-items-center mw-100">
+                                <div class="col-11 p-0 d-flex flex-row align-items-center header-web mw-100">
                                     <div class="container">
                                         {!!
                                             Menu::renderMenuLocation('main-menu', [

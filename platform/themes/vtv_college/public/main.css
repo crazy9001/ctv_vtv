@@ -451,11 +451,7 @@ main a:hover {
 .news-event-content {
     margin-top: 20px;
 }
-.news-content-container {
-    height: 680px;
-}
 .list-news-event {
-    height: 680px;
     overflow-y: auto;
     box-shadow: 0px 3px 6px #27347d1f;
     border-radius: 5px;
@@ -517,7 +513,7 @@ main a:hover {
 .upcoming-events .bg-fake {
     height: 10px;
     background: #9a0000;
-    border-radius: 10px 10px 0 0;
+    border-radius: 10px 10px 0px 0px;
 }
 .list-news-event h5 a {
     color: #464646;
@@ -596,6 +592,12 @@ main a:hover {
     top: 50%;
     left: 0;
     color: #bfafb2;
+}
+.register-container .form-control {
+    margin-top: 0 !important;
+}
+.register-container .form-inline {
+    padding-left: 10px;
 }
 /* end tin-tuc-su-kien */
 /* footer */
@@ -699,6 +701,14 @@ main a:hover {
         height: unset !important;
         padding-bottom: 20px;
     }
+    .introduce-content .introduce-item {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .post__title,
+    .post__title a {
+        padding: 5px;
+    }
     .news-text-title h3 a {
         font-size: 20px !important;
     }
@@ -785,10 +795,6 @@ main a:hover {
     }
     .gioi-thieu-content-1 {
         padding: 0 10px 0 10px !important;
-    }
-    .post__content img {
-        height: 50vh !important;
-        object-fit: cover !important;
     }
 }
 @media only screen and (max-width: 540px) {
@@ -1003,7 +1009,7 @@ main a:hover {
 }
 
 .txt_Center {
-    margin: 50% 0 0 20%;
+    margin: 50% 0% 0% 20%;
 }
 
 .txt_h1 {
@@ -1531,6 +1537,10 @@ svg.fa-angle-down {
     overflow-x: auto;
     flex-wrap: nowrap;
 }
+.block-one .col-lg-6 {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
 /* .daotao-scroll::-webkit-scrollbar {
   display: none;
 } */
@@ -1697,7 +1707,7 @@ svg.fa-angle-down {
 .info__contact .info__contact--info span {
     color: #8b0000;
     font-size: 20px;
-    font-family: Roboto;
+    font-family: RobotoMedium;
 }
 .bg-click {
     width: 100%;
@@ -2318,6 +2328,9 @@ ul.subMenu li.active > a {
     top: 0;
     left: 100%;
     width: 100%;
+}
+.svg-inline--fa {
+    color: #fff;
 }
 
 /* responsive */

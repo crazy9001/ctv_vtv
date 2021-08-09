@@ -22,7 +22,7 @@
                         </h3>
                         <div class="post__author d-flex flex-row">
                             @if ($post->author->username)
-                                <h5 class=" text-roboto-medium-black font-size-18">
+                                <h    /* height: 680px;5 class=" text-roboto-medium-black font-size-18">
                                     {{$post->author->getFullName()}}
                                 </h5>
                             @endif
@@ -34,9 +34,11 @@
                         <div class="post__thumbnail">
                             <img class="img-fluid" src="{{ RvMedia::getImageUrl($post->image, 'featured', false, RvMedia::getDefaultImage()) }}" alt="{{ $post->name }}">
                         </div>
-                        <div class="post__description">
-                            {{ $post->description }}
-                        </div>
+                        @if($post->description)
+                            <div class="post__description">
+                                {{ $post->description }}
+                            </div>
+                        @endif
                         <div class="post__content">
                             {!! clean($post->content) !!}
                         </div>

@@ -55,7 +55,7 @@
             <h4 class="text-content">Hotline liên hệ</h4>
         </div>
     </div>
-    <div class="w-percent-one col-xl-3 col-lg-4 col-md-6 col-sm-6 col-6row m-0">
+    <div class="w-percent-one col-xl-3 col-lg-4 col-md-6 col-sm-6 col-6 row m-0">
         <div class="d-flex w-25 justify-content-center align-items-center">
             <img
                 width="50"

@@ -73,7 +73,7 @@
                 <div class="mt-3 mb-3">
                     {!! do_shortcode('[upcoming-events title="Sự kiện sắp diễn ra" category="'. theme_option('id_upcoming_event', 1) .'"][/upcoming-events]') !!}
                     <section class="section-banner">
-                        <div class="row">
+                        <div class="row ml-0 mr-0">
                             <div class="introduce-content">
                                 <div class="section-banner">
                                     <div class="row">
