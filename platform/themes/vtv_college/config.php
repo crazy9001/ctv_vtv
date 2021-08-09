@@ -68,6 +68,8 @@ return [
                 ->usePath()->add('jscroll', 'library/js/masonry.pkgd.min.js')
                 ->usePath()->add('carousel', 'library/js/carousel.js')
                 ->usePath()->add('intlTelInput', 'library/js/intlTelInput.min.js')
+                ->usePath()->add('photoswipe', 'library/js/photoswipe.min.js')
+                ->usePath()->add('photoswipe-ui-default', 'library/js/photoswipe-ui-default.min.js')
                 ->usePath()->add('slider', 'scripts/slider-3d.js');
 
             $theme
@@ -82,6 +84,8 @@ return [
                 ->usePath()->add('intlTelInput', 'library/css/intlTelInput.css')
                 ->usePath()->add('main', 'main.css')
                 ->usePath()->add('introduce', 'tuyen-sinh.css')
+                ->usePath()->add('photoswipe', 'library/css/photoswipe.css')
+                ->usePath()->add('photoswipe-default-skin', 'library/css/default-skin.css')
                 ->usePath()->add('style', 'css/style.css');
 
 
