@@ -6,3 +6,4 @@
         <p>{!! $config['content'] !!}</p>
     </div>
 </div>
+{{--{!! $config['content'] !!}--}}

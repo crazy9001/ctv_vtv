@@ -33,10 +33,7 @@
                                             <a href="{{ $featureItem->url }}" title="{{ $featureItem->name }}">{{ $featureItem->name }}</a>
                                         </h3>
                                         <div class="time-view d-flex flex-row align-items-center">
-                                            <i
-                                                class="far fa-calendar-alt"
-                                                style="color: #666666; width: 17px; height: 16px"
-                                            ></i>
+                                            <i class="far fa-calendar-alt" style="color: #666666; width: 17px; height: 16px"></i>
                                             <span class="ml-2">{{ $featureItem->created_at->format('d/m/Y - H:i:s') }}</span>
                                         </div>
                                         <div>
@@ -60,7 +57,7 @@
                                         @endif
                                         <div class="border-bottom pb-3">
                                             <h5 class="rules font-size-18">
-                                                <a href="#">{{ $featureItem->name }}</a>
+                                                <a href="{{ $featureItem->url }}">{{ $featureItem->name }}</a>
                                             </h5>
                                             @if($index == 1)
                                                 <h6>{{ $featureItem->description }}</h6>
@@ -114,8 +111,8 @@
                     </section>
                 </div>
             </div>
-            <div class="col-lg-3">
-                <div class="d-flex flex-column justify-content-center align-items-center">
+            <div class="col-lg-3 blue">
+                <div class="sticky d-flex flex-column justify-content-center align-items-center">
                     {!! dynamic_sidebar('ads_posts_sidebar') !!}
                 </div>
             </div>

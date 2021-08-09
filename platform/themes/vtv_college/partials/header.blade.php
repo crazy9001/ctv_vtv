@@ -31,7 +31,7 @@
         </div>
 
         <header id="header-home">
-            <div class="container" style="height: 100%">
+            <div class="container green" style="height: 100%">
                 <div class="w-100 js-between h-100 d-flex flex-row">
                     @if (theme_option('logo'))
                         <div class="div-fake"></div>

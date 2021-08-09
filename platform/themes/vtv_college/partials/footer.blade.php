@@ -179,6 +179,25 @@
         scrollFunction();
     };
 
+    $(document).ready(function () {
+        var stickyTop = $(".sticky").offset().top;
+
+        $(window).scroll(function () {
+            var windowTop = $(window).scrollTop();
+            if (
+                stickyTop < windowTop &&
+                $(".blue").height() +
+                $(".blue").offset().top -
+                $(".sticky").height() >
+                windowTop
+            ) {
+                $(".sticky").css("position", "sticky");
+            } else {
+                $(".sticky").css("top", "100px");
+            }
+        });
+    });
+
     function scrollFunction() {
         if (
             document.body.scrollTop > 200 ||

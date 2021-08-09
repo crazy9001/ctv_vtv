@@ -111,8 +111,8 @@
                     </section>
                 </div>
             </div>
-            <div class="col-lg-3">
-                <div class="d-flex flex-column justify-content-center align-items-center">
+            <div class="col-lg-3 blue">
+                <div class="sticky d-flex flex-column justify-content-center align-items-center">
                     {!! dynamic_sidebar('ads_category_sidebar') !!}
                 </div>
             </div>

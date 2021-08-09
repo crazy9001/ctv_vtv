@@ -22,7 +22,7 @@
                         </h3>
                         <div class="post__author d-flex flex-row">
                             @if ($post->author->username)
-                                <h    /* height: 680px;5 class=" text-roboto-medium-black font-size-18">
+                                <h5 class=" text-roboto-medium-black font-size-18">
                                     {{$post->author->getFullName()}}
                                 </h5>
                             @endif
@@ -47,8 +47,8 @@
                 {!! do_shortcode('[upcoming-events title="Sự kiện sắp diễn ra" category="'. theme_option('id_upcoming_event', 1) .'"][/upcoming-events]') !!}
             </div>
 
-            <div class="col-lg-3 position-relative">
-                <div class="d-flex flex-column justify-content-center">
+            <div class="col-lg-3 blue">
+                <div class="sticky d-flex flex-column justify-content-center align-items-center">
                     {!! dynamic_sidebar('ads_post_sidebar') !!}
                 </div>
             </div>
