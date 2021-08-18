@@ -116,6 +116,10 @@ add_shortcode('student-reviews', __('Đánh giá của sinh viên'), __('Đánh 
         return Theme::partial('short-codes.student-reviews');
     });
 
+add_shortcode('video-player', __('Video player'), __('Add video player'), function ($shortCode) {
+    return Theme::partial('short-codes.video-player', ['url' => $shortCode->content, 'title' => $shortCode->title]);
+});
+
 theme_option()
     ->setField([
         'id'         => 'copyright',

@@ -70,7 +70,10 @@ return [
                 ->usePath()->add('intlTelInput', 'library/js/intlTelInput.min.js')
                 ->usePath()->add('photoswipe', 'library/js/photoswipe.min.js')
                 ->usePath()->add('photoswipe-ui-default', 'library/js/photoswipe-ui-default.min.js')
-                ->usePath()->add('slider', 'scripts/slider-3d.js');
+                ->usePath()->add('slider', 'scripts/slider-3d.js')
+                ->usePath()->add('video-js', 'library/js/video.min.js', ['jquery'], [], '5.11')
+                ->usePath()->add('videojs-contrib-quality-levels', 'library/js/videojs-contrib-quality-levels.min.js', ['jquery'], [], '5.11')
+                ->usePath()->add('videojs-hls-quality-selector', 'library/js/videojs-hls-quality-selector.js', ['jquery'], [], '5.11');
 
             $theme
                 ->asset()
@@ -86,6 +89,7 @@ return [
                 ->usePath()->add('introduce', 'tuyen-sinh.css')
                 ->usePath()->add('photoswipe', 'library/css/photoswipe.css')
                 ->usePath()->add('photoswipe-default-skin', 'library/css/default-skin.css')
+                ->usePath()->add('video-js', 'library/css/video-js.css')
                 ->usePath()->add('style', 'css/style.css');
 
 
