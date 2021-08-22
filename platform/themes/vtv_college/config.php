@@ -73,7 +73,8 @@ return [
                 ->usePath()->add('slider', 'scripts/slider-3d.js')
                 ->usePath()->add('video-js', 'library/js/video.min.js', ['jquery'], [], '5.11')
                 ->usePath()->add('videojs-contrib-quality-levels', 'library/js/videojs-contrib-quality-levels.min.js', ['jquery'], [], '5.11')
-                ->usePath()->add('videojs-hls-quality-selector', 'library/js/videojs-hls-quality-selector.js', ['jquery'], [], '5.11');
+                ->usePath()->add('videojs-hls-quality-selector', 'library/js/videojs-hls-quality-selector.js', ['jquery'], [], '5.11')
+                ->usePath()->add('script.js', 'js/script.js', ['jquery'], [], '5.11');;
 
             $theme
                 ->asset()

@@ -54,7 +54,7 @@
                 "
                     >
                         <a href="{{ route('public.single') }}">Trang chủ</a>
-                        <a href="#">Vì sao chọn CTV</a>
+                        <a href="#">Vì sao chọn VTVcollege</a>
                         <a href="#">Chuyên ngành đào tạo</a>
                         <a href="#">Thông tin tuyển sinh</a>
                         <a href="#">Cơ hội việc làm</a>

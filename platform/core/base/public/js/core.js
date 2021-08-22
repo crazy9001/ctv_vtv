@@ -1453,11 +1453,11 @@ var Botble = /*#__PURE__*/function () {
 
       if (data_video && data_video !== '') {
         //let sources = [{"type": "video/mp4", "src": data_video}];
-        //let sources = [{"type": "video/mp4", "src": BotbleVariables.storage_url + data_video}];
         var sources = [{
-          "type": "application/x-mpegURL",
-          "src": 'https://nmxlive.akamaized.net/hls/live/529965/Live_1/index.m3u8'
-        }];
+          "type": "video/mp4",
+          "src": BotbleVariables.storage_url + data_video
+        }]; //let sources = [{"type": "application/x-mpegURL", "src": 'https://nmxlive.akamaized.net/hls/live/529965/Live_1/index.m3u8'}];
+
         player.pause();
         player.src(sources);
         player.load();
@@ -1537,8 +1537,8 @@ var Botble = /*#__PURE__*/function () {
             break;
 
           case 'video':
-            //html += '[video-player title="'+ file.name +'"]'+ link +'[/video-player]';
-            html += '<div class="video-player" id="video-player-' + file.id + '" data-video="' + link + '"><video class="vjs-tech video-js"></video></div>';
+            html += '[video-player title="' + file.name + '"]' + link + '[/video-player]'; //html += '<div class="video-player" id="video-player-'+file.id+'" data-video="'+ link +'"><video class="vjs-tech video-js"></video></div>'
+
             break;
 
           default:

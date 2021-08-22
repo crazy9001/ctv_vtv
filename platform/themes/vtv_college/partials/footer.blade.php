@@ -8,7 +8,7 @@
                             <img src="{{ RvMedia::getImageUrl(theme_option('logo')) }}" class="img-fluid" alt="{{ theme_option('site_title') }}">
                         </div>
                     @endif
-                    <h3>TRƯỜNG CAO ĐẲNG TRUYỀN HÌNH - ĐÀI TRUYỀN HÌNH VIỆT NAM</h3>
+                    <h3>{{ theme_option('site_title') }} - ĐÀI TRUYỀN HÌNH VIỆT NAM</h3>
                     <h5>
                         {!! dynamic_sidebar('footer_sidebar') !!}
                     </h5>
@@ -40,7 +40,39 @@
                     <div class="d-inline">
                         <h3>facebook</h3>
                         <div class="d-flex flex-row">
-                            <img src="{{ Theme::asset()->url('images/footer-qc.png') }}" class="img-fluid"/>
+{{--                            <img src="{{ Theme::asset()->url('images/footer-qc.png') }}" class="img-fluid"/>--}}
+                            @if (theme_option('facebook_comment_enabled_in_post', 'yes') == 'yes' || (theme_option('facebook_chat_enabled', 'yes') == 'yes' && theme_option('facebook_page_id')))
+                                <div id="fb-root"></div>
+                                <script>
+                                    window.fbAsyncInit = function() {
+                                        FB.init({
+                                            xfbml            : true,
+                                            version          : 'v7.0'
+                                        });
+                                    };
+
+                                    (function(d, s, id) {
+                                        var js, fjs = d.getElementsByTagName(s)[0];
+                                        if (d.getElementById(id)) return;
+                                        js = d.createElement(s); js.id = id;
+                                        js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+                                        fjs.parentNode.insertBefore(js, fjs);
+                                    }(document, 'script', 'facebook-jssdk'));</script>
+
+                                @if (theme_option('facebook_page_id'))
+{{--                                    <div class="fb-customerchat"--}}
+{{--                                         attribution="install_email"--}}
+{{--                                         page_id="{{ theme_option('facebook_page_id') }}"--}}
+{{--                                         theme_color="{{ theme_option('primary_color', '#ff2b4a') }}">--}}
+{{--                                    </div>--}}
+
+                                    <div class="fb-page"
+                                         data-href="https://www.facebook.com/{{ theme_option('facebook_page_id') }}"
+                                         data-width="272"
+                                         data-hide-cover="false"
+                                         data-show-facepile="false"></div>
+                                @endif
+                            @endif
                         </div>
                     </div>
                 </div>

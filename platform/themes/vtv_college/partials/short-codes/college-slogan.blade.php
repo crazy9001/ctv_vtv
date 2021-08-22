@@ -13,7 +13,7 @@
                 <div class="line2"></div>
             </div>
             <h5 class="mt-2 text-lato-italic font-size-24 text-center" style="color: #333333">
-                " Dẫn lối tri thức, Tiếp sức thành công "
+                " HỌC THỰC - LÀM NGAY - CAM KẾT VIỆC LÀM SAU TỐT NGHIỆP "
             </h5>
         </div>
         <div class="video-img h-100 d-flex align-items-center">
