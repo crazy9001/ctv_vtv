@@ -2,10 +2,7 @@
 
 <div class="bg-banner-gioithieu d-flex flex-column justify-content-center align-items-center">
     <div class="container d-flex flex-column justify-content-center align-items-center">
-        <h3>Thư viện ảnh</h3>
-        {{--        <h5 class="font-size-14 text-roboto-white text-center mt-2">--}}
-        {{--            {{ $gallery->description }}--}}
-        {{--        </h5>--}}
+        <h3>{{ __('Photo library') }}</h3>
     </div>
     <div class="d-flex flex-row justify-content-center align-items-center mt-2">
         <div class="line"></div>

@@ -1,7 +1,7 @@
 @php Theme::set('section-name', $post->name) @endphp
 
 <div class="bg-banner-gioithieu d-flex flex-column justify-content-center align-items-center">
-    <h3>Chi tiết tin tức</h3>
+    <h3>{{ __('News details') }}</h3>
     <div class="d-flex flex-row justify-content-center align-items-center mt-3">
         <div class="line"></div>
             <i class="fas fa-book-open" style="color: #fff"></i>

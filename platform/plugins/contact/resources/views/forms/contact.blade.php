@@ -77,7 +77,7 @@
     <div class="container info__contact">
         <div class="row">
             <div class="col-lg-5 info__contact--info">
-                <h3>Thông tin liên hệ</h3>
+                <h3>{{ __('Communications') }}</h3>
                 <div class="hd-ct mt-2"></div>
                 <div>
                     <h3 class="mt-2 font-size-20 ">
@@ -108,35 +108,28 @@
                 {!! Form::open(['route' => 'public.send.contact', 'method' => 'POST', 'class' => 'from-input contact-form']) !!}
                 <div class="row m-0">
                     <div class="col">
-                        <label class="mb-1">Họ và tên</label>
-{{--                        <input type="text" class="form-control" placeholder="Nhập họ tên" name="name">--}}
-{{--                        <div class="invalid-feedback">--}}
-{{--                            Vui lòng không để trống trường này!!!--}}
-{{--                        </div>--}}
+                        <label class="mb-1">{{ __('Full name') }}</label>
                         <div class="input-group has-validation">
-                            <input type="text" class="form-control" name="name" placeholder="Họ và tên" id="validationCustomUsername">
-{{--                            <div class="invalid-feedback">--}}
-{{--                                Vui lòng không để trống trường này!!!--}}
-{{--                            </div>--}}
+                            <input type="text" class="form-control" name="name" placeholder="{{ __('Full name') }}" id="validationCustomUsername">
                         </div>
                     </div>
                     <div class="col">
-                        <label class="mb-1">Số Điện Thoại</label>
+                        <label class="mb-1">{{ __('Phone number') }}</label>
                         <div class="d-flex flex-row">
                             <input initialCountry="auto" id="phone" type="tel" name="phone"/>
                         </div>
                     </div>
                 </div>
                 <div class="col mt-3">
-                    <label class="mb-1">Email</label>
-                    <input type="text" class="form-control" placeholder="Nhập email" name="email">
+                    <label class="mb-1">{{ __('Email') }}</label>
+                    <input type="text" class="form-control" placeholder="{{ __('Email') }}" name="email">
                 </div>
                 <div class="col mt-3">
-                    <label class="mb-1">Chủ đề</label>
-                    <input type="text" class="form-control" placeholder="Nhập chủ đề" name="subject">
+                    <label class="mb-1">{{ __('Title') }}</label>
+                    <input type="text" class="form-control" placeholder="{{ __('Title') }}" name="subject">
                 </div>
                 <div class="col mt-3">
-                    <label class="mb-1">Nội dung tin nhắn</label>
+                    <label class="mb-1">{{ __('Content') }}</label>
                     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="content"></textarea>
                 </div>
 
@@ -165,7 +158,7 @@
                         <div class="contact-message contact-error-message" style="display: none"></div>
                     </div>
                 </div>
-                <button type="submit" class=" ml-3 mt-3">Gửi</button>
+                <button type="submit" class=" ml-3 mt-3">{{ __('Send') }}</button>
                 {!! Form::close() !!}
             </div>
         </div>

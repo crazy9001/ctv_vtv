@@ -5,7 +5,7 @@
     ]);
 @endphp
 <div class="bg-banner-gioithieu d-flex flex-column justify-content-center align-items-center ">
-    <h3>Tin tức & Sự kiện</h3>
+    <h3>{{ __('News & Events') }}</h3>
     <div class="d-flex flex-row justify-content-center align-items-center mt-3">
         <div class="line"></div>
         <i class="fas fa-book-open" style="color: #fff"></i>
@@ -71,7 +71,7 @@
                     @endforeach
                 </div>
                 <div class="mt-3 mb-3">
-                    {!! do_shortcode('[upcoming-events title="Sự kiện sắp diễn ra" category="'. theme_option('id_upcoming_event', 1) .'"][/upcoming-events]') !!}
+                    {!! do_shortcode('[upcoming-events title="'.__('Upcoming events').'" category="'. theme_option('id_upcoming_event', 1) .'"][/upcoming-events]') !!}
                     <section class="section-banner">
                         <div class="row row ml-0 mr-0">
                             <div class="introduce-content">

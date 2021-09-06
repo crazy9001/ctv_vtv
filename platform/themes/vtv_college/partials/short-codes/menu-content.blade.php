@@ -9,8 +9,8 @@
             />
         </div>
         <div class="content w-75 d-flex flex-column justify-content-center p-auto">
-            <h3 class="text-title">Chuyên ngành đào tạo</h3>
-            <h4 class="text-content">Các chuyên ngành đào tạo của trường</h4>
+            <h3 class="text-title">{{ __('Specialized training') }}</h3>
+            <h4 class="text-content">{{ __('The training specialties of the school') }}</h4>
         </div>
     </div>
     <div class="w-percent-tow col-xl-3 col-lg-4 col-md-6 col-8 row m-0">
@@ -23,8 +23,8 @@
             />
         </div>
         <div class="content w-75 d-flex flex-column justify-content-center p-auto">
-            <h3 class="text-title">Tra cứu điểm thi</h3>
-            <h4 class="text-content">Tra cứu kết quả thi và học tập</h4>
+            <h3 class="text-title">{{ __('Look up test scores') }}</h3>
+            <h4 class="text-content">{{ __('Look up exam results and study') }}</h4>
         </div>
     </div>
     <div class="w-percent-one col-xl-3 col-lg-4 col-md-6 col-sm-6 col-6 row m-0">
@@ -37,8 +37,8 @@
             />
         </div>
         <div class="content w-75 d-flex flex-column justify-content-center p-auto">
-            <h3 class="text-title">Hòm thư nội bộ</h3>
-            <h4 class="text-content">Email hòm thư của CTV</h4>
+            <h3 class="text-title">{{ __('Internal mailbox') }}</h3>
+            <h4 class="text-content">{{ __('CTV\'s email inbox') }}</h4>
         </div>
     </div>
     <div class="w-percent-tow col-xl-3 col-lg-4 col-md-6 col-sm-6 col-6 row m-0">
@@ -52,7 +52,7 @@
         </div>
         <div class="content w-75 d-flex flex-column justify-content-center p-auto ">
             <h3 class="text-title">024.3385.048</h3>
-            <h4 class="text-content">Hotline liên hệ</h4>
+            <h4 class="text-content">{{ __('Hotline') }}</h4>
         </div>
     </div>
     <div class="w-percent-one col-xl-3 col-lg-4 col-md-6 col-sm-6 col-6 row m-0">
@@ -66,7 +66,7 @@
         </div>
         <div class=" content w-75 d-flex flex-column justify-content-center p-auto">
             <h3 class="text-title">Facebook</h3>
-            <h4 class="text-content">Fanpage của trường</h4>
+            <h4 class="text-content">{{ __('Facebook page') }}</h4>
         </div>
     </div>
 </div>

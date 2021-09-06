@@ -8,7 +8,7 @@
                             <img src="{{ RvMedia::getImageUrl(theme_option('logo')) }}" class="img-fluid" alt="{{ theme_option('site_title') }}">
                         </div>
                     @endif
-                    <h3>{{ theme_option('site_title') }} - ĐÀI TRUYỀN HÌNH VIỆT NAM</h3>
+                    <h3>{{ __('College of Television') }} - {{ __('Vietnam television') }}</h3>
                     <h5>
                         {!! dynamic_sidebar('footer_sidebar') !!}
                     </h5>
@@ -16,7 +16,7 @@
                 <div class=" col-md-4 block-col-md col-item-2 d-flex flex-column align">
                     <div class="d-inline">
                         <div class="footer-img-logo"></div>
-                        <h3>Liên hệ</h3>
+                        <h3>{{ __('Contact') }}</h3>
                         <div class="d-flex flex-row align-items-center">
                             <i style="color: #fff" class="fas fa-map-marker-alt"></i>
                             <strong>{{ theme_option('address') }}</strong>
@@ -59,15 +59,9 @@
                                         fjs.parentNode.insertBefore(js, fjs);
                                     }(document, 'script', 'facebook-jssdk'));</script>
 
-                                @if (theme_option('facebook_page_id'))
-{{--                                    <div class="fb-customerchat"--}}
-{{--                                         attribution="install_email"--}}
-{{--                                         page_id="{{ theme_option('facebook_page_id') }}"--}}
-{{--                                         theme_color="{{ theme_option('primary_color', '#ff2b4a') }}">--}}
-{{--                                    </div>--}}
-
+                                @if (theme_option('facebook'))
                                     <div class="fb-page"
-                                         data-href="https://www.facebook.com/{{ theme_option('facebook_page_id') }}"
+                                         data-href="{{theme_option('facebook')}}"
                                          data-width="272"
                                          data-hide-cover="false"
                                          data-show-facepile="false"></div>

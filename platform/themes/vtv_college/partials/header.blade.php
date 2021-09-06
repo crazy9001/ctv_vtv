@@ -44,7 +44,7 @@
                     <div class="col-10 block-mobile">
                         <div class="d-flex flex-row w-100 h-50">
                             <div class="col-7 w-100 col-lg-6 d-flex align-items-center">
-                                <span class="header-title-vtv">{{ theme_option('site_title') }}</span>
+                                <span class="header-title-vtv">{{ __('College of Television') }}</span>
                             </div>
                             <div class="col-5 col-lg-6 d-flex flex-row item-title-top">
                                 <div class="col-5 d-flex flex-row align-items-center">

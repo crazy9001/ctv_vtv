@@ -231,19 +231,6 @@ theme_option()
         ],
     ])
     ->setField([
-        'id'         => 'facebook_page_id',
-        'section_id' => 'opt-text-subsection-general',
-        'type'       => 'text',
-        'label'      => __('Facebook page ID'),
-        'attributes' => [
-            'name'    => 'facebook_page_id',
-            'value'   => null,
-            'options' => [
-                'class' => 'form-control',
-            ],
-        ],
-    ])
-    ->setField([
         'id'         => 'facebook_comment_enabled_in_post',
         'section_id' => 'opt-text-subsection-general',
         'type'       => 'select',
@@ -259,7 +246,56 @@ theme_option()
                 'class' => 'form-control',
             ],
         ],
-    ]);;
+    ])
+    ->setSection([
+        'title'      => __('Social'),
+        'desc'       => __('Social links'),
+        'id'         => 'opt-text-subsection-social',
+        'subsection' => true,
+        'icon'       => 'fa fa-share-alt',
+    ])
+    ->setField([
+        'id'         => 'facebook',
+        'section_id' => 'opt-text-subsection-social',
+        'type'       => 'text',
+        'label'      => 'Facebook',
+        'attributes' => [
+            'name'    => 'facebook',
+            'value'   => null,
+            'options' => [
+                'class'       => 'form-control',
+                'placeholder' => 'https://facebook.com/@username',
+            ],
+        ],
+    ])
+    ->setField([
+        'id'         => 'twitter',
+        'section_id' => 'opt-text-subsection-social',
+        'type'       => 'text',
+        'label'      => 'Twitter',
+        'attributes' => [
+            'name'    => 'twitter',
+            'value'   => null,
+            'options' => [
+                'class'       => 'form-control',
+                'placeholder' => 'https://twitter.com/@username',
+            ],
+        ],
+    ])
+    ->setField([
+        'id'         => 'youtube',
+        'section_id' => 'opt-text-subsection-social',
+        'type'       => 'text',
+        'label'      => 'Youtube',
+        'attributes' => [
+            'name'    => 'youtube',
+            'value'   => null,
+            'options' => [
+                'class'       => 'form-control',
+                'placeholder' => 'https://youtube.com/@channel-url',
+            ],
+        ],
+    ]);
 
 add_action('init', function () {
     config([

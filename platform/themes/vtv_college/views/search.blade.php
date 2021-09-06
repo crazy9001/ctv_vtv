@@ -41,7 +41,7 @@
             <div class="row">
                 <div class="col-lg-6">
                     <div class=" breadcrumbs__search--content d-flex flex-row justify-content-start">
-                        <h3>Kết quả tìm kiếm cho: </h3>
+                        <h3>{{ __('Search result for: ') }}</h3>
                         <span>{{ Request::input('q') }}</span>
                     </div>
                 </div>
