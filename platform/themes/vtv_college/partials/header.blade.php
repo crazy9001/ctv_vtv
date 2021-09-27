@@ -57,6 +57,13 @@
                                 <div class="col-3 d-flex align-items-center">
                                     <span class="text-fanpage">Email</span>
                                 </div>
+                                <div class="d-flex align-items-center">
+                                    <div class="pull-right">
+                                        <div class="language-wrapper">
+                                            {!! apply_filters('language_switcher') !!}
+                                        </div>
+                                    </div>
+                                </div>
                                 <div onclick="openSearch()" style="cursor: pointer" class="col-1 d-flex align-items-center">
                                     <i class="fas fa-search" style="color: #fff"></i>
                                 </div>

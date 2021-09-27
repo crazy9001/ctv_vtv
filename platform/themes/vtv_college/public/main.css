@@ -2210,6 +2210,7 @@ svg.fa-angle-down {
 #header-home .block-mobile .header-web a {
     display: inline-block;
     color: #000;
+    text-decoration: none;
 }
 #header-home .block-mobile a:hover,
 li.active {
