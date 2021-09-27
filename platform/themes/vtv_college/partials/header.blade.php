@@ -95,6 +95,13 @@
                                     'view'    => 'main-menu-mobile',
                                 ])
                             !!}
+                            <div class="d-flex align-items-center">
+                                <div class="pull-right">
+                                    <div class="language-wrapper">
+                                        {!! apply_filters('language_switcher') !!}
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                 </div>
             </div>
