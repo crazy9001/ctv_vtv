@@ -141,7 +141,7 @@
 </script>
 <script>
     function openNav() {
-        document.getElementById("mySidenav").style.height = "350px";
+        document.getElementById("mySidenav").style.height = "auto";
         document.getElementById("mySidenav").style.marginTop = "50px";
         document.getElementsByClassName("ic-open-menu")[0].style.display =
             "none";
