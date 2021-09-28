@@ -86,6 +86,22 @@ var VtvCollege = /*#__PURE__*/function () {
 
   return VtvCollege;
 }();
+$(".see-more").click(function () {
+  var $div = $($(this).data('div')); //div to append
+
+  var $link = $(this).data('link'); //current URL
+
+  var $page = $(this).data('page'); //get the next page #
+
+  var $href = $link + $page; //complete URL
+
+  $.get($href, function (response) {
+    //append data
+    var $html = $(response).find("#posts").html();
+    $div.append($html);
+  });
+  $(this).data('page', parseInt($page) + 1); //update page #
+});
 $(document).ready(function () {
   new VtvCollege().bindActionToElement();
 });

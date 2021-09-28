@@ -78,28 +78,31 @@
                                 <div class="section-banner">
                                     <div class="row">
                                         <div class="col-lg-8 introduce-item">
-                                            @foreach($posts as $post)
-                                                <div class="post__introduce_item">
-                                                    <h3><a href="{{ $post->url }}" title="{{ $post->name }}">{{ $post->name }}</a></h3>
-                                                    <div class="row mt-3 bg-content-item">
-                                                        <div class="col-lg-4">
-                                                            <a href="{{ $post->url }}">
-                                                                <img src="{{ RvMedia::getImageUrl($post->image, 'medium', false, RvMedia::getDefaultImage()) }}"/>
-                                                            </a>
-                                                        </div>
-                                                        <div class="col-lg-8">
-                                                            <div class="time-view d-flex flex-row align-items-center">
-                                                                <i class="far fa-calendar-alt" style=" color: #666666; width: 17px;height: 16px;"></i>
-                                                                <span class="ml-2">{{ $post->created_at->format('d/m/Y - H:i:s') }}</span>
+                                            <div id="posts">
+                                                @foreach($posts as $post)
+                                                    <div class="post__introduce_item">
+                                                        <h3><a href="{{ $post->url }}" title="{{ $post->name }}">{{ $post->name }}</a></h3>
+                                                        <div class="row mt-3 bg-content-item">
+                                                            <div class="col-lg-4">
+                                                                <a href="{{ $post->url }}">
+                                                                    <img src="{{ RvMedia::getImageUrl($post->image, 'medium', false, RvMedia::getDefaultImage()) }}"/>
+                                                                </a>
                                                             </div>
-                                                            <h5>
-                                                                <a href="{{ $post->url }}">{{ $post->description }}</a>
-                                                            </h5>
+                                                            <div class="col-lg-8">
+                                                                <div class="time-view d-flex flex-row align-items-center">
+                                                                    <i class="far fa-calendar-alt" style=" color: #666666; width: 17px;height: 16px;"></i>
+                                                                    <span class="ml-2">{{ $post->created_at->format('d/m/Y - H:i:s') }}</span>
+                                                                </div>
+                                                                <h5>
+                                                                    <a href="{{ $post->url }}">{{ $post->description }}</a>
+                                                                </h5>
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                </div>
-                                            @endforeach
-                                            {{ $posts->links() }}
+                                                @endforeach
+                                            </div>
+                                            <?php dd($posts->links()) ?>
+                                            <button class="see-more mt-4 button-add" data-page="2" data-link="{{$category->url}}?page=" data-div="#posts">{{__('See more')}}</button>
                                         </div>
                                         <div class="col-lg-4 item-right-1">
                                             {!! dynamic_sidebar('posts_sidebar') !!}
