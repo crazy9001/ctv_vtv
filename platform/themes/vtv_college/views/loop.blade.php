@@ -101,7 +101,7 @@
                                                     </div>
                                                 @endforeach
                                             </div>
-                                            <button class="see-more mt-4 button-add" data-page="2" data-link="{{$category->url}}?page=" data-div="#posts">{{__('See more')}}</button>
+{{--                                            <button class="see-more mt-4 button-add" data-page="2" data-link="{{$category->url}}?page=" data-div="#posts">{{__('See more')}}</button>--}}
                                         </div>
                                         <div class="col-lg-4 item-right-1">
                                             {!! dynamic_sidebar('posts_sidebar') !!}
